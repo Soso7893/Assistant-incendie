@@ -1,1 +1,10 @@
-{"name":"Assistant Incendie — Démonstration","short_name":"Assistant Incendie","start_url":"./index.html","display":"standalone","background_color":"#f2f5f9","theme_color":"#102b45","lang":"fr"}
+{
+  "name": "Assistant Incendie V3",
+  "short_name": "Assistant Incendie",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f2f5f9",
+  "theme_color": "#102b45",
+  "lang": "fr"
+}
