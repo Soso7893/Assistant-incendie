@@ -1,12 +1,17 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#102b45"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Assistant Incendie"><link rel="manifest" href="manifest.webmanifest"><title>Assistant Incendie V3.6.3 — Démo</title><style>*{box-sizing:border-box}body{margin:0;background:#f2f5f9;color:#172a3b;font-family:-apple-system,BlinkMacSystemFont,system-ui}header{background:#102b45;color:white;padding:28px 18px}h1{font-size:23px;margin:0}header p{color:#b9d1e3;font-size:13px}main{padding:18px 16px 105px;max-width:600px;margin:auto}h2{font-size:20px}section{background:white;border-radius:15px;padding:16px;margin:12px 0;box-shadow:0 2px 12px #19324b0c}.row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:12px 0}.muted{font-size:12px;color:#6c7b89}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}button{border:0;border-radius:12px;background:#12649a;color:white;padding:13px 10px;font-size:14px;font-weight:600}button.light{background:#e8f0f6;color:#23415b}select,input{width:100%;padding:12px;border:1px solid #d4dfe9;border-radius:10px;background:white;font-size:15px}nav{position:fixed;bottom:0;background:white;left:0;right:0;display:flex;justify-content:space-around;border-top:1px solid #e3e8ee;padding:10px 4px max(12px,env(safe-area-inset-bottom))}nav button{font-size:12px;background:white;color:#183b55;padding:8px}.tag{font-size:12px;background:#e9f5e9;border-radius:7px;padding:5px 8px}.notice{background:#fff3db;border-radius:10px;padding:12px;font-size:13px}b{font-weight:700}
-.lock{max-width:460px;margin:22px auto}.danger{color:#8d2424}.small{font-size:12px;color:#576675}.actions{display:flex;gap:8px;flex-wrap:wrap}.actions button{flex:1}.tag{font-size:12px;background:#e7f1fa;padding:5px 9px;border-radius:8px}.hidden{display:none!important}input[type=password]{width:100%;padding:13px;border:1px solid #aab9c7;border-radius:9px;margin:8px 0 14px}button:disabled{opacity:.55} .notice{line-height:1.5}</style></head><body><header><h1>🛡️ Assistant Incendie</h1><p>V3.6.3 — exports PDF · données fictives uniquement</p></header><main id="app"></main><nav id="nav" class="hidden"><button onclick="show('home')">⌂ Accueil</button><button onclick="show('syndics')">▤ Syndics</button><button onclick="show('devis')">▣ Devis</button><button onclick="show('relances')">◷ Relances</button><button onclick="show('exports')">⇩ Exports</button></nav><script>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#102b45"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Assistant Incendie"><link rel="manifest" href="manifest.webmanifest"><title>Assistant Incendie V3.8.3 — Principale</title><style>*{box-sizing:border-box}body{margin:0;background:#f2f5f9;color:#172a3b;font-family:-apple-system,BlinkMacSystemFont,system-ui}header{background:#102b45;color:white;padding:28px 18px}h1{font-size:23px;margin:0}header p{color:#b9d1e3;font-size:13px}main{padding:18px 16px 105px;max-width:600px;margin:auto}h2{font-size:20px}section{background:white;border-radius:15px;padding:16px;margin:12px 0;box-shadow:0 2px 12px #19324b0c}.row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:12px 0}.muted{font-size:12px;color:#6c7b89}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}button{border:0;border-radius:12px;background:#12649a;color:white;padding:13px 10px;font-size:14px;font-weight:600}button.light{background:#e8f0f6;color:#23415b}select,input{width:100%;padding:12px;border:1px solid #d4dfe9;border-radius:10px;background:white;font-size:15px}nav{position:fixed;bottom:0;background:white;left:0;right:0;display:flex;justify-content:space-around;border-top:1px solid #e3e8ee;padding:10px 4px max(12px,env(safe-area-inset-bottom))}nav button{font-size:12px;background:white;color:#183b55;padding:8px}.tag{font-size:12px;background:#e9f5e9;border-radius:7px;padding:5px 8px}.notice{background:#fff3db;border-radius:10px;padding:12px;font-size:13px}b{font-weight:700}
+.lock{max-width:460px;margin:22px auto}.danger{color:#8d2424}.small{font-size:12px;color:#576675}.actions{display:flex;gap:8px;flex-wrap:wrap}.actions button{flex:1}.tag{font-size:12px;background:#e7f1fa;padding:5px 9px;border-radius:8px}.hidden{display:none!important}input[type=password]{width:100%;padding:13px;border:1px solid #aab9c7;border-radius:9px;margin:8px 0 14px}button:disabled{opacity:.55} .notice{line-height:1.5}
+:root{--navy:#08243f;--orange:#fa7718;--ink:#102b45}body{background:#f5f7fb;color:var(--ink)}header{background:linear-gradient(115deg,#041b31,#103856);padding:26px max(20px,calc((100% - 600px)/2));border-radius:0 0 24px 24px}header .brand{display:flex;align-items:center;gap:12px}header .flame{width:43px;height:62px;flex-shrink:0;color:var(--orange)}.brand-fl{font-size:43px;letter-spacing:-3px;color:var(--orange);font-weight:850}.brand-name{font-size:15px;font-weight:800;line-height:1.15}.brand-line{border-left:1px solid #ffffff80;padding-left:14px;margin-left:auto;font-size:11px;line-height:1.8}.services{display:flex;justify-content:space-between;gap:8px;font-size:10px;margin-top:20px;color:#fff}.version{font-size:10px;color:#b9d1e3;margin-top:14px}main{padding-top:22px}button{background:var(--orange);border-radius:13px;cursor:pointer;min-height:44px}button.light{background:#f0f4f8;color:var(--ink);border:1px solid #dce4ed}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #1377ce;outline-offset:2px}section{border:1px solid #e7ebf1;border-radius:18px;box-shadow:0 3px 15px #14345104}nav{box-shadow:0 -4px 25px #1434510b;z-index:10}nav button{background:white;display:flex;flex-direction:column;gap:3px;align-items:center;color:#466078;border-radius:8px;font-size:11px;min-width:54px}nav button.active{color:#e76608;background:#fff5ec}nav .nav-icon{font-size:22px;line-height:1.2}input,select{margin-top:5px;margin-bottom:10px;background:#fbfcfe}h2{letter-spacing:-.4px}.home-title{display:flex;align-items:center;gap:12px;margin:0 0 24px}.shield{background:linear-gradient(140deg,#fff1df,#ff791b);border:3px solid #cbd2d9;border-radius:45% 45% 50% 50%;padding:10px;font-size:23px}.home-title h2{margin:0 0 4px;font-size:23px}.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:22px}.quick{display:flex;flex-direction:column;align-items:center;gap:9px;padding:17px 4px;background:#eef5ff;color:#0872e6;font-size:12px}.quick span{font-size:28px}.quick.green{background:#edf9f3;color:#087a43}.quick.red{background:#fff1f2;color:#e81b29}.quick.orange{background:#fff5ea;color:#df6905}.search-home{padding:16px;margin-bottom:20px;border-radius:16px}.recent-head{display:flex;justify-content:space-between;align-items:center}.recent-head button{background:none;color:#0872e6;padding:8px}.site-card{display:block;background:white;color:var(--ink);text-align:left;width:100%;border:1px solid #e4eaf0;border-radius:17px;margin:10px 0;padding:17px}.site-card b{display:block;font-size:16px;margin-bottom:6px}.site-card .muted{line-height:1.6;overflow-wrap:anywhere}.site-card .tag{display:inline-block;margin-top:9px;background:#e0f7ed;color:#087743}.import-cta{width:100%;padding:20px;margin:18px 0 8px;font-size:18px;box-shadow:0 6px 18px #fa77181c}.import-cta small{display:block;font-size:11px;font-weight:400;margin-top:6px}.notice{border:1px solid #f3e2bf}.lock button{width:100%}@media(max-width:380px){.brand-line{font-size:9px;padding-left:8px}.brand-fl{font-size:36px}.brand-name{font-size:12px}.services{font-size:9px}.quick-grid{gap:5px}}
+
+.quick-grid{grid-template-columns:repeat(3,minmax(0,1fr))}#nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}#nav button{min-width:0;width:100%;font-size:10px;padding:8px 1px;letter-spacing:-.3px}
+.sales-badges{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.sales-badge{display:inline-block;padding:5px 8px;border-radius:7px;font-size:11px;font-weight:700;background:#edf1f6;color:#475b70}.sales-badge.green{background:#ddf5e6;color:#126a3d}.sales-badge.orange{background:#fff0d9;color:#995000}.sales-badge.blue{background:#e5f0ff;color:#145b99}.sales-badge.red{background:#ffe5e5;color:#a52d2d}.ca-number{font-size:23px;font-weight:750;margin:7px 0}.ca-table{border-collapse:collapse;width:100%;font-size:12px}.ca-table th,.ca-table td{padding:10px 8px;text-align:right;border-bottom:1px solid #e3e9ef;white-space:nowrap}.ca-table th:first-child,.ca-table td:first-child{text-align:left}.sales-card{border-left:4px solid #fa7718}.sales-card.done{border-left-color:#198253}
+</style></head><body><header><div class="brand"><svg class="flame" viewBox="0 0 48 72" aria-hidden="true"><path fill="currentColor" d="M26 1C29 20 4 28 5 48c0 13 9 22 20 23C8 57 32 47 29 31c21 24 17 34 1 40 29-5 21-35 10-48-2 13-7 17-7 17C39 21 31 9 26 1Z"/><path fill="currentColor" d="M25 47c-1 9-14 16-1 24 10-2 9-13 1-24Z"/></svg><span class="brand-fl">FL</span><span class="brand-name">PROTECTION<br>INCENDIE</span><span class="brand-line">Vérification | Maintenance | Travaux</span></div><div class="services"><span>▥ Extincteurs</span><span>⚑ BAES</span><span>◉ Désenfumage</span><span>▣ Portes coupe-feu</span></div><div class="version">V3.8.3 · Édition orange · Coffre principal</div></header><main id="app"></main><nav id="nav" class="hidden"><button onclick="show('home')"><span class="nav-icon">⌂</span>Accueil</button><button onclick="show('sites')"><span class="nav-icon">▥</span>Résidences</button><button onclick="show('syndics')"><span class="nav-icon">▦</span>Syndics</button><button onclick="show('devis')"><span class="nav-icon">▤</span>Devis</button><button onclick="show('relances')"><span class="nav-icon">◷</span>Relances</button><button onclick="show('exports')"><span class="nav-icon">⇩</span>Exports</button></nav><script>
  'use strict';
 const $=id=>document.getElementById(id),el=$('app');
 const encoder=new TextEncoder(),decoder=new TextDecoder();
 const demo=()=>({quotes:[{ref:'DEMO-D001',name:'Vérification extincteurs',amount:450,status:'À confirmer',siteId:'DEMO-001'},{ref:'DEMO-D002',name:'Éclairage de sécurité',amount:1000,status:'À confirmer',siteId:'DEMO-002'}],reminders:[],syndics:[{id:'SY-DEMO-1',name:'Syndic Exemple',contact:'Camille Martin',phone:'',email:''}],sites:[{id:'DEMO-001',name:'Résidence Démonstration A',city:'Ville Exemple',address:'1 rue Exemple',syndicId:'SY-DEMO-1',devis:1450,contrat:680},{id:'DEMO-002',name:'Résidence Démonstration B',city:'Ville Exemple',address:'2 rue Exemple',syndicId:'SY-DEMO-1',devis:720,contrat:320}]});
 const defaultSyndics=demo().syndics,defaultSites=demo().sites;
 let vault=null,passphrase=null,unlocked=false,current='home';
-const keyName='assistant-incendie-v2-encrypted'; // même coffre que V2 : migration sans suppression
+const keyName='assistant-incendie-v2-encrypted'; // coffre de l’application principale conservé
 // Coffre chiffré conservé en IndexedDB (quota mieux adapté aux PDF).
 // L'ancien localStorage est conservé intact comme copie de secours V3.4.1.
 const dbName='assistant-incendie-v342', storeName='vault';
@@ -22,14 +27,23 @@ function chooseCandidate(items){let valid=items.filter(x=>x.data);valid.sort((a,
 
 const money=n=>Number(n||0).toLocaleString('fr-FR',{style:'currency',currency:'EUR'});
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+// Encodage d'un argument JavaScript dans un attribut HTML (évite l'injection via IDs).
+const jsArg=value=>esc(JSON.stringify(String(value??'')));
 const b64=a=>{const bytes=new Uint8Array(a),parts=[];for(let i=0;i<bytes.length;i+=8192)parts.push(String.fromCharCode(...bytes.subarray(i,i+8192)));return btoa(parts.join(''))};
 const unb64=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
 const random=n=>crypto.getRandomValues(new Uint8Array(n));
 const uid=()=>Array.from(random(12),n=>n.toString(16).padStart(2,'0')).join('');
 async function derive(pass,salt){let base=await crypto.subtle.importKey('raw',encoder.encode(pass),'PBKDF2',false,['deriveKey']);return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:310000,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['encrypt','decrypt'])}
 async function seal(data,pass){let salt=random(16),iv=random(12),key=await derive(pass,salt);let ct=await crypto.subtle.encrypt({name:'AES-GCM',iv},key,encoder.encode(JSON.stringify(data)));return {format:'assistant-incendie-v2',version:2,kdf:'PBKDF2-SHA256',iterations:310000,salt:b64(salt),iv:b64(iv),ciphertext:b64(ct)}}
-async function openSeal(pkg,pass){if(pkg?.format!=='assistant-incendie-v2'||pkg.version!==2||pkg.iterations!==310000)throw Error('Format non reconnu');let key=await derive(pass,unb64(pkg.salt));let data=await crypto.subtle.decrypt({name:'AES-GCM',iv:unb64(pkg.iv)},key,unb64(pkg.ciphertext));let result=JSON.parse(decoder.decode(data));if(!Array.isArray(result.quotes)||!Array.isArray(result.reminders))throw Error('Sauvegarde incorrecte');return result}
-function migrate(d){if(!Array.isArray(d.syndics))d.syndics=structuredClone(defaultSyndics);if(!Array.isArray(d.sites))d.sites=structuredClone(defaultSites);if(!Array.isArray(d.documents))d.documents=[];if(!d.contracts||typeof d.contracts!=='object'||Array.isArray(d.contracts))d.contracts={};for(const q of d.quotes){if(!('siteId' in q))q.siteId=''}return d}
+async function openSeal(pkg,pass){if(pkg?.format!=='assistant-incendie-v2'||pkg.version!==2||pkg.iterations!==310000)throw Error('Format non reconnu');let key=await derive(pass,unb64(pkg.salt));let data=await crypto.subtle.decrypt({name:'AES-GCM',iv:unb64(pkg.iv)},key,unb64(pkg.ciphertext));let result=validateVaultShape(JSON.parse(decoder.decode(data)));return result}
+function validateVaultShape(d){
+ if(!d||typeof d!=='object'||Array.isArray(d))throw Error('Structure invalide');
+ for(const key of ['quotes','reminders'])if(!Array.isArray(d[key])||d[key].length>100000)throw Error('Tableau invalide : '+key);
+ for(const key of ['syndics','sites','documents','maintenanceVisits'])if(d[key]!==undefined&&(!Array.isArray(d[key])||d[key].length>100000))throw Error('Tableau invalide : '+key);
+ if(d.contracts!==undefined&&(!d.contracts||typeof d.contracts!=='object'||Array.isArray(d.contracts)))throw Error('Contrats invalides');
+ return d;
+}
+function migrate(d){if(!Array.isArray(d.maintenanceVisits))d.maintenanceVisits=[];if(!Array.isArray(d.syndics))d.syndics=structuredClone(defaultSyndics);if(!Array.isArray(d.sites))d.sites=structuredClone(defaultSites);if(!Array.isArray(d.documents))d.documents=[];if(!d.contracts||typeof d.contracts!=='object'||Array.isArray(d.contracts))d.contracts={};for(const q of d.quotes){if(!('siteId' in q))q.siteId=''}return d}
 // Chaque écriture est sérialisée pour éviter qu'un chiffrement plus lent écrase une modification récente.
 let writeQueue=Promise.resolve(),lastStoredValue=null,externalChange=false;
 window.addEventListener('storage',e=>{if(e.key===keyName&&unlocked&&activeStore==='legacy'&&e.newValue!==lastStoredValue){externalChange=true;alert('Le coffre a changé dans un autre onglet. Ne modifie rien ici : exporte une sauvegarde puis rouvre une seule fenêtre.')}});
@@ -51,42 +65,48 @@ async function persist(){
 }
 async function saveAndShow(page){try{await persist();show(page);alert('Modification enregistrée et vérifiée sur cet appareil. Exporte une sauvegarde chiffrée pour la conserver hors de Safari.')}catch(e){alert('Échec de sauvegarde : '+(e?.message||'stockage indisponible')+'. Exporte immédiatement une sauvegarde avant de fermer l’application.');show(page)}}
 function lock(){vault=null;passphrase=null;unlocked=false;$('nav').classList.add('hidden');renderLock()}
-async function renderLock(){let idbValue=null;try{idbValue=await readIdb()}catch(e){}let exists=!!(idbValue||localStorage.getItem(keyName));el.innerHTML=`<section class="lock"><h2>🔐 ${exists?'Déverrouiller':'Créer un coffre chiffré'}</h2><p class="small">V3 de démonstration : données fictives uniquement. Les modifications sont chiffrées localement sur cet appareil.</p><label>Phrase secrète<input type="password" id="pass" autocomplete="off" placeholder="Au moins 12 caractères"></label>${exists?'':`<label>Confirmer la phrase secrète<input type="password" id="confirm" autocomplete="off"></label>`}<button id="unlock">${exists?'Déverrouiller':'Créer mon coffre'}</button><p id="error" class="danger"></p><p class="notice"><b>Attention :</b> sans la phrase secrète, les données sont irrécupérables. Sauvegarde régulièrement. Cette démo n’est pas auditée et ne doit pas recevoir de données professionnelles réelles.</p></section>`;$('unlock').onclick=async()=>{let pass=$('pass').value,err=$('error');err.textContent='';if(pass.length<12){err.textContent='Phrase secrète de 12 caractères minimum.';return}if(!exists&&pass!==$('confirm').value){err.textContent='Les deux phrases ne correspondent pas.';return}let btn=$('unlock');btn.disabled=true;try{let candidates=exists?await readCandidates(pass):[],selected=chooseCandidate(candidates);if(exists&&!selected)throw Error('Aucun coffre déchiffrable');let source=selected?.value||null;let data=selected?.data||demo();vault=migrate(data);passphrase=pass;unlocked=true;lastStoredValue=source;activeStore=selected?.name||'legacy';externalChange=false;if(!idbValue||selected?.name==='legacy')await persist();$('nav').classList.remove('hidden');show('home')}catch(e){err.textContent='Phrase incorrecte ou sauvegarde illisible.'}finally{btn.disabled=false}}}
+async function renderLock(){let idbValue=null;try{idbValue=await readIdb()}catch(e){}let exists=!!(idbValue||localStorage.getItem(keyName));el.innerHTML=`<section class="lock"><h2>🔐 ${exists?'Déverrouiller':'Créer un coffre chiffré'}</h2><p class="small">Application principale V3.8.3. Utilise ta phrase secrète habituelle pour retrouver son coffre. Les données de la version test peuvent ensuite être ajoutées depuis leur sauvegarde chiffrée.</p><label>Phrase secrète<input type="password" id="pass" autocomplete="off" placeholder="Au moins 12 caractères"></label>${exists?'':`<label>Confirmer la phrase secrète<input type="password" id="confirm" autocomplete="off"></label>`}<button id="unlock">${exists?'Déverrouiller':'Créer mon coffre'}</button><p id="error" class="danger"></p><p class="notice"><b>Attention :</b> sans la phrase secrète, les données sont irrécupérables. Sauvegarde régulièrement. Cette démo n’est pas auditée et ne doit pas recevoir de données professionnelles réelles.</p></section>`;$('unlock').onclick=async()=>{let pass=$('pass').value,err=$('error');err.textContent='';if(pass.length<12){err.textContent='Phrase secrète de 12 caractères minimum.';return}if(!exists&&pass!==$('confirm').value){err.textContent='Les deux phrases ne correspondent pas.';return}let btn=$('unlock');btn.disabled=true;try{let candidates=exists?await readCandidates(pass):[],selected=chooseCandidate(candidates);if(exists&&!selected)throw Error('Aucun coffre déchiffrable');let source=selected?.value||null;let data=selected?.data||demo();vault=migrate(data);passphrase=pass;unlocked=true;lastStoredValue=source;activeStore=selected?.name||'legacy';externalChange=false;if(!idbValue||selected?.name==='legacy')await persist();$('nav').classList.remove('hidden');show('home')}catch(e){err.textContent='Phrase incorrecte ou sauvegarde illisible.'}finally{btn.disabled=false}}}
 function syndicName(id){return vault.syndics.find(x=>x.id===id)?.name||'Non rattaché'}
 function siteName(id){return vault.sites.find(x=>x.id===id)?.name||'Site non renseigné'}
+function homeSites(query){const term=query.toLocaleLowerCase('fr');const sites=vault.sites.filter(x=>[x.name,x.id,x.address,x.city,syndicName(x.syndicId)].join(' ').toLocaleLowerCase('fr').includes(term));return sites.slice().reverse().slice(0,8).map(x=>{const c=vault.contracts[x.id];return `<button class="site-card" onclick="showSite(${jsArg(x.id)})"><b>${esc(x.name)} <span style="float:right" aria-hidden="true">›</span></b><div class="muted">Site ${esc(x.id)} · ${esc(syndicName(x.syndicId))}<br>${esc(x.address||'')} · ${esc(x.city||'')}</div>${siteSalesBadges(x.id)}${c?`<span class="tag">Contrat · ${esc(c.status||'À confirmer')} · ${money(c.amount)} HT</span>`:''}</button>`}).join('')||'<p class="muted">Aucune résidence trouvée.</p>'}
+function filterHome(query){$('recentSites').innerHTML=homeSites(query)}
 function show(page){if(!unlocked)return renderLock();current=page;let s='';
-if(page==='home'){let total=vault.quotes.reduce((n,q)=>n+Number(q.amount||0),0);s=`<h2>Bonjour 👋</h2><div class="grid"><section>Résidences<h2>${vault.sites.length}</h2></section><section>Devis enregistrés HT<h2>${money(total)}</h2></section></div><section><h2>Mon espace commercial</h2><div class="grid"><button onclick="show('syndics')">🏢 Syndics</button><button onclick="show('sites')">📍 Résidences</button><button onclick="show('devis')">📄 Devis</button><button onclick="show('relances')">📅 Relances</button><button onclick="show('documents')">📎 Documents PDF</button></div></section><section><h2>🔒 Coffre et sauvegardes</h2><div class="actions"><button onclick="exportBackup()">Exporter une sauvegarde chiffrée</button><button onclick="$('restore').click()">Restaurer une sauvegarde</button><button onclick="lock()">Verrouiller</button><button class="light" onclick="verifyStorage()">Vérifier la sauvegarde locale</button></div><input class="hidden" type="file" id="restore" accept=".json,application/json" onchange="importBackup(event)"><p class="small">Une sauvegarde V2/V3 peut utiliser une autre phrase secrète : elle sera demandée si nécessaire. Une restauration remplace les modifications actuelles après confirmation.</p></section><p class="notice">⚠️ Démonstration uniquement. N'ajoute aucun vrai client, contact ou document. Les chiffres de cette page sont des données fictives, pas du chiffre d'affaires réalisé.</p>`}
-if(page==='syndics'){s=`<h2>Syndics fictifs</h2><section><h3>Ajouter un syndic</h3><form onsubmit="addSyndic(event)"><label>Nom du syndic<input id="sn" required maxlength="100" placeholder="Syndic Démonstration"></label><label>Interlocuteur<input id="sc" maxlength="100" placeholder="Prénom Nom"></label><label>Téléphone<input id="sp" type="tel" maxlength="40"></label><label>E-mail<input id="se" type="email" maxlength="160"></label><button type="submit">Ajouter le syndic</button></form></section>`+vault.syndics.map(x=>`<section><b>${esc(x.name)}</b><div class="muted">${esc(x.contact||'Aucun interlocuteur')} ${x.phone?' · '+esc(x.phone):''}</div>${x.email?`<div class="muted">${esc(x.email)}</div>`:''}<div class="muted">${vault.sites.filter(z=>z.syndicId===x.id).length} résidence(s)</div><div class="actions"><button class="light" onclick="showSyndic('${esc(x.id)}')">Voir la fiche</button><button class="light" onclick="editSyndic('${esc(x.id)}')">Modifier</button></div></section>`).join('')}
-if(page==='sites'){s=`<h2>Résidences fictives</h2><section><label>🔎 Rechercher une résidence, un syndic, un gestionnaire, un numéro de site ou un devis<input id="siteSearch" type="search" placeholder="Nom, n° site, devis…" oninput="filterSites(this.value)"></label><p id="siteSearchCount" class="small"></p></section><section><h3>Ajouter une résidence</h3><form onsubmit="addSite(event)"><label>Nom<input id="rn" required maxlength="120" placeholder="Résidence Démonstration C"></label><label>N° de site<input id="rid" required maxlength="40" placeholder="DEMO-003"></label><label>Adresse<input id="ra" maxlength="160"></label><label>Ville<input id="rc" maxlength="100"></label><label>Gestionnaire<input id="rg" maxlength="100" placeholder="Nom fictif du gestionnaire"></label><label>Syndic<select id="rs">${syndicOptions('')}</select></label><button type="submit">Ajouter la résidence</button></form></section>`+vault.sites.map(x=>`<section data-site-card="1" data-search="${esc([x.name,x.id,x.address,x.city,x.gestionnaire||'',syndicName(x.syndicId),...(vault.quotes.filter(q=>q.siteId===x.id).flatMap(q=>[q.ref,q.name])),...(vault.reminders.filter(r=>r.siteId===x.id).map(r=>r.title)),...(vault.documents.filter(d=>d.siteId===x.id).map(d=>d.name))].join(' ').toLocaleLowerCase('fr'))}"><b>${esc(x.name)}</b><div class="muted">${esc(x.address||'')} ${esc(x.city||'')} · Site ${esc(x.id)}</div><div class="muted">Syndic : ${esc(syndicName(x.syndicId))} · Gestionnaire : ${esc(x.gestionnaire||'Non renseigné')}</div><div class="actions"><button class="light" onclick="showSite('${esc(x.id)}')">Voir la fiche</button><button class="light" onclick="editSite('${esc(x.id)}')">Modifier</button></div></section>`).join('')}
-if(page==='devis'){s=`<h2>Devis fictifs</h2><section><h3>+ Nouveau devis</h3><form onsubmit="addQuote(event)"><label>Numéro de devis<input id="qref" required maxlength="60" placeholder="DEMO-D003"></label><label>Objet<input id="qname" required maxlength="160" placeholder="Maintenance extincteurs"></label><label>Résidence<select id="qsite" required><option value="">Choisir une résidence</option>${vault.sites.map(x=>`<option value="${esc(x.id)}">${esc(x.name)} — ${esc(x.id)}</option>`).join('')}</select></label><label>Montant HT (€)<input id="qamount" type="number" min="0" step="0.01" required></label><label>Date du devis<input id="qdate" type="date"></label><label>Statut<select id="qstatus">${['À confirmer','À relancer','Accepté','Refusé','Réalisé','Facturé'].map(v=>`<option>${v}</option>`).join('')}</select></label><button type="submit">Enregistrer le devis</button></form></section>`+vault.quotes.map((x,i)=>`<section><div class="row"><div><b>${esc(x.ref)}</b><div class="muted">${esc(x.name)} · ${esc(siteName(x.siteId))}</div><div class="muted">${esc(x.date||'')}${x.pdfDocId?' · 📎 PDF associé':''}</div></div><b>${money(x.amount)}</b></div><select aria-label="Statut ${esc(x.ref)}" onchange="setStatus(${i},this.value)">${['À confirmer','À relancer','Accepté','Refusé','Réalisé','Facturé'].map(v=>`<option ${x.status===v?'selected':''}>${v}</option>`).join('')}</select><button class="light" onclick="remindQuote(${i})">Programmer une relance</button></section>`).join('')}
+if(page==='home'){let total=vault.quotes.reduce((n,q)=>n+Number(q.amount||0),0);s=`<div class="home-title"><span class="shield" aria-hidden="true">ϟ</span><div><h2>Assistant Incendie</h2><div class="muted">Suivi commercial · V3.8.3</div></div></div><div class="quick-grid"><button class="quick" onclick="show('sites')"><span>⌂</span>Résidences</button><button class="quick" onclick="show('syndics')"><span>▦</span>Syndics</button><button class="quick green" onclick="show('devis')"><span>▤</span>Devis</button><button class="quick red" onclick="showContracts()"><span>☑</span>Contrats</button><button class="quick orange" onclick="show('relances')"><span>▣</span>Relances</button><button class="quick green" onclick="show('documents')"><span>▧</span>Documents</button></div><input class="search-home" type="search" aria-label="Rechercher une résidence ou un syndic" placeholder="Rechercher un syndic, une résidence, un site…" oninput="filterHome(this.value)"><div class="actions"><button onclick="show('ca')">CA par syndic</button><button class="light" onclick="show('planning')">À relancer / À planifier</button></div><div class="recent-head"><h2>Dossiers récents</h2><button onclick="show('sites')">Voir tout</button></div><div id="recentSites">${homeSites('')}</div><button class="import-cta" onclick="show('documents')">＋ Importer un PDF<small>Analyse et classement par syndic et résidence</small></button><section><h2>🔒 Coffre et sauvegardes</h2><div class="actions"><button onclick="$('mergeTestBackup').click()">Importer les données de la version test</button><button class="light" onclick="restoreBeforeMerge()">Revenir à la sauvegarde avant fusion</button></div><input class="hidden" type="file" id="mergeTestBackup" accept=".json,application/json" onchange="prepareTestMerge(event)"><p class="small">La fusion conserve les données de cette application et ajoute les nouvelles fiches. Le suivi déjà présent dans la principale reste prioritaire.</p><div class="actions"><button onclick="exportBackup()">Exporter une sauvegarde chiffrée</button><button onclick="$('restore').click()">Restaurer une sauvegarde</button><button onclick="lock()">Verrouiller</button><button class="light" onclick="verifyStorage()">Vérifier la sauvegarde locale</button></div><input class="hidden" type="file" id="restore" accept=".json,application/json" onchange="importBackup(event)"><p class="small">Une sauvegarde V2/V3 peut utiliser une autre phrase secrète : elle sera demandée si nécessaire. Une restauration remplace les modifications actuelles après confirmation. Pour ajouter les données de test en conservant les données actuelles, utilise « Importer les données de la version test » ci-dessous.</p></section><p class="notice">⚠️ Démonstration uniquement. N'ajoute aucun vrai client, contact ou document. Les chiffres de cette page sont des données fictives, pas du chiffre d'affaires réalisé.</p>`}
+if(page==='syndics'){s=`<h2>Syndics fictifs</h2><section><h3>Ajouter un syndic</h3><form onsubmit="addSyndic(event)"><label>Nom du syndic<input id="sn" required maxlength="100" placeholder="Syndic Démonstration"></label><label>Interlocuteur<input id="sc" maxlength="100" placeholder="Prénom Nom"></label><label>Téléphone<input id="sp" type="tel" maxlength="40"></label><label>E-mail<input id="se" type="email" maxlength="160"></label><button type="submit">Ajouter le syndic</button></form></section>`+vault.syndics.map(x=>`<section><b>${esc(x.name)}</b><div class="muted">${esc(x.contact||'Aucun interlocuteur')} ${x.phone?' · '+esc(x.phone):''}</div>${x.email?`<div class="muted">${esc(x.email)}</div>`:''}<div class="muted">${vault.sites.filter(z=>z.syndicId===x.id).length} résidence(s)</div><div class="actions"><button class="light" onclick="showSyndic(${jsArg(x.id)})">Voir la fiche</button><button class="light" onclick="editSyndic(${jsArg(x.id)})">Modifier</button></div></section>`).join('')}
+if(page==='sites'){s=`<h2>Résidences fictives</h2><section><label>🔎 Rechercher une résidence, un syndic, un gestionnaire, un numéro de site ou un devis<input id="siteSearch" type="search" placeholder="Nom, n° site, devis…" oninput="filterSites(this.value)"></label><p id="siteSearchCount" class="small"></p></section><section><h3>Ajouter une résidence</h3><form onsubmit="addSite(event)"><label>Nom<input id="rn" required maxlength="120" placeholder="Résidence Démonstration C"></label><label>N° de site<input id="rid" required maxlength="40" placeholder="DEMO-003"></label><label>Adresse<input id="ra" maxlength="160"></label><label>Ville<input id="rc" maxlength="100"></label><label>Gestionnaire<input id="rg" maxlength="100" placeholder="Nom fictif du gestionnaire"></label><label>Syndic<select id="rs">${syndicOptions('')}</select></label><button type="submit">Ajouter la résidence</button></form></section>`+vault.sites.map(x=>`<section data-site-card="1" data-search="${esc([x.name,x.id,x.address,x.city,siteManagerNames(x).join(' '),syndicName(x.syndicId),...(vault.quotes.filter(q=>q.siteId===x.id).flatMap(q=>[q.ref,q.name])),...(vault.reminders.filter(r=>r.siteId===x.id).map(r=>r.title)),...(vault.documents.filter(d=>d.siteId===x.id).map(d=>d.name))].join(' ').toLocaleLowerCase('fr'))}"><b>${esc(x.name)}</b><div class="muted">${esc(x.address||'')} ${esc(x.city||'')} · Site ${esc(x.id)}</div><div class="muted">Syndic : ${esc(syndicName(x.syndicId))} · Gestionnaire : ${esc(siteManagerNames(x).join(' · ')||'Non renseigné')}</div><div class="actions"><button class="light" onclick="showSite(${jsArg(x.id)})">Voir la fiche</button><button class="light" onclick="editSite(${jsArg(x.id)})">Modifier</button></div></section>`).join('')}
+if(page==='devis'){s=`<h2>Devis fictifs</h2><section><h3>+ Nouveau devis</h3><form onsubmit="addQuote(event)"><label>Numéro de devis<input id="qref" required maxlength="60" placeholder="DEMO-D003"></label><label>Objet<input id="qname" required maxlength="160" placeholder="Maintenance extincteurs"></label><label>Résidence<select id="qsite" required><option value="">Choisir une résidence</option>${vault.sites.map(x=>`<option value="${esc(x.id)}">${esc(x.name)} — ${esc(x.id)}</option>`).join('')}</select></label><label>Montant HT (€)<input id="qamount" type="number" min="0" step="0.01" required></label><label>Date du devis<input id="qdate" type="date"></label><label>Statut<select id="qstatus">${['À confirmer','À relancer','Accepté','Refusé','Réalisé','Facturé'].map(v=>`<option>${v}</option>`).join('')}</select></label><button type="submit">Enregistrer le devis</button></form></section>`+vault.quotes.map((x,i)=>`<section><div class="row"><div><b>${esc(x.ref)}</b><div class="muted">${esc(x.name)} · ${esc(siteName(x.siteId))}</div><div class="muted">${esc(x.date||'')}${x.pdfDocId?' · 📎 PDF associé':''}${x.sourcePages?.length?' · Pages '+esc(x.sourcePages.join(', ')):''}</div></div><b>${money(x.amount)}</b></div><select aria-label="Statut ${esc(x.ref)}" onchange="setStatus(${i},this.value)">${['À confirmer','À relancer','Accepté','Refusé','Réalisé','Facturé'].map(v=>`<option ${x.status===v?'selected':''}>${v}</option>`).join('')}</select><button class="light" onclick="remindQuote(${i})">Programmer une relance</button>${x.pdfDocId?`<button class="light" onclick="openQuoteSource(${i})">Voir le PDF source</button>`:''}</section>`).join('')}
 if(page==='relances'){s=`<h2>Relances fictives</h2><section><h3>+ Nouvelle relance</h3><form onsubmit="addReminder(event)"><label>Objet<input id="title" required maxlength="160" placeholder="Relancer un devis fictif"></label><label>Résidence<select id="rsite"><option value="">Sans résidence</option>${vault.sites.map(x=>`<option value="${esc(x.id)}">${esc(x.name)} — ${esc(x.id)}</option>`).join('')}</select></label><label>Devis associé (facultatif)<select id="rquote"><option value="">Aucun</option>${vault.quotes.map(x=>`<option value="${esc(x.ref)}">${esc(x.ref)} — ${esc(x.name)}</option>`).join('')}</select></label><label>Date<input type="date" id="date" required></label><button type="submit">Enregistrer la relance</button></form></section>`+vault.reminders.map((r,i)=>`<section class="row"><div><b>${esc(r.title)}</b><div class="muted">${esc(r.date)} · ${esc(siteName(r.siteId||''))} ${r.quoteRef?' · '+esc(r.quoteRef):''}</div></div><button class="light" onclick="removeReminder(${i})">Terminé</button></section>`).join('')}
 
 if(page==='documents'){
- s=`<h2>📎 Documents PDF fictifs</h2><section><h3>Importer et analyser plusieurs PDF</h3><p class="small">Analyse du texte dans le navigateur avec PDF.js (connexion requise au premier chargement). Aucun PDF n’est envoyé volontairement à un service d’analyse, mais une bibliothèque externe est téléchargée. Documents fictifs uniquement. Les scans ne sont pas reconnus. Vérifie chaque proposition. </p><p class="small">Choisis plusieurs PDF fictifs, puis affecte chacun à une seule résidence. Limite de démonstration : 1,5 Mo par PDF et 3 Mo au total, pour éviter de saturer le stockage du navigateur.</p><input id="pdfInput" type="file" accept=".pdf,application/pdf" multiple onchange="preparePDFs(event)"><div id="pdfDrafts"></div></section><section><label>Rechercher un document<input id="docSearch" type="search" oninput="filterDocs(this.value)" placeholder="Nom, catégorie, résidence…"></label></section>`+vault.documents.map(d=>`<section data-doc-card data-search="${esc([d.name,d.category,siteName(d.siteId),d.siteId].join(' ').toLowerCase())}"><b>${esc(d.name)}</b><div class="muted">${esc(d.category)} · ${esc(siteName(d.siteId))} · ${Math.round(d.size/1024)} Ko</div><div class="actions"><button class="light" onclick="openPDF('${esc(d.id)}')">Ouvrir</button>${d.category==='Devis'?`<button class="light" onclick="prepareQuoteFromPDF('${esc(d.id)}')">Créer / voir le devis</button>`:''}<button class="light" onclick="movePDF('${esc(d.id)}')">Changer résidence</button><button class="light" onclick="deletePDF('${esc(d.id)}')">Supprimer</button></div></section>`).join('')
+ s=`<h2>📎 Documents PDF fictifs</h2><section><h3>Importer et analyser plusieurs PDF</h3><p class="small">Lecture automatique locale : les syndics et résidences reconnus sont ajoutés et reliés sans nouvelle saisie. Les cas incomplets restent à compléter. PDF.js est chargé depuis ce site. Documents fictifs uniquement. Les scans ne sont pas reconnus. Vérifie chaque proposition. </p><p class="small">Choisis plusieurs PDF fictifs, puis affecte chacun à une seule résidence. Limite de démonstration : 1,5 Mo par PDF et 3 Mo au total, pour éviter de saturer le stockage du navigateur.</p><input id="pdfInput" type="file" accept=".pdf,application/pdf" multiple onchange="preparePDFs(event)"><div id="pdfDrafts"></div></section><section><label>Rechercher un document<input id="docSearch" type="search" oninput="filterDocs(this.value)" placeholder="Nom, catégorie, résidence…"></label></section>`+vault.documents.map(d=>`<section data-doc-card data-search="${esc([d.name,d.category,siteName(d.siteId),d.siteId].join(' ').toLowerCase())}"><b>${esc(d.name)}</b><div class="muted">${esc(d.category)} · ${esc(siteName(d.siteId))} · ${Math.round(d.size/1024)} Ko</div><div class="actions"><button class="light" onclick="openPDF(${jsArg(d.id)})">Ouvrir</button>${d.category==='Devis'?`<button class="light" onclick="prepareQuoteFromPDF(${jsArg(d.id)})">Créer / voir le devis</button>`:''}<button class="light" onclick="movePDF(${jsArg(d.id)})">Changer résidence</button><button class="light" onclick="deletePDF(${jsArg(d.id)})">Supprimer</button></div></section>`).join('')
 }
 if(page==='exports'){
  s=`<h2>Exports PDF commerciaux</h2><section><h3>Exporter une résidence</h3><p class="small">Génère une fiche synthétique avec les informations de la résidence, son contrat global, les équipements, devis, documents et relances.</p><label>Résidence<select id="exportSite"><option value="">Choisir une résidence</option>${vault.sites.map(x=>`<option value="${esc(x.id)}">${esc(x.name)} — ${esc(x.id)}</option>`).join('')}</select></label><button onclick="exportResidencePDF()">Préparer le PDF de la résidence</button></section><section><h3>Exporter un syndic</h3><p class="small">Génère un dossier regroupant toutes les résidences rattachées au syndic, les contrats, les devis et les indicateurs commerciaux disponibles.</p><label>Syndic<select id="exportSyndic"><option value="">Choisir un syndic</option>${vault.syndics.map(x=>`<option value="${esc(x.id)}">${esc(x.name)}</option>`).join('')}</select></label><button onclick="exportSyndicPDF()">Préparer le PDF du syndic</button></section><p class="notice">Le PDF s'ouvre dans une fenêtre d'impression. Sur iPhone, utilise le bouton de partage puis « Enregistrer dans Fichiers » ou l'option d'impression. Vérifie les données avant de le remettre au client.</p>`
 } 
 if(page==='maintenance'){s='<h2>Maintenance fictive</h2><section><p>Les contrats de maintenance par résidence seront ajoutés dans une prochaine version.</p></section>'}
-el.innerHTML=s}
+el.innerHTML=s;document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.getAttribute('onclick')===`show('${page}')`))}
 function filterSites(value){const query=value.trim().toLocaleLowerCase('fr').normalize('NFD').replace(/[\u0300-\u036f]/g,'');let visible=0;document.querySelectorAll('[data-site-card]').forEach(card=>{const hay=(card.dataset.search||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'');const match=hay.includes(query);card.hidden=!match;if(match)visible++});let counter=$('siteSearchCount');if(counter)counter.textContent=visible+' résidence(s) trouvée(s)'}
 function syndicOptions(selected){return `<option value="">Non rattaché</option>`+vault.syndics.map(x=>`<option value="${esc(x.id)}" ${x.id===selected?'selected':''}>${esc(x.name)}</option>`).join('')}
-function showSyndic(id){let x=vault.syndics.find(z=>z.id===id);if(!x)return show('syndics');let attached=vault.sites.filter(z=>z.syndicId===id);el.innerHTML=`<button class="light" onclick="show('syndics')">← Syndics</button><section><h2>${esc(x.name)}</h2><p>Interlocuteur : ${esc(x.contact||'Non renseigné')}</p><p>Téléphone : ${esc(x.phone||'Non renseigné')}</p><p>E-mail : ${esc(x.email||'Non renseigné')}</p></section><h3>Résidences (${attached.length})</h3>`+attached.map(z=>`<section><b>${esc(z.name)}</b><div class="muted">${esc(z.address||'')} · ${esc(z.city||'')}</div><button class="light" onclick="showSite('${esc(z.id)}')">Voir la résidence</button></section>`).join('')}
-function showSite(id){let x=vault.sites.find(z=>z.id===id);if(!x)return show('sites');let qs=vault.quotes.filter(z=>z.siteId===id);el.innerHTML=`<button class="light" onclick="show('sites')">← Résidences</button><section><h2>${esc(x.name)}</h2><p>${esc(x.address||'Adresse non renseignée')} · ${esc(x.city||'')}</p><p>Site : ${esc(x.id)}</p><p>Syndic : ${esc(syndicName(x.syndicId))}</p><p>Gestionnaire : ${esc(x.gestionnaire||'Non renseigné')}</p></section><h3>Devis rattachés (${qs.length})</h3>`+qs.map(q=>`<section><b>${esc(q.ref)}</b> — ${esc(q.name)}<div class="muted">${money(q.amount)} · ${esc(q.status)}</div></section>`).join('')+'<h3>Relances associées</h3>'+vault.reminders.filter(r=>r.siteId===id).map(r=>`<section><b>${esc(r.title)}</b><div class="muted">${esc(r.date)} · ${esc(r.quoteRef||'')}</div></section>`).join('')+'<h3>Contrat global de maintenance</h3>'+contractCard(id)+'<h3>Documents PDF ('+vault.documents.filter(d=>d.siteId===id).length+')</h3>'+vault.documents.filter(d=>d.siteId===id).map(d=>`<section><b>${esc(d.name)}</b><div class="muted">${esc(d.category)}</div><button class="light" onclick="openPDF('${esc(d.id)}')">Ouvrir le PDF</button></section>`).join('')}
+function showSyndic(id){let x=vault.syndics.find(z=>z.id===id);if(!x)return show('syndics');let attached=vault.sites.filter(z=>z.syndicId===id);el.innerHTML=`<button class="light" onclick="show('syndics')">← Syndics</button><section><h2>${esc(x.name)}</h2><p>Interlocuteur : ${esc(x.contact||'Non renseigné')}</p><p>Téléphone : ${esc(x.phone||'Non renseigné')}</p><p>E-mail : ${esc(x.email||'Non renseigné')}</p></section><h3>Résidences (${attached.length})</h3>`+attached.map(z=>`<section><b>${esc(z.name)}</b><div class="muted">${esc(z.address||'')} · ${esc(z.city||'')}</div><button class="light" onclick="showSite(${jsArg(z.id)})">Voir la résidence</button></section>`).join('')}
+function showSite(id){
+ const x=vault.sites.find(z=>z.id===id);if(!x)return show('sites');
+ const qs=vault.quotes.filter(z=>z.siteId===id),docs=vault.documents.filter(d=>d.siteId===id||d.siteIds?.includes(id));
+ el.innerHTML=`<button class="light" onclick="show('sites')">← Résidences</button><section>${residencePhotoCard(id)}<h2>${esc(x.name)}</h2><p>${esc(x.address||'Adresse non renseignée')} · ${esc(x.city||'')}</p><p>Site : ${esc(x.id)}</p><p>Syndic : <b>${esc(syndicName(x.syndicId))}</b></p>${siteManagerNames(x).length?`<p>Gestionnaire${siteManagerNames(x).length>1?'s':''} : ${siteManagerNames(x).map(esc).join(' · ')}</p>`:''}</section>`+contractCard(id)+`<h3>Documents PDF (${docs.length})</h3>`+docs.map(d=>`<section><b>${esc(d.name)}</b><div class="muted">${esc(d.category)}</div><button class="light" onclick="openPDF(${jsArg(d.id)})">Ouvrir le PDF</button></section>`).join('')+`<h3>Devis rattachés (${qs.length})</h3>`+qs.map(q=>`<section><b>${esc(q.ref)}</b> — ${esc(q.name)}<div class="muted">${money(q.amount)}</div>${quoteSalesBadges(q)}<button class="light" onclick="editQuoteTracking(${jsArg(q.ref)})">Statut et planification</button><div class="muted">${q.sourcePages?.length?' · Pages '+esc(q.sourcePages.join(', ')):''}</div>${q.pdfDocId?`<button class="light" onclick="openQuoteSource(${vault.quotes.indexOf(q)})">Voir le PDF source</button>`:''}</section>`).join('')+'<h3>Relances associées</h3>'+vault.reminders.filter(r=>r.siteId===id).map(r=>`<section><b>${esc(r.title)}</b><div class="muted">${esc(r.date)} · ${esc(r.quoteRef||'')}</div></section>`).join('');
+}
 const EQUIPMENT=['Extincteurs','BAES','Désenfumage escalier','Colonnes sèches','Désenfumage des circulations','Ferme-portes','Ventilation parking','VMC','Pompes de relevage','Portes coupe-feu','Alarme incendie'];
 const EQUIPMENT_PATTERNS=[/extincteur/i,/\bbaes\b|eclairage de securite/i,/desenfumage.{0,25}escalier|escalier.{0,25}desenfumage/i,/colonne.{0,12}seche/i,/desenfumage.{0,25}circulation|circulation.{0,25}desenfumage/i,/ferme[ -]?porte/i,/ventilation.{0,20}parking|parking.{0,20}ventilation/i,/\bvmc\b|ventilation mecanique controlee/i,/pompe.{0,20}relevage/i,/porte.{0,15}coupe[ -]?feu/i,/alarme.{0,15}incendie|\bssi\b|\bbaas\b/i];
 function equipmentFromLegacy(c){if(Array.isArray(c?.equipmentItems))return c.equipmentItems.filter(x=>EQUIPMENT.includes(x));const raw=normalized(c?.equipment||'');return EQUIPMENT.filter((x,i)=>EQUIPMENT_PATTERNS[i].test(raw))}
-function contractCard(siteId){const c=vault.contracts?.[siteId];const docs=vault.documents.filter(d=>d.siteId===siteId&&d.category==='Contrat de maintenance');const items=c?equipmentFromLegacy(c):[];const prices=c?.equipmentPrices||{};return `<section><div class="muted">Un seul contrat global par résidence · pas d'alerte automatique</div>${c?`<p><b>${esc(c.number||'Sans numéro')}</b> · ${money(c.amount)} HT/an</p><p>${items.length?items.map(x=>esc(x)).join(', '):esc(c.equipment||'Équipements non renseignés')}</p>${items.filter(x=>prices[x]!==''&&prices[x]!=null).map(x=>`<div class="row"><span>${esc(x)}</span><b>${money(prices[x])} HT/an</b></div>`).join('')}<p>Du ${esc(c.start||'—')} au ${esc(c.end||'—')} · ${esc(c.status||'')}</p>`:'<p>Aucun contrat renseigné.</p>'}${docs.length?`<p class="small">PDF de contrat associés : ${docs.map(d=>esc(d.name)).join(' · ')}</p>${docs.filter(d=>d.contractProposal?.items?.length).map(d=>`<button class="light" onclick="reviewContractProposal('${esc(d.id)}')">Vérifier la proposition du PDF : ${esc(d.name)}</button>`).join('')}`:''}<button class="light" onclick="editContract('${esc(siteId)}')">${c?'Modifier':'Ajouter'} le contrat global</button></section>`}
-function reviewContractProposal(docId){const d=vault.documents.find(x=>x.id===docId);if(!d||!d.contractProposal)return;const proposal=d.contractProposal,old=vault.contracts[d.siteId]||{};if(!confirm('Préremplir le formulaire du contrat avec les équipements détectés dans ce PDF fictif ? Tu vérifieras les informations avant tout enregistrement.'))return;editContract(d.siteId);for(let i=0;i<EQUIPMENT.length;i++){const selected=proposal.items.includes(EQUIPMENT[i]);$('eq'+i).checked=selected;$('ep'+i).disabled=!selected;$('ep'+i).value=selected&&proposal.prices[EQUIPMENT[i]]!=null?proposal.prices[EQUIPMENT[i]]:''}if(d.detectedReference&&!old.number)$('cn').value=d.detectedReference;alert('Proposition préremplie. Vérifie les équipements, les montants et le total avant d’enregistrer. Aucun changement n’est encore sauvegardé.')}
-function editContract(siteId){const x=vault.sites.find(z=>z.id===siteId);if(!x)return;const c=vault.contracts?.[siteId]||{},selected=equipmentFromLegacy(c),prices=c.equipmentPrices||{};el.innerHTML=`<button class="light" onclick="showSite('${esc(siteId)}')">← Résidence</button><section><h2>Contrat global · ${esc(x.name)}</h2><form onsubmit="saveContract(event,'${esc(siteId)}')"><label>Numéro de contrat<input id="cn" maxlength="70" value="${esc(c.number||'')}"></label><label>Montant annuel HT global (€)<input id="ca" type="number" min="0" step="0.01" value="${esc(c.amount??'')}"></label><h3>Équipements couverts et montants annuels HT</h3><p class="small">Coche les équipements réellement inclus. Les montants par équipement sont facultatifs si le PDF indique seulement un total.</p>${EQUIPMENT.map((item,i)=>`<div class="row" style="align-items:flex-end"><label style="flex:2"><input type="checkbox" id="eq${i}" ${selected.includes(item)?'checked':''} style="width:auto" onchange="toggleEquipment(${i})"> ${esc(item)}</label><label style="flex:1;font-size:12px">HT/an (€)<input type="number" id="ep${i}" min="0" step="0.01" ${selected.includes(item)?'':'disabled'} value="${esc(prices[item]??'')}" placeholder="—"></label></div>`).join('')}<button type="button" class="light" onclick="sumContractPrices()">Calculer le total des lignes renseignées</button><p id="contractSum" class="small"></p><label>Date de début<input id="cs" type="date" value="${esc(c.start||'')}"></label><label>Date d'échéance<input id="cd" type="date" value="${esc(c.end||'')}"></label><label>Statut<select id="ct">${['À proposer','Envoyé','Signé','En cours','Résilié'].map(v=>`<option ${c.status===v?'selected':''}>${v}</option>`).join('')}</select></label><p class="small">Les PDF classés « Contrat de maintenance » pour cette résidence restent accessibles dans sa fiche. Une proposition issue d'un PDF doit toujours être vérifiée.</p><button type="submit">Enregistrer le contrat</button></form></section>`}
+function contractCard(siteId){const c=vault.contracts?.[siteId];const docs=vault.documents.filter(d=>d.siteId===siteId&&d.category==='Contrat de maintenance');const items=c?equipmentFromLegacy(c):[];const prices=c?.equipmentPrices||{};return `<section><div class="muted">Un seul contrat global par résidence · les montants proposés ne prouvent pas une acceptation</div>${c?`<p><b>${esc(c.number||'Sans numéro')}</b> · ${money(c.amount)} HT/an</p><p>${items.length?items.map(x=>esc(x)).join(', '):esc(c.equipment||'Équipements non renseignés')}</p>${items.filter(x=>prices[x]!==''&&prices[x]!=null).map(x=>`<div class="row"><span>${esc(x)}</span><b>${money(prices[x])} HT/an</b></div>`).join('')}<p>Du ${esc(c.start||'—')} au ${esc(c.end||'—')} · ${esc(c.status||'')}</p>`:'<p>Aucun contrat renseigné.</p>'}${docs.length?`<p class="small">PDF de contrat associés : ${docs.map(d=>esc(d.name)).join(' · ')}</p>${docs.filter(d=>d.contractProposal?.items?.length).map(d=>`<button class="light" onclick="reviewContractProposal(${jsArg(d.id)})">Vérifier la proposition du PDF : ${esc(d.name)}</button>`).join('')}`:''}<button class="light" onclick="editContract(${jsArg(siteId)})">${c?'Modifier':'Ajouter'} le contrat global</button></section>`}
+function reviewContractProposal(docId){const d=vault.documents.find(x=>x.id===docId);if(!d||!d.contractProposal)return;const proposal=d.contractProposal,old=vault.contracts[d.siteId]||{};if(!confirm('Préremplir le formulaire du contrat avec les équipements détectés dans ce PDF fictif ? Tu vérifieras les informations avant tout enregistrement.'))return;editContract(d.siteId);for(let i=0;i<EQUIPMENT.length;i++){const selected=false;$('eq'+i).checked=selected;$('ep'+i).disabled=true;$('ep'+i).value=proposal.prices[EQUIPMENT[i]]!=null?proposal.prices[EQUIPMENT[i]]:''}if(d.detectedReference&&!old.number&&d.detectedReference!==d.siteId)$('cn').value=d.detectedReference;alert('Prestations proposées détectées. Coche uniquement les prestations réellement retenues, puis vérifie les montants et le total avant d’enregistrer. Aucun contrat n’a encore été sauvegardé.')}
+function editContract(siteId){const x=vault.sites.find(z=>z.id===siteId);if(!x)return;const c=vault.contracts?.[siteId]||{},selected=equipmentFromLegacy(c),prices=c.equipmentPrices||{};el.innerHTML=`<button class="light" onclick="showSite(${jsArg(siteId)})">← Résidence</button><section><h2>Contrat global · ${esc(x.name)}</h2><form onsubmit="saveContract(event,${jsArg(siteId)})"><label>Numéro de contrat<input id="cn" maxlength="70" value="${esc(c.number||'')}"></label><label>Montant annuel HT global (€)<input id="ca" type="number" min="0" step="0.01" value="${esc(c.amount??'')}"></label><h3>Équipements couverts et montants annuels HT</h3><p class="small">Coche les équipements réellement inclus. Les montants par équipement sont facultatifs si le PDF indique seulement un total.</p>${EQUIPMENT.map((item,i)=>`<div class="row" style="align-items:flex-end"><label style="flex:2"><input type="checkbox" id="eq${i}" ${selected.includes(item)?'checked':''} style="width:auto" onchange="toggleEquipment(${i})"> ${esc(item)}</label><label style="flex:1;font-size:12px">HT/an (€)<input type="number" id="ep${i}" min="0" step="0.01" ${selected.includes(item)?'':'disabled'} value="${esc(prices[item]??'')}" placeholder="—"></label></div>`).join('')}<button type="button" class="light" onclick="sumContractPrices()">Calculer le total des lignes renseignées</button><p id="contractSum" class="small"></p><label>Date de début<input id="cs" type="date" value="${esc(c.start||'')}"></label><label>Date d'échéance<input id="cd" type="date" value="${esc(c.end||'')}"></label><label>Statut<select id="ct">${['À proposer','Envoyé','Signé','En cours','Résilié'].map(v=>`<option ${c.status===v?'selected':''}>${v}</option>`).join('')}</select></label><p class="small">Les PDF classés « Contrat de maintenance » pour cette résidence restent accessibles dans sa fiche. Une proposition issue d'un PDF doit toujours être vérifiée.</p><button type="submit">Enregistrer le contrat</button></form></section>`}
 function toggleEquipment(i){$('ep'+i).disabled=!$('eq'+i).checked;if(!$('eq'+i).checked)$('ep'+i).value=''}
 function sumContractPrices(){let total=0,count=0;EQUIPMENT.forEach((_,i)=>{if($('eq'+i).checked&&$('ep'+i).value!==''){total+=Number($('ep'+i).value);count++}});$('contractSum').textContent=count?`Somme des ${count} lignes renseignées : ${money(total)} HT/an. Vérifie avant d'appliquer.`:'Aucun montant détaillé renseigné.';if(count&&confirm('Reporter cette somme dans le montant global ?'))$('ca').value=total.toFixed(2)}
-async function saveContract(e,siteId){e.preventDefault();const amount=$('ca').value;if(amount!==''&&(!Number.isFinite(Number(amount))||Number(amount)<0))return alert('Montant incorrect');let items=[],prices={};for(let i=0;i<EQUIPMENT.length;i++){if(!$('eq'+i).checked)continue;items.push(EQUIPMENT[i]);let v=$('ep'+i).value;if(v!==''){if(!Number.isFinite(Number(v))||Number(v)<0)return alert('Montant incorrect pour '+EQUIPMENT[i]);prices[EQUIPMENT[i]]=Number(v)}}const old=vault.contracts[siteId];vault.contracts[siteId]={...old,number:$('cn').value.trim(),amount:amount===''?0:Number(amount),equipment:items.join(', '),equipmentItems:items,equipmentPrices:prices,start:$('cs').value,end:$('cd').value,status:$('ct').value};try{await persist();showSite(siteId);alert('Contrat enregistré et vérifié.')}catch(err){if(old===undefined)delete vault.contracts[siteId];else vault.contracts[siteId]=old;alert('Échec de sauvegarde : '+(err?.message||'erreur'))}}
+async function saveContract(e,siteId){e.preventDefault();const acceptance=$('contractAcceptedDate')?.value||'';if(['Signé','En cours'].includes($('ct').value)&&(!acceptance||acceptance>todayLocal()))return alert('Indique la date réelle d’acceptation du contrat.');const amount=$('ca').value;if(amount!==''&&(!Number.isFinite(Number(amount))||Number(amount)<0))return alert('Montant incorrect');let items=[],prices={};for(let i=0;i<EQUIPMENT.length;i++){if(!$('eq'+i).checked)continue;items.push(EQUIPMENT[i]);let v=$('ep'+i).value;if(v!==''){if(!Number.isFinite(Number(v))||Number(v)<0)return alert('Montant incorrect pour '+EQUIPMENT[i]);prices[EQUIPMENT[i]]=Number(v)}}const old=vault.contracts[siteId],oldContractReminders=structuredClone(vault.reminders);vault.contracts[siteId]={...old,number:$('cn').value.trim(),amount:amount===''?null:Number(amount),equipment:items.join(', '),equipmentItems:items,equipmentPrices:prices,start:$('cs').value,end:$('cd').value,status:$('ct').value,acceptedDate:acceptance};reconcilePlanningReminders();try{await persist();showSite(siteId);alert('Contrat enregistré et vérifié.')}catch(err){if(old===undefined)delete vault.contracts[siteId];else vault.contracts[siteId]=old;vault.reminders=oldContractReminders;alert('Échec de sauvegarde : '+(err?.message||'erreur'))}}
 async function addSyndic(e){e.preventDefault();let name=$('sn').value.trim();if(!name)return;vault.syndics.push({id:'SY-'+uid(),name,contact:$('sc').value.trim(),phone:$('sp').value.trim(),email:$('se').value.trim()});await saveAndShow('syndics')}
 async function addSite(e){e.preventDefault();let id=$('rid').value.trim(),name=$('rn').value.trim();if(!id||!name)return;if(vault.sites.some(x=>x.id===id))return alert('Ce numéro de site existe déjà.');vault.sites.push({id,name,address:$('ra').value.trim(),city:$('rc').value.trim(),syndicId:$('rs').value,gestionnaire:$('rg').value.trim(),devis:0,contrat:0});await saveAndShow('sites')}
-function editSyndic(id){let x=vault.syndics.find(z=>z.id===id);if(!x)return;el.innerHTML=`<h2>Modifier le syndic</h2><section><form onsubmit="updateSyndic(event,'${esc(id)}')"><label>Nom<input id="en" required maxlength="100" value="${esc(x.name)}"></label><label>Interlocuteur<input id="ec" maxlength="100" value="${esc(x.contact)}"></label><label>Téléphone<input id="ep" maxlength="40" value="${esc(x.phone)}"></label><label>E-mail<input id="ee" type="email" maxlength="160" value="${esc(x.email)}"></label><button type="submit">Enregistrer</button><button type="button" class="light" onclick="show('syndics')">Annuler</button></form></section>`}
+function editSyndic(id){let x=vault.syndics.find(z=>z.id===id);if(!x)return;el.innerHTML=`<h2>Modifier le syndic</h2><section><form onsubmit="updateSyndic(event,${jsArg(id)})"><label>Nom<input id="en" required maxlength="100" value="${esc(x.name)}"></label><label>Interlocuteur<input id="ec" maxlength="100" value="${esc(x.contact)}"></label><label>Téléphone<input id="ep" maxlength="40" value="${esc(x.phone)}"></label><label>E-mail<input id="ee" type="email" maxlength="160" value="${esc(x.email)}"></label><button type="submit">Enregistrer</button><button type="button" class="light" onclick="show('syndics')">Annuler</button></form></section>`}
 async function updateSyndic(e,id){e.preventDefault();let x=vault.syndics.find(z=>z.id===id);if(!x)return;x.name=$('en').value.trim();x.contact=$('ec').value.trim();x.phone=$('ep').value.trim();x.email=$('ee').value.trim();await saveAndShow('syndics')}
-function editSite(id){let x=vault.sites.find(z=>z.id===id);if(!x)return;el.innerHTML=`<h2>Modifier la résidence</h2><section><form onsubmit="updateSite(event,'${esc(id)}')"><p class="muted">Numéro de site : ${esc(x.id)} (non modifiable)</p><label>Nom<input id="en" required maxlength="120" value="${esc(x.name)}"></label><label>Adresse<input id="ea" maxlength="160" value="${esc(x.address)}"></label><label>Ville<input id="ec" maxlength="100" value="${esc(x.city)}"></label><label>Gestionnaire<input id="eg" maxlength="100" value="${esc(x.gestionnaire||'')}"></label><label>Syndic<select id="es">${syndicOptions(x.syndicId)}</select></label><button type="submit">Enregistrer</button><button type="button" class="light" onclick="show('sites')">Annuler</button></form></section>`}
+function editSite(id){let x=vault.sites.find(z=>z.id===id);if(!x)return;el.innerHTML=`<h2>Modifier la résidence</h2><section><form onsubmit="updateSite(event,${jsArg(id)})"><p class="muted">Numéro de site : ${esc(x.id)} (non modifiable)</p><label>Nom<input id="en" required maxlength="120" value="${esc(x.name)}"></label><label>Adresse<input id="ea" maxlength="160" value="${esc(x.address)}"></label><label>Ville<input id="ec" maxlength="100" value="${esc(x.city)}"></label><label>Gestionnaire<input id="eg" maxlength="100" value="${esc(x.gestionnaire||'')}"></label><label>Syndic<select id="es">${syndicOptions(x.syndicId)}</select></label><button type="submit">Enregistrer</button><button type="button" class="light" onclick="show('sites')">Annuler</button></form></section>`}
 async function updateSite(e,id){e.preventDefault();let x=vault.sites.find(z=>z.id===id);if(!x)return;x.name=$('en').value.trim();x.address=$('ea').value.trim();x.city=$('ec').value.trim();x.syndicId=$('es').value;x.gestionnaire=$('eg').value.trim();await saveAndShow('sites')}
 async function setStatus(i,value){vault.quotes[i].status=value;await saveAndShow('devis')}
 async function addQuote(e){e.preventDefault();let ref=$('qref').value.trim(),name=$('qname').value.trim(),siteId=$('qsite').value,amount=Number($('qamount').value),date=$('qdate').value,status=$('qstatus').value;if(!ref||!name||!siteId||!Number.isFinite(amount)||amount<0)return alert('Vérifie les champs du devis.');if(vault.quotes.some(q=>q.ref.toLowerCase()===ref.toLowerCase()))return alert('Ce numéro de devis existe déjà.');vault.quotes.push({ref,name,siteId,amount,date,status});await saveAndShow('devis')}
@@ -96,41 +116,212 @@ async function removeReminder(i){vault.reminders.splice(i,1);await saveAndShow('
 const MAX_PDF=Math.floor(1.5*1024*1024),MAX_ALL=3*1024*1024;
 let stagedPDFs=[];
 function docOptions(selected=''){return vault.sites.map(x=>`<option value="${esc(x.id)}" ${selected===x.id?'selected':''}>${esc(x.name)} — ${esc(x.id)}</option>`).join('')}
+// PDF.js corrige: module ESM et worker de la meme version. Test fictif uniquement.
+const PDFJS_MODULE_URL=new URL('./test-v366/test-v366/vendor/pdfjs/pdf.min.mjs?v=3691',document.baseURI).href;
+const PDFJS_WORKER_URL=new URL('./test-v366/test-v366/vendor/pdfjs/pdf.worker.min.mjs?v=3691',document.baseURI).href;
 let pdfLibraryPromise=null;
-function loadPdfLibrary(){if(window.pdfjsLib)return Promise.resolve(window.pdfjsLib);if(pdfLibraryPromise)return pdfLibraryPromise;pdfLibraryPromise=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';script.onload=()=>{if(!window.pdfjsLib)return reject(Error('Bibliothèque indisponible'));window.pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';resolve(window.pdfjsLib)};script.onerror=()=>reject(Error('Chargement PDF.js impossible (connexion requise)'));document.head.appendChild(script)});return pdfLibraryPromise}
-async function extractPdfText(bytes){const lib=await loadPdfLibrary();const pdf=await lib.getDocument({data:bytes.slice(),useSystemFonts:true}).promise;let pages=[];try{for(let n=1;n<=Math.min(pdf.numPages,40);n++){const page=await pdf.getPage(n),content=await page.getTextContent();let rows=[];for(const item of content.items){const value=(item.str||'').trim();if(!value)continue;const y=Math.round(item.transform?.[5]||0);let row=rows.find(r=>Math.abs(r.y-y)<=2);if(!row){row={y,parts:[]};rows.push(row)}row.parts.push(value)}rows.sort((a,b)=>b.y-a.y);pages.push(rows.map(r=>r.parts.join(' ')).join('\n'))}}finally{pdf.destroy()}return pages.join('\n\n').slice(0,160000)}
+async function loadPdfLibrary(){
+  if(!pdfLibraryPromise){
+    pdfLibraryPromise=import(PDFJS_MODULE_URL).then(lib=>{
+      if(!lib||typeof lib.getDocument!=='function'||!lib.GlobalWorkerOptions)throw Error('Module PDF.js indisponible');
+      lib.GlobalWorkerOptions.workerSrc=PDFJS_WORKER_URL;
+      return lib;
+    }).catch(error=>{pdfLibraryPromise=null;throw Error('Lecteur PDF local absent ou indisponible. Les deux fichiers officiels doivent être installés dans vendor/pdfjs/. Détail : '+(error?.message||'connexion requise'))});
+  }
+  return pdfLibraryPromise;
+}
+let lastPdfPhotos=[],lastPdfPageTexts=[],lastPdfPageCount=0;
+async function extractPdfText(bytes){lastPdfPhotos=[];lastPdfPageTexts=[];lastPdfPageCount=0;const lib=await loadPdfLibrary();const pdf=await lib.getDocument({data:bytes.slice(),useSystemFonts:true,isEvalSupported:false}).promise;lastPdfPageCount=pdf.numPages;let pages=[];try{for(let n=1;n<=Math.min(pdf.numPages,40);n++){const page=await pdf.getPage(n),content=await page.getTextContent();let rows=[];for(const item of content.items){const value=(item.str||'').trim();if(!value)continue;const y=Math.round(item.transform?.[5]||0);let row=rows.find(r=>Math.abs(r.y-y)<=2);if(!row){row={y,parts:[]};rows.push(row)}row.parts.push({value,x:Number(item.transform?.[4]||0)})}rows.sort((a,b)=>b.y-a.y);pages.push(rows.map(r=>r.parts.sort((a,b)=>a.x-b.x).map(p=>p.value).join(' ')).join('\n'));if(lastPdfPhotos.length<4){try{const photos=await extractPagePhotos(page,lib,n);for(const photo of photos){if(lastPdfPhotos.length<4&&!lastPdfPhotos.some(p=>p.data===photo.data))lastPdfPhotos.push(photo)}}catch(photoError){/* Photo extraction must not block text import. */}}}}finally{pdf.destroy()}lastPdfPageTexts=pages.slice();return pages.join('\n\n').slice(0,160000)}
 const normalized=s=>String(s||'').toLocaleLowerCase('fr').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ');
 function parseEuroAmount(line){const m=String(line).match(/(?:^|\s)(\d{1,6}(?:[ .\u00a0]\d{3})*(?:[,.]\d{2})?)\s*(?:€|euros?)(?:\s*(?:ht|\/an|annuel))?/i)||String(line).match(/(?:ht|annuel|par an)\s*[:=]?\s*(\d{1,6}(?:[ .\u00a0]\d{3})*(?:[,.]\d{2})?)/i);if(!m)return null;const v=Number(m[1].replace(/[ .\u00a0]/g,'').replace(',','.'));return Number.isFinite(v)?v:null}
-function detectContractDetails(text){const lines=String(text||'').split(/\n|\r/).map(x=>x.trim()).filter(Boolean),items=[],prices={};for(let i=0;i<EQUIPMENT.length;i++){const rx=EQUIPMENT_PATTERNS[i];let matching=lines.filter(line=>rx.test(normalized(line)));if(matching.length){items.push(EQUIPMENT[i]);for(const line of matching){const value=parseEuroAmount(line);if(value!==null){prices[EQUIPMENT[i]]=value;break}}}}return {items,prices}}
+function detectContractDetails(text){
+ // The stated amounts are proposals, never proof that the client accepted an option.
+ const lines=String(text||'').split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+ const items=[],prices={};
+ const named=[
+  ['VMC',/^(?:prestation\s+vmc|vmc\s*:)\s*:?\s*([\d\s.,]+)\s*€/i],
+  ['Désenfumage escalier',/^prestation\s+d[eé]senfumage\s+escalier\s*:?\s*([\d\s.,]+)\s*€/i],
+  ['BAES',/^prestation\s+bloc\s+secours\s*:?\s*([\d\s.,]+)\s*€/i],
+  ['Extincteurs',/^prestation\s+extincteur\s*:?\s*([\d\s.,]+)\s*€/i],
+  ['Ferme-portes',/^prestation\s+ferme[- ]porte\s*:?\s*([\d\s.,]+)\s*€/i],
+  ['Ventilation parking',/^prestation\s+ventilation\s+parking\s*:?\s*([\d\s.,]+)\s*€/i],
+  ['Pompes de relevage',/^prestation\s+pompe\s+de\s+relevage\s*:?\s*([\d\s.,]+)\s*€/i]
+ ];
+ for(const [label,rx] of named){for(const line of lines){const match=line.match(rx);if(match){const price=parseDetectedEuro(match[1]);if(price!==null){items.push(label);prices[label]=price;break}}}}
+ // Other document layouts: detect names, but never infer a price from general paragraphs.
+ if(!items.length){for(let i=0;i<EQUIPMENT.length;i++){if(lines.some(line=>EQUIPMENT_PATTERNS[i].test(normalized(line))))items.push(EQUIPMENT[i])}}
+ const optionLine=lines.find(x=>/option\s*serenite\s*extincteurs/i.test(normalized(x)))||'';
+ const optionPrice=(optionLine.match(/([\d\s.,]+)\s*€/)||[])[1];
+ const special=String(text||'').match(/total\s*ht\s*de\s*la\s*prestation[^\n]*option\s*extincteurs\s*serenite\s*:\s*([\d\s.,]+)\s*€/i);
+ return {items,prices,optionSerenite:optionPrice?parseDetectedEuro(optionPrice):null,proposalTotalWithOption:special?parseDetectedEuro(special[1]):null};
+}
 function detectReference(text,name){const str=String(text||'');const patterns=[/(?:n[°ºo]\s*(?:de\s*)?(?:devis|contrat)|(?:devis|contrat)\s*n[°ºo]|r[eé]f[eé]rence\s*(?:du\s*)?(?:devis|contrat)?|r[eé]f\.?\s*(?:devis|contrat)?)\s*[:#°-]?\s*([A-Z0-9][A-Z0-9/_-]{3,45})/i,/(?:devis|contrat)\s*(?:num[eé]ro)?\s*[:#°-]\s*([A-Z0-9][A-Z0-9/_-]{3,45})/i];for(const source of [str,name])for(const pattern of patterns){let m=source.match(pattern);if(m&&!/^(GLOBAL|FICTIF|MAINTENANCE|ANNUEL|INCENDIE|REFERENCE)$/i.test(m[1]))return m[1]}return ''}
-function inferPdf(text,name){const raw=text+' '+name,hay=normalized(raw);const scored=vault.sites.map(site=>{let score=0,reasons=[];const id=normalized(site.id).trim(),sn=normalized(site.name).trim(),address=normalized(site.address).trim();if(id&&(' '+hay+' ').includes(' '+id+' ')){score+=100;reasons.push('numéro de site')}if(sn.length>=5&&hay.includes(sn)){score+=70;reasons.push('nom de résidence')}if(address.length>=7&&hay.includes(address)){score+=50;reasons.push('adresse')}const syndic=normalized(syndicName(site.syndicId)).trim();if(syndic.length>=6&&hay.includes(syndic)){score+=8;reasons.push('syndic')}return {site,score,reasons}}).sort((a,b)=>b.score-a.score);const top=scored[0];const reliable=top&&top.score>=50&&(!scored[1]||top.score-scored[1].score>=30);const cat=/contrat|maintenance annuelle|renouvellement/.test(hay)?'Contrat de maintenance':/devis|proposition commerciale|offre de prix/.test(hay)?'Devis':/rapport|verification periodique|compte rendu/.test(hay)?'Rapport':/courrier|lettre|correspondance/.test(hay)?'Courrier':'Autre';const ref=detectReference(text,name);const amount=raw.match(/(?:total\s*ht|montant\s*ht|prix\s*ht)\s*[:\s]*([0-9][0-9 .\u00a0]*[,.][0-9]{2}|[0-9][0-9 .\u00a0]*)\s*(?:€|eur)?/i)?.[1]||'';return {siteId:reliable?top.site.id:'',category:cat,reference:ref,amount:amount.trim(),reason:reliable?top.reasons.join(', '):'Correspondance insuffisante ou ambiguë',textFound:text.trim().length>15,contractDetails:detectContractDetails(text)}}
+function extractBusinessFields(text,name){
+ const lines=String(text||'').split(/\r?\n/).map(s=>s.replace(/\s+/g,' ').trim()).filter(Boolean);
+ const joined=lines.join('\n');
+ const number=(joined.match(/(?:SITE\s*N\s*[°ºo]?|N\s*[°ºo]?\s*SITE|NUM[EÉ]RO\s*DE\s*SITE)\s*[:#-]?\s*([A-Z0-9-]{2,35})/i)||[])[1]||'';
+ const isStreet=s=>/^(?:\d{1,5}[a-z]*(?:\s*[/\-]\s*\d{1,5}[a-z]*)*\s+)?(?:rue|av(?:enue|\.)?|boulevard|bd|place|all[eé]e|impasse|chemin|route)\b/i.test(s)||/^\d[\d\s/a-z-]*\s+(?:rue|avenue|place|boulevard|all[eé]e)\b/i.test(s);
+ const splitLocation=value=>{
+  const match=String(value||'').match(/^(.*?)(?:\s+)(\d{5})\s+([A-ZÀ-Ÿ][A-ZÀ-Ÿ\s'’\-]+)\s*$/i);
+  return match?{street:match[1].trim(),city:(match[2]+' '+match[3]).trim()}:{street:String(value||'').trim(),city:''};
+ };
+ let title='',street='',city='',syndic='';
+ // Contrats : le site est identifié dans le bloc client, jamais dans le bloc prestataire.
+ const clientStart=lines.findIndex(l=>/identification\s+du\s+client\s+ou\s+utilisateur/i.test(l));
+ if(clientStart>=0){
+  const clientEnd=lines.findIndex((l,i)=>i>clientStart&&(/identification\s+par\s+nom|objet\s+de\s+la\s+prestation|prestations\s+propos[eé]es/i.test(l)));
+  const block=lines.slice(clientStart+1,clientEnd>clientStart?Math.min(clientEnd,clientStart+25):clientStart+18);
+  const titleAt=block.findIndex(l=>/^(?:syndicat\s+des\s+copropri[eé]taires|copropri[eé]t[eé]|r[eé]sidence)\s*:/i.test(l));
+  if(titleAt>=0){
+   title=block[titleAt].replace(/^[^:]*:\s*/,'').trim();
+   if(!title&&block[titleAt+1])title=block[titleAt+1];
+   for(const l of block.slice(titleAt+1,titleAt+5)){
+    if(/^(?:repr[eé]sent[eé]\s+par|n[°ºo]?\s*de\s*rcs|adresse\s+du\s+si[eè]ge)/i.test(l))break;
+    if(isStreet(l)){const loc=splitLocation(l);street=loc.street;city=loc.city;break}
+   }
+  }
+  const represented=block.find(l=>/^repr[eé]sent[eé]\s+par\s*:/i.test(l));
+  if(represented)syndic=represented.replace(/^[^:]*:\s*/,'').trim();
+ }
+ // Devis : les informations se trouvent sous « Concerne », avant les coordonnées du syndic.
+ if(!title){
+  const concern=lines.findIndex(l=>/^concerne\s*:\s*\d+/i.test(l));
+  if(concern>=0){
+   const subset=lines.slice(concern+1,concern+9);
+   for(const l of subset){
+    if(/^(?:site\s*n|num[eé]ro|devis|client\s*n|objet|date)/i.test(l))break;
+    if(isStreet(l)){if(!street){const loc=splitLocation(l);street=loc.street;city=loc.city}continue}
+    if(/^\d{5}\b/.test(l)){if(!city)city=l.trim();continue}
+    if(!title&&!/^(?:\.|-|\d+|t[eé]l|mail|adresse)/i.test(l))title=l;
+   }
+  }
+ }
+ if(!title){const m=joined.match(/(?:R[EÉ]SIDENCE|COPROPRI[EÉ]T[EÉ])\s*[:\-]\s*([^\n]{3,100})/i);title=m?m[1]:''}
+ // Ne jamais utiliser une adresse de siège social ni une adresse fournisseur comme adresse du site.
+ if(!street&&clientStart<0){
+  const concern=lines.findIndex(l=>/^concerne\s*:/i.test(l));
+  const candidates=concern>=0?lines.slice(concern+1,concern+12):[];
+  const hit=candidates.find(l=>isStreet(l)&&!/si[eè]ge\s+social|fl\s+protection/i.test(l));
+  if(hit){const loc=splitLocation(hit);street=loc.street;city=loc.city}
+ }
+ if(street&&!city){const index=lines.findIndex(l=>l===street||l.startsWith(street+' '));if(index>=0){const next=lines.slice(index+1,index+4).find(l=>/^\d{5}\s+\D/.test(l));if(next)city=next}}
+ if(!syndic){const explicit=joined.match(/(?:REPR[EÉ]SENT[EÉ]\s+PAR|SYNDIC|GESTIONNAIRE)\s*[:\-]\s*([^\n]+)/i);if(explicit)syndic=explicit[1]}
+ if(!syndic){const candidate=lines.find(l=>/\b(?:GESTION|SYNDIC|IMMOBILIER|HABITAT|ATRIUM)\b/i.test(l)&&!/adresse|si[eè]ge|identification|gestionnaire\s*:/i.test(l));if(candidate)syndic=candidate}
+ title=title.replace(/\s+(?:SITE\s*N.*)$/i,'').trim();
+ if(!/[a-zà-ÿ]{2,}/i.test(title)||/^(?:\.|-|n[eé]ant)$/i.test(title))title='';
+ const total=(joined.match(/TOTAL\s*H\s*\.?\s*T\s*\.?\s*[:\s]*([\d\s.,]+)\s*€/i)||joined.match(/TOTAL\s*H\s*\.?\s*T\s*\.?\s*[:\s]*([\d\s.,]+)/i)||[])[1]||'';
+ const ref=(joined.match(/(?:DEVIS\s*(?:N[°ºo]?|NUM[EÉ]RO)?|NUM[EÉ]RO)\s*[:#\-]?\s*(C\d{4,12})\b/i)||joined.match(/\b(C\d{5,12})\b/i)||[])[1]||detectReference(text,name);
+ const object=(joined.match(/OBJET\s+DU\s+DEVIS\s*:\s*([^\n]{3,155})/i)||[])[1]||'';
+ const date=(joined.match(/DATE\s*(?:D['’]?[EÉ]MISSION|[EÉ]MISSION)\s*[:\-]?\s*(\d{2})\/(\d{2})\/(\d{4})/i)||[]);
+ return {number:number.trim(),name:title.slice(0,120),street:street.slice(0,160),city:city.slice(0,100),syndic:syndic.slice(0,100),ref,amount:total.trim(),object:object.trim(),date:date.length?`${date[3]}-${date[2]}-${date[1]}`:''};
+}
+function inferPdf(text,name){
+ const raw=text+' '+name,hay=normalized(raw),fields=extractBusinessFields(text,name);
+ const scored=vault.sites.map(site=>{let score=0,reasons=[];const id=normalized(site.id).trim(),sn=normalized(site.name).trim(),address=normalized(site.address).trim();if(id&&(' '+hay+' ').includes(' '+id+' ')){score+=100;reasons.push('numéro de site')}if(fields.number&&fields.number===site.id){score+=110;reasons.push('site indiqué sur le PDF')}if(sn.length>=5&&hay.includes(sn)){score+=70;reasons.push('nom de résidence')}if(address.length>=7&&hay.includes(address)){score+=50;reasons.push('adresse')}return {site,score,reasons}}).sort((a,b)=>b.score-a.score);
+ const top=scored[0],reliable=top&&top.score>=50&&(!scored[1]||top.score-scored[1].score>=30);
+ const cat=/contrat|maintenance annuelle|renouvellement/.test(hay)?'Contrat de maintenance':/devis|proposition commerciale|offre de prix/.test(hay)?'Devis':/rapport|verification periodique|compte rendu/.test(hay)?'Rapport':/courrier|lettre|correspondance/.test(hay)?'Courrier':'Autre';
+ const ref=fields.ref||detectReference(text,name),amount=fields.amount||((raw.match(/(?:total\s*ht|montant\s*ht|prix\s*ht)\s*[:\s]*([0-9][0-9 .\u00a0]*[,.][0-9]{2}|[0-9][0-9 .\u00a0]*)\s*(?:€|eur)?/i)||[])[1]||'');
+ return {siteId:reliable?top.site.id:'',category:cat,reference:ref,amount:amount.trim(),fields,reason:reliable?top.reasons.join(', '):'Vérifie la résidence proposée et les champs détectés',textFound:text.trim().length>15,contractDetails:detectContractDetails(text)};
+}
+
 async function preparePDFs(event){
- stagedPDFs=[];const files=Array.from(event.target.files||[]),errors=[],box=$('pdfDrafts');box.textContent='Analyse des PDF en cours…';
+ stagedPDFs=[];const files=Array.from(event.target.files||[]),errors=[],box=$('pdfDrafts');box.textContent='Analyse des PDF en cours…';const existingBytes=(vault.documents||[]).reduce((n,d)=>n+Number(d.size||0),0);let stagedBytes=0;
  for(const file of files){
   if(file.size>MAX_PDF){errors.push(file.name+' : plus de 1,5 Mo');continue}
+  if(existingBytes+stagedBytes+file.size>MAX_ALL){errors.push(file.name+' : limite de 3 Mo du coffre atteinte');continue}
+  stagedBytes+=file.size;
   const bytes=new Uint8Array(await file.arrayBuffer());if(bytes.length<5||String.fromCharCode(...bytes.slice(0,5))!=='%PDF-'){errors.push(file.name+' : PDF non reconnu');continue}
   let parts=[];for(let i=0;i<bytes.length;i+=16384)parts.push(String.fromCharCode(...bytes.subarray(i,i+16384)));
   let text='',issue='';try{text=await extractPdfText(bytes)}catch(err){issue=err?.message||'Analyse indisponible'}
-  const analysis=inferPdf(text,file.name);stagedPDFs.push({id:uid(),name:file.name.slice(0,160),size:file.size,data:btoa(parts.join('')),analysis,issue});
+  if(!issue&&lastPdfPageCount>40){errors.push(file.name+' : plus de 40 pages, import automatique suspendu pour ne pas omettre des devis.');continue;}if(!issue){const bundle=detectQuoteBundle(lastPdfPageTexts,file.name);if(bundle.quotes.length>1){if(files.length>1){errors.push(file.name+' : ce PDF contient plusieurs devis. Sélectionne-le seul pour importer chaque devis distinctement.');continue;}quoteBundleDraft={name:file.name,size:file.size,data:btoa(parts.join('')),bundle};renderQuoteBundle();if(bundle.quotes.every(validBundledQuote))await saveQuoteBundle();return;}}
+  const analysis=inferPdf(text,file.name);analysis.quoteLines=analysis.category==='Devis'?extractQuoteLineItems(text):[];analysis.photos=issue?[]:lastPdfPhotos.map(p=>({...p}));stagedPDFs.push({id:uid(),name:file.name.slice(0,160),size:file.size,data:btoa(parts.join('')),analysis,issue});
  }
- box.innerHTML=stagedPDFs.map((f,i)=>`<section><b>${esc(f.name)}</b><p class="small">${f.issue?'⚠️ '+esc(f.issue):f.analysis.textFound?'Texte analysé':'⚠️ Aucun texte exploitable (PDF scanné possible)'} · ${esc(f.analysis.reason)}</p>${f.analysis.reference?`<p class="small">Référence détectée : ${esc(f.analysis.reference)}</p>`:''}${f.analysis.amount?`<p class="small">Montant HT possible : ${esc(f.analysis.amount)} € (à vérifier)</p>`:''}${f.analysis.contractDetails.items.length?`<p class="small">Équipements repérés (à vérifier) : ${f.analysis.contractDetails.items.map(esc).join(', ')}</p>`:''}<label>Résidence proposée — à confirmer<select id="pdfr${i}"><option value="">Choisir une résidence</option>${docOptions(f.analysis.siteId)}</select></label><label>Catégorie proposée<select id="pdfc${i}">${['Devis','Contrat de maintenance','Rapport','Courrier','Autre'].map(c=>`<option ${f.analysis.category===c?'selected':''}>${c}</option>`).join('')}</select></label></section>`).join('')+(stagedPDFs.length?'<button onclick="savePDFs()">Valider et enregistrer les PDF</button>':'<p>Aucun document prêt.</p>');
+ box.innerHTML=stagedPDFs.map((f,i)=>{
+ const a=f.analysis,p=a.fields||{};
+ // Priorité au numéro de site : un PDF portant le même numéro réutilise la résidence.
+ const found=vault.sites.find(s=>String(s.id).trim().toLocaleUpperCase('fr')===String(p.number||'').trim().toLocaleUpperCase('fr'))||null;
+ const chosen=found?.id||a.siteId||'';
+ return `<section><b>${esc(f.name)}</b><p class="small">${f.issue?'⚠️ '+esc(f.issue):a.textFound?'Texte analysé':'⚠️ PDF scanné : champs à remplir'} · ${esc(a.reason)}</p>
+ <p class="notice" id="pdfhint${i}">${found?'✅ Résidence existante retrouvée par le numéro de site '+esc(found.id)+' : '+esc(found.name)+'. Le PDF sera classé dans sa fiche.':'🆕 Nouvelle résidence détectée : après vérification et confirmation, elle sera automatiquement ajoutée à la liste « Résidences » et le PDF y sera classé.'}</p>
+ <label>Classement automatique<select id="pdfr${i}" onchange="toggleNewSite(${i})"><option value="">Créer une résidence depuis le PDF</option>${docOptions(chosen)}</select></label>
+ <div id="pdfnew${i}" ${chosen?'class="hidden"':''}>
+ <p class="small"><b>Créer la résidence lors de l’enregistrement (champs modifiables)</b></p>
+ <label>Numéro de site<input id="pdfsite${i}" maxlength="40" value="${esc(p.number)}" placeholder="Numéro de site"></label>
+ <label>Nom de résidence<input id="pdfname${i}" maxlength="120" value="${esc(p.name)}" placeholder="Nom de la résidence"></label>
+ <label>Adresse<input id="pdfaddress${i}" maxlength="160" value="${esc(p.street)}"></label>
+ <label>Ville<input id="pdfcity${i}" maxlength="100" value="${esc(p.city)}"></label>
+ <label>Syndic existant<select id="pdfsyndic${i}" onchange="toggleNewSyndic(${i})"><option value="">Choisir ou créer</option>${syndicOptions('')}</select></label>
+ <div id="pdfnewsyn${i}"><label>Nom du nouveau syndic (facultatif)<input id="pdfsynname${i}" maxlength="100" value="${esc(p.syndic)}" placeholder="Nouveau syndic"></label></div>
+ </div>
+ <label>Catégorie<select id="pdfc${i}" onchange="toggleQuoteFields(${i})">${['Devis','Contrat de maintenance','Rapport','Courrier','Autre'].map(c=>`<option ${a.category===c?'selected':''}>${c}</option>`).join('')}</select></label>
+ <div id="pdfcontract${i}" ${a.category==='Contrat de maintenance'?'':'class="hidden"'}>
+ <p class="small"><b>Proposition de maintenance détectée</b> — les équipements et prix sont proposés uniquement. Aucun contrat n'est considéré signé ni accepté.</p>
+ <p class="small">${(a.contractDetails.items||[]).map(item=>esc(item)+' : '+(a.contractDetails.prices[item]!=null?money(a.contractDetails.prices[item]):'montant à vérifier')).join(' · ')||'Prestations à compléter après import'}</p>
+ <p class="small">${a.contractDetails.proposalTotalWithOption!=null?'Total indicatif avec option mentionné : '+money(a.contractDetails.proposalTotalWithOption)+' HT. Ce n’est pas un montant contractuel accepté.':''}</p>
+ </div>
+ <div id="pdfquote${i}" ${a.category==='Devis'?'':'class="hidden"'}>
+ <p class="small"><b>Créer aussi le devis dans le suivi (facultatif)</b></p>
+ <label><input type="checkbox" id="pdfmakequote${i}" checked> Ajouter ce devis au suivi commercial</label>
+ <label>Référence<input id="pdfref${i}" maxlength="60" value="${esc(a.reference)}"></label>
+ <label>Objet<input id="pdfobject${i}" maxlength="160" value="${esc(p.object)}" placeholder="Travaux / maintenance"></label>
+ <label>Montant HT (€)<input id="pdfamount${i}" type="number" min="0" step="0.01" value="${parseDetectedEuro(a.amount)??''}"></label>
+ <label>Date du devis<input id="pdfdate${i}" type="date" value="${esc(p.date)}"></label>
+ </div></section>`;
+ }).join('')+(stagedPDFs.length?'<button onclick="savePDFs()">Vérifier et enregistrer les PDF</button>':'<p>Aucun document prêt.</p>');
  if(errors.length)alert(errors.join('\n'));
+ if(!errors.length&&stagedPDFs.length&&stagedPDFs.every(canAutoImport))await savePDFs(true);
 }
-async function savePDFs(){
+function toggleNewSite(i){
+ const existing=$('pdfr'+i).value;
+ $('pdfnew'+i).classList.toggle('hidden',!!existing);
+ $('pdfhint'+i).textContent=existing?'✅ Le PDF sera ajouté à la résidence existante : '+siteName(existing):'🆕 À la validation, la résidence sera créée automatiquement et apparaîtra dans la liste « Résidences ».';
+}
+function toggleNewSyndic(i){$('pdfnewsyn'+i).classList.toggle('hidden',!!$('pdfsyndic'+i).value)}
+function toggleQuoteFields(i){const cat=$('pdfc'+i).value;$('pdfquote'+i).classList.toggle('hidden',cat!=='Devis');$('pdfcontract'+i).classList.toggle('hidden',cat!=='Contrat de maintenance')}
+async function savePDFs(automatic=false){
  if(!stagedPDFs.length)return;
- let existing=vault.documents.reduce((n,d)=>n+d.size,0),incoming=stagedPDFs.reduce((n,d)=>n+d.size,0);
- if(existing+incoming>MAX_ALL)return alert('Limite de 3 Mo atteinte. Réduis le nombre ou la taille des PDF.');
- let additions=[];
+ const incoming=stagedPDFs.reduce((n,d)=>n+d.size,0),existing=vault.documents.reduce((n,d)=>n+d.size,0);
+ if(existing+incoming>MAX_ALL)return alert('Limite du coffre atteinte.');
+ const changes=[],newSites=[],newSyndics=[],newQuotes=[],newDocs=[],documentUpdates=[];
+ const knownSite=new Map(vault.sites.map(x=>[String(x.id).toUpperCase(),x]));
+ const knownSyndic=new Map(vault.syndics.map(x=>[normalized(x.name).trim(),x]));
+ const knownRefs=new Set(vault.quotes.map(q=>normalized(q.ref).trim()));
  for(let i=0;i<stagedPDFs.length;i++){
-  let siteId=$('pdfr'+i).value,category=$('pdfc'+i).value;
-  if(!siteId)return alert('Choisis une résidence pour chaque PDF.');
-  let f=stagedPDFs[i];
-  if(vault.documents.some(d=>d.siteId===siteId&&d.data===f.data))return alert('Document déjà présent dans cette résidence : '+f.name);
-  const {analysis,issue,...stored}=f;additions.push({...stored,siteId,category,detectedReference:analysis.reference||'',detectedAmount:analysis.amount||'',detectedEquipment:analysis.contractDetails.items||[],contractProposal:category==='Contrat de maintenance'?analysis.contractDetails:null});
+  const f=stagedPDFs[i],category=$('pdfc'+i).value;
+  let siteId=$('pdfr'+i).value;
+  if(siteId){const site=knownSite.get(siteId.toUpperCase());const detected=f.analysis.fields?.syndic;if(site&&!site.syndicId&&detected){let syn=knownSyndic.get(normalized(detected).trim());if(!syn){syn={id:'SY-'+uid(),name:detected,contact:'',phone:'',email:''};newSyndics.push(syn);knownSyndic.set(normalized(detected).trim(),syn)}changes.push({site,syndicId:syn.id});}}
+  if(!['Devis','Contrat de maintenance','Rapport','Courrier','Autre'].includes(category))return alert('Catégorie incorrecte.');
+  if(!siteId){
+   const number=$('pdfsite'+i).value.trim(),name=$('pdfname'+i).value.trim();
+   if(!number||!name)return alert('PDF '+(i+1)+' : indique un numéro et un nom de résidence.');
+   const same=knownSite.get(number.toUpperCase());
+   if(same){if(normalized(same.name)!==normalized(name)&&!confirm('Site '+number+' déjà présent sous le nom « '+same.name+' » (PDF : « '+name+' »). Rattacher au site existant sans créer de doublon ?'))return;siteId=same.id}
+   else{
+    let syndicId=$('pdfsyndic'+i).value;
+    if(!syndicId){const sname=$('pdfsynname'+i).value.trim();if(sname){const existingS=knownSyndic.get(normalized(sname).trim());if(existingS)syndicId=existingS.id;else{const syndic={id:'SY-'+uid(),name:sname,contact:'',phone:'',email:''};newSyndics.push(syndic);knownSyndic.set(normalized(sname).trim(),syndic);syndicId=syndic.id}}}
+    const site={id:number,name,address:$('pdfaddress'+i).value.trim(),city:$('pdfcity'+i).value.trim(),syndicId:syndicId||'',gestionnaire:'',devis:0,contrat:0};
+    newSites.push(site);knownSite.set(number.toUpperCase(),site);siteId=number;
+   }
+  }
+  if(!knownSite.has(siteId.toUpperCase()))return alert('Résidence introuvable pour '+f.name);
+  if(!f.data||!f.analysis)return alert('PDF incomplet, réimporte-le.');
+  const duplicate=vault.documents.concat(newDocs).find(d=>d.siteId===siteId&&d.data===f.data);if(duplicate){if(automatic){documentUpdates.push({doc:duplicate,proposal:f.analysis.contractDetails,photos:f.analysis.photos||[],manager:f.analysis.fields?.gestionnaire||'',quoteLines:f.analysis.quoteLines||[],category});continue;}return alert('PDF déjà présent dans cette résidence : '+f.name);}
+  const doc={id:f.id,name:f.name,size:f.size,data:f.data,siteId,category,detectedQuoteLines:f.analysis.quoteLines||[],detectedManager:f.analysis.fields?.gestionnaire||'',detectedReference:$('pdfref'+i).value.trim(),detectedAmount:$('pdfamount'+i).value.trim(),detectedEquipment:f.analysis.contractDetails.items||[],photos:f.analysis.photos||[],contractProposal:category==='Contrat de maintenance'?f.analysis.contractDetails:null};
+  newDocs.push(doc);
+  if(category==='Devis'&&$('pdfmakequote'+i).checked){
+   const ref=$('pdfref'+i).value.trim(),name=$('pdfobject'+i).value.trim(),amountRaw=$('pdfamount'+i).value;
+   const amount=Number(amountRaw);
+   if(!ref||!name||amountRaw===''||!Number.isFinite(amount)||amount<0)return alert('PDF '+(i+1)+' : vérifie référence, objet et montant HT, ou décoche « Ajouter ce devis ».');
+   if(knownRefs.has(normalized(ref).trim()))return alert('Le devis '+ref+' existe déjà. Décoche « Ajouter ce devis » pour conserver uniquement le PDF.');
+   knownRefs.add(normalized(ref).trim());newQuotes.push({ref,name,siteId,amount,date:$('pdfdate'+i).value,status:'À confirmer',pdfDocId:doc.id,lineItems:structuredClone(doc.detectedQuoteLines||[])});
+  }
  }
- vault.documents.push(...additions);
- try{await persist();stagedPDFs=[];show('documents');alert('PDF enregistrés dans le coffre chiffré.')}catch(e){vault.documents.splice(-additions.length,additions.length);alert('Enregistrement du PDF impossible : '+(e?.message||'erreur de stockage')+'. Aucun nouveau PDF enregistré.')}
+ if(!automatic&&!confirm('Confirmer : '+newDocs.length+' PDF, '+newSites.length+' résidence(s), '+newSyndics.length+' syndic(s), '+newQuotes.length+' devis ? Vérifie les champs avant de valider.'))return;
+ const before=structuredClone(vault);
+ vault.syndics.push(...newSyndics);vault.sites.push(...newSites);vault.documents.push(...newDocs);vault.quotes.push(...newQuotes);for(const change of changes)change.site.syndicId=change.syndicId;
+ try{for(const update of documentUpdates){if(update.category==='Devis'&&update.quoteLines.length){update.doc.detectedQuoteLines=update.quoteLines;for(const quote of vault.quotes.filter(q=>q.pdfDocId===update.doc.id))quote.lineItems=structuredClone(update.quoteLines);}attachManagerToSite(vault.sites.find(s=>s.id===update.doc.siteId),update.manager);if(update.category==='Contrat de maintenance'){update.doc.contractProposal=update.proposal;update.doc.photos=update.photos;attachContractProposal(update.doc);}}for(const doc of newDocs){attachContractProposal(doc);attachManagerToSite(vault.sites.find(s=>s.id===doc.siteId),doc.detectedManager);}await persist();stagedPDFs=[];show('documents');alert('Enregistrement vérifié : '+newDocs.length+' PDF, '+newSites.length+' résidence(s), '+newSyndics.length+' syndic(s), '+newQuotes.length+' devis. '+documentUpdates.length+' PDF déjà présent(s) réanalysé(s). Les fiches sont reliées automatiquement.')}catch(e){vault=before;alert('Sauvegarde impossible : '+(e?.message||'erreur')+'. Réessaie sans fermer cette page.')}
 }
+
 function parseDetectedEuro(raw){
  const str=String(raw||'').replace(/[\s\u00a0\u202f]/g,'').replace(/€/g,'');
  if(!str)return null;
@@ -148,7 +339,7 @@ function prepareQuoteFromPDF(docId){
  const ref=String(doc.detectedReference||'').trim();
  const sameRef=vault.quotes.find(q=>ref&&String(q.ref||'').trim().toLocaleLowerCase('fr')===ref.toLocaleLowerCase('fr'));
  const amount=parseDetectedEuro(doc.detectedAmount);
- el.innerHTML=`<button class="light" onclick="show('documents')">← Documents PDF</button><section><h2>Créer un devis à partir du PDF</h2><p class="small">${esc(doc.name)} · Les valeurs proposées doivent être confirmées. Aucun devis n'est créé sans validation.</p>${sameRef?`<p class="notice">⚠️ Un devis portant déjà la référence ${esc(ref)} existe dans le suivi. Vérifie-le plutôt que de créer un doublon.</p>`:''}<form onsubmit="saveQuoteFromPDF(event,'${esc(doc.id)}')"><label>Résidence<select id="pdqsite" required><option value="">Choisir</option>${docOptions(doc.siteId)}</select></label><label>Référence du devis<input id="pdqref" required maxlength="60" value="${esc(ref)}" placeholder="Référence à vérifier"></label><label>Objet du devis<input id="pdqname" required maxlength="160" value="${esc(doc.detectedEquipment?.join(', ')||'Travaux ou maintenance sécurité incendie')}"></label><label>Montant HT (€)<input id="pdqamount" type="number" required min="0" step="0.01" value="${amount===null?'':amount}"></label><label>Date du devis (facultative)<input id="pdqdate" type="date"></label><label>Statut<select id="pdqstatus"><option>À confirmer</option><option>À relancer</option><option>Accepté</option><option>Refusé</option><option>Réalisé</option><option>Facturé</option></select></label><button type="submit" ${sameRef?'disabled':''}>Confirmer et créer le devis</button></form></section>`;
+ el.innerHTML=`<button class="light" onclick="show('documents')">← Documents PDF</button><section><h2>Créer un devis à partir du PDF</h2><p class="small">${esc(doc.name)} · Les valeurs proposées doivent être confirmées. Aucun devis n'est créé sans validation.</p>${sameRef?`<p class="notice">⚠️ Un devis portant déjà la référence ${esc(ref)} existe dans le suivi. Vérifie-le plutôt que de créer un doublon.</p>`:''}<form onsubmit="saveQuoteFromPDF(event,${jsArg(doc.id)})"><label>Résidence<select id="pdqsite" required><option value="">Choisir</option>${docOptions(doc.siteId)}</select></label><label>Référence du devis<input id="pdqref" required maxlength="60" value="${esc(ref)}" placeholder="Référence à vérifier"></label><label>Objet du devis<input id="pdqname" required maxlength="160" value="${esc(doc.detectedEquipment?.join(', ')||'Travaux ou maintenance sécurité incendie')}"></label><label>Montant HT (€)<input id="pdqamount" type="number" required min="0" step="0.01" value="${amount===null?'':amount}"></label><label>Date du devis (facultative)<input id="pdqdate" type="date"></label><label>Statut<select id="pdqstatus"><option>À confirmer</option><option>À relancer</option><option>Accepté</option><option>Refusé</option><option>Réalisé</option><option>Facturé</option></select></label><button type="submit" ${sameRef?'disabled':''}>Confirmer et créer le devis</button></form></section>`;
 }
 async function saveQuoteFromPDF(e,docId){
  e.preventDefault();const doc=vault.documents.find(d=>d.id===docId);
@@ -156,22 +347,625 @@ async function saveQuoteFromPDF(e,docId){
  const siteId=$('pdqsite').value,ref=$('pdqref').value.trim(),name=$('pdqname').value.trim(),amount=Number($('pdqamount').value),date=$('pdqdate').value,status=$('pdqstatus').value;
  if(!vault.sites.some(s=>s.id===siteId)||!ref||!name||!Number.isFinite(amount)||amount<0)return alert('Vérifie la résidence, la référence et le montant.');
  if(vault.quotes.some(q=>q.pdfDocId===docId||String(q.ref||'').trim().toLocaleLowerCase('fr')===ref.toLocaleLowerCase('fr')))return alert('Ce PDF ou cette référence existe déjà parmi les devis. Aucun doublon créé.');
- const quote={ref,name,siteId,amount,date,status,pdfDocId:docId};
+ const quote={ref,name,siteId,amount,date,status,pdfDocId:docId,lineItems:structuredClone(doc.detectedQuoteLines||[])};
  if(!confirm('Créer le devis '+ref+' de '+money(amount)+' HT pour '+siteName(siteId)+' ?'))return;
  vault.quotes.push(quote);
- try{await persist();show('devis');alert('Devis enregistré et associé à son PDF.')}catch(err){vault.quotes.splice(vault.quotes.indexOf(quote),1);alert('Échec de sauvegarde : '+(err?.message||'erreur'))}
+ try{
+  await persist();
+  const raw=await readIdb();
+  if(!raw)throw Error('Coffre principal introuvable après écriture');
+  const reloaded=await openSeal(JSON.parse(raw),passphrase);
+  if(!reloaded.quotes.some(q=>q.ref===quote.ref&&q.siteId===quote.siteId&&Number(q.amount)===Number(quote.amount)))throw Error('Le devis n’est pas retrouvé dans le coffre enregistré');
+  show('devis');alert('Devis présent et vérifié dans le coffre principal. Actualise la page pour tester la persistance.');
+ }catch(err){
+  const idx=vault.quotes.indexOf(quote);if(idx>=0)vault.quotes.splice(idx,1);
+  alert('Échec de sauvegarde ou de vérification : '+(err?.message||'erreur'));
+ }
 }
 function exportRows(items){return items.length?items.map(x=>`<tr><td>${esc(x.label)}</td><td>${esc(x.value)}</td></tr>`).join(''):'<tr><td colspan="2">Aucune donnée renseignée</td></tr>'}
-function exportShell(title,subtitle,body){const w=window.open('','_blank');if(!w){alert('La fenêtre PDF a été bloquée. Autorise les fenêtres contextuelles pour cette application puis réessaie.');return}w.document.open();w.document.write(`<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><style>body{font-family:Arial,sans-serif;color:#203247;margin:28px;line-height:1.45}header{border-bottom:4px solid #173c5a;padding-bottom:14px;margin-bottom:22px}h1{color:#173c5a;margin:0 0 6px;font-size:24px}h2{color:#173c5a;font-size:17px;margin:24px 0 8px}.sub{color:#66788a;font-size:12px}.meta{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#f1f5f8;padding:12px;border-radius:8px}.meta div{padding:4px}table{width:100%;border-collapse:collapse;margin:8px 0 18px}th,td{text-align:left;border-bottom:1px solid #d9e1e8;padding:8px;font-size:12px}th{background:#edf2f6}.total{font-weight:bold;color:#173c5a}.foot{margin-top:30px;border-top:1px solid #ccd6df;padding-top:10px;color:#718092;font-size:10px}@media print{body{margin:14mm}.no-print{display:none}}@page{size:A4;margin:14mm}</style></head><body><header><h1>${esc(title)}</h1><div class="sub">${esc(subtitle)} · Généré le ${new Date().toLocaleDateString('fr-FR')}</div></header>${body}<div class="foot">Assistant Incendie · Document de synthèse généré à partir des données enregistrées. Les informations doivent être vérifiées avant diffusion.</div><p class="no-print"><button onclick="window.print()">Imprimer / Enregistrer en PDF</button></p><script>window.onload=()=>setTimeout(()=>window.print(),350)<\/script></body></html>`);w.document.close()}
+function exportShell(title,subtitle,body){const w=window.open('','_blank');if(!w){alert('La fenêtre PDF a été bloquée. Autorise les fenêtres contextuelles pour cette application puis réessaie.');return}w.document.open();w.document.write(`<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><style>body{font-family:Arial,sans-serif;color:#203247;margin:28px;line-height:1.45}header{border-bottom:4px solid #173c5a;padding-bottom:14px;margin-bottom:22px}h1{color:#173c5a;margin:0 0 6px;font-size:24px}h2{color:#173c5a;font-size:17px;margin:24px 0 8px}.sub{color:#66788a;font-size:12px}.meta{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#f1f5f8;padding:12px;border-radius:8px}.meta div{padding:4px}table{width:100%;border-collapse:collapse;margin:8px 0 18px}th,td{text-align:left;border-bottom:1px solid #d9e1e8;padding:8px;font-size:12px}th{background:#edf2f6}.total{font-weight:bold;color:#173c5a}.foot{margin-top:30px;border-top:1px solid #ccd6df;padding-top:10px;color:#718092;font-size:10px}@media print{body{margin:14mm}.no-print{display:none}}@page{size:A4;margin:14mm}
+:root{--navy:#08243f;--orange:#fa7718;--ink:#102b45}body{background:#f5f7fb;color:var(--ink)}header{background:linear-gradient(115deg,#041b31,#103856);padding:26px max(20px,calc((100% - 600px)/2));border-radius:0 0 24px 24px}header .brand{display:flex;align-items:center;gap:12px}header .flame{width:43px;height:62px;flex-shrink:0;color:var(--orange)}.brand-fl{font-size:43px;letter-spacing:-3px;color:var(--orange);font-weight:850}.brand-name{font-size:15px;font-weight:800;line-height:1.15}.brand-line{border-left:1px solid #ffffff80;padding-left:14px;margin-left:auto;font-size:11px;line-height:1.8}.services{display:flex;justify-content:space-between;gap:8px;font-size:10px;margin-top:20px;color:#fff}.version{font-size:10px;color:#b9d1e3;margin-top:14px}main{padding-top:22px}button{background:var(--orange);border-radius:13px;cursor:pointer;min-height:44px}button.light{background:#f0f4f8;color:var(--ink);border:1px solid #dce4ed}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #1377ce;outline-offset:2px}section{border:1px solid #e7ebf1;border-radius:18px;box-shadow:0 3px 15px #14345104}nav{box-shadow:0 -4px 25px #1434510b;z-index:10}nav button{background:white;display:flex;flex-direction:column;gap:3px;align-items:center;color:#466078;border-radius:8px;font-size:11px;min-width:54px}nav button.active{color:#e76608;background:#fff5ec}nav .nav-icon{font-size:22px;line-height:1.2}input,select{margin-top:5px;margin-bottom:10px;background:#fbfcfe}h2{letter-spacing:-.4px}.home-title{display:flex;align-items:center;gap:12px;margin:0 0 24px}.shield{background:linear-gradient(140deg,#fff1df,#ff791b);border:3px solid #cbd2d9;border-radius:45% 45% 50% 50%;padding:10px;font-size:23px}.home-title h2{margin:0 0 4px;font-size:23px}.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:22px}.quick{display:flex;flex-direction:column;align-items:center;gap:9px;padding:17px 4px;background:#eef5ff;color:#0872e6;font-size:12px}.quick span{font-size:28px}.quick.green{background:#edf9f3;color:#087a43}.quick.red{background:#fff1f2;color:#e81b29}.quick.orange{background:#fff5ea;color:#df6905}.search-home{padding:16px;margin-bottom:20px;border-radius:16px}.recent-head{display:flex;justify-content:space-between;align-items:center}.recent-head button{background:none;color:#0872e6;padding:8px}.site-card{display:block;background:white;color:var(--ink);text-align:left;width:100%;border:1px solid #e4eaf0;border-radius:17px;margin:10px 0;padding:17px}.site-card b{display:block;font-size:16px;margin-bottom:6px}.site-card .muted{line-height:1.6;overflow-wrap:anywhere}.site-card .tag{display:inline-block;margin-top:9px;background:#e0f7ed;color:#087743}.import-cta{width:100%;padding:20px;margin:18px 0 8px;font-size:18px;box-shadow:0 6px 18px #fa77181c}.import-cta small{display:block;font-size:11px;font-weight:400;margin-top:6px}.notice{border:1px solid #f3e2bf}.lock button{width:100%}@media(max-width:380px){.brand-line{font-size:9px;padding-left:8px}.brand-fl{font-size:36px}.brand-name{font-size:12px}.services{font-size:9px}.quick-grid{gap:5px}}
+</style></head><body><header><h1>${esc(title)}</h1><div class="sub">${esc(subtitle)} · Généré le ${new Date().toLocaleDateString('fr-FR')}</div></header>${body}<div class="foot">Assistant Incendie · Document de synthèse généré à partir des données enregistrées. Les informations doivent être vérifiées avant diffusion.</div><p class="no-print"><button onclick="window.print()">Imprimer / Enregistrer en PDF</button></p><script>window.onload=()=>setTimeout(()=>window.print(),350)<\/script></body></html>`);w.document.close()}
 function exportResidencePDF(){const id=$('exportSite')?.value;if(!id)return alert('Choisis une résidence.');const site=vault.sites.find(x=>x.id===id);if(!site)return;const syndic=vault.syndics.find(x=>x.id===site.syndicId);const c=vault.contracts?.[id];const qs=vault.quotes.filter(x=>x.siteId===id);const rs=vault.reminders.filter(x=>x.siteId===id);const docs=vault.documents.filter(x=>x.siteId===id);const items=c?equipmentFromLegacy(c):[];let body=`<div class="meta"><div><b>Résidence :</b> ${esc(site.name)}</div><div><b>N° de site :</b> ${esc(site.id)}</div><div><b>Adresse :</b> ${esc(site.address||'Non renseignée')}</div><div><b>Ville :</b> ${esc(site.city||'Non renseignée')}</div><div><b>Syndic :</b> ${esc(syndic?.name||'Non rattaché')}</div><div><b>Gestionnaire :</b> ${esc(site.gestionnaire||'Non renseigné')}</div></div><h2>Contrat global de maintenance</h2><table><tbody>${exportRows([{label:'Numéro',value:c?.number||'Non renseigné'},{label:'Montant global HT/an',value:c?money(c.amount):'Non renseigné'},{label:'Période',value:c?`${c.start||'—'} au ${c.end||'—'}`:'—'},{label:'Statut',value:c?.status||'Non renseigné'},{label:'Équipements couverts',value:items.join(', ')||c?.equipment||'Non renseignés'}])}</tbody></table><h2>Détail des montants par équipement</h2><table><thead><tr><th>Équipement</th><th>Montant HT/an</th></tr></thead><tbody>${exportRows(items.map(x=>({label:x,value:c?.equipmentPrices?.[x]!=null?money(c.equipmentPrices[x]):'Non détaillé'})))}</tbody></table><h2>Devis (${qs.length})</h2><table><thead><tr><th>Référence / objet</th><th>Montant HT</th></tr></thead><tbody>${exportRows(qs.map(q=>({label:`${q.ref} — ${q.name} (${q.status})`,value:money(q.amount)})))}</tbody></table><h2>Documents enregistrés (${docs.length})</h2><table><tbody>${exportRows(docs.map(d=>({label:d.name,value:d.category||'Autre'})))}</tbody></table><h2>Relances (${rs.length})</h2><table><tbody>${exportRows(rs.map(r=>({label:r.title,value:r.date||'Date non renseignée'})))}</tbody></table>`;exportShell(`Fiche résidence — ${site.name}`,`Site ${site.id}`,body)}
 function exportSyndicPDF(){const id=$('exportSyndic')?.value;if(!id)return alert('Choisis un syndic.');const syndic=vault.syndics.find(x=>x.id===id);if(!syndic)return;const sites=vault.sites.filter(x=>x.syndicId===id);const quotes=vault.quotes.filter(q=>sites.some(s=>s.id===q.siteId));const totalQuotes=quotes.reduce((n,q)=>n+Number(q.amount||0),0);const totalContracts=sites.reduce((n,s)=>n+Number(vault.contracts?.[s.id]?.amount||0),0);let body=`<div class="meta"><div><b>Syndic :</b> ${esc(syndic.name)}</div><div><b>Interlocuteur :</b> ${esc(syndic.contact||'Non renseigné')}</div><div><b>Téléphone :</b> ${esc(syndic.phone||'Non renseigné')}</div><div><b>E-mail :</b> ${esc(syndic.email||'Non renseigné')}</div><div><b>Résidences :</b> ${sites.length}</div><div><b>Devis enregistrés :</b> ${quotes.length}</div></div><h2>Synthèse du portefeuille</h2><table><tbody>${exportRows([{label:'Total annuel des contrats renseignés HT',value:sites.some(s=>vault.contracts?.[s.id])?money(totalContracts):'Aucun contrat renseigné'},{label:'Total des devis enregistrés HT',value:money(totalQuotes)}])}</tbody></table><h2>Résidences et contrats</h2><table><thead><tr><th>Résidence / site</th><th>Contrat HT/an</th></tr></thead><tbody>${exportRows(sites.map(s=>({label:`${s.name} — ${s.id} · ${s.address||''} · ${vault.contracts?.[s.id]?.status||'Sans statut'}`,value:vault.contracts?.[s.id]?money(vault.contracts[s.id].amount):'Non renseigné'})))}</tbody></table><h2>Devis par résidence</h2><table><thead><tr><th>Résidence — référence — objet — statut</th><th>Montant HT</th></tr></thead><tbody>${exportRows(quotes.map(q=>({label:`${siteName(q.siteId)} — ${q.ref} — ${q.name} (${q.status})`,value:money(q.amount)})))}</tbody></table>`;exportShell(`Dossier syndic — ${syndic.name}`,`Portefeuille de ${sites.length} résidence(s)`,body)}
 function filterDocs(q){q=q.toLocaleLowerCase('fr');document.querySelectorAll('[data-doc-card]').forEach(e=>e.hidden=!e.dataset.search.includes(q))}
 function openPDF(id){let d=vault.documents.find(x=>x.id===id);if(!d)return;try{let bin=atob(d.data),bytes=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);let url=URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}));let a=document.createElement('a');a.href=url;a.download=d.name;a.click();setTimeout(()=>URL.revokeObjectURL(url),60000);alert('Le PDF est exporté hors du coffre : conserve-le dans un emplacement sûr.')}catch(e){alert('Ouverture impossible')}}
 async function movePDF(id){let d=vault.documents.find(x=>x.id===id);if(!d)return;let site=prompt('Numéro de site de destination :',d.siteId);if(site===null)return;if(!vault.sites.some(s=>s.id===site))return alert('Numéro de site inconnu');let old=d.siteId;d.siteId=site;try{await persist();show('documents')}catch(e){d.siteId=old;alert('Enregistrement impossible')}}
 async function deletePDF(id){if(!confirm('Supprimer ce document du coffre ?'))return;let index=vault.documents.findIndex(x=>x.id===id);if(index<0)return;let d=vault.documents.splice(index,1)[0];try{await persist();show('documents')}catch(e){vault.documents.splice(index,0,d);alert('Suppression non enregistrée')}}
-async function exportBackup(){try{let pkg=await seal(vault,passphrase);let blob=new Blob([JSON.stringify(pkg,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='assistant-incendie-v3-6-1-sauvegarde-chiffree-'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000)}catch(e){alert('Export impossible')}}
-async function verifyStorage(){try{await writeQueue;const stored=await readIdb();if(!stored)throw Error('Aucune sauvegarde IndexedDB');const saved=migrate(await openSeal(JSON.parse(stored),passphrase));if(JSON.stringify(saved)!==JSON.stringify(vault))throw Error('La sauvegarde locale ne correspond pas aux données affichées');alert('Vérification réussie dans IndexedDB. Attention : Safari peut effacer son stockage. Exporte une sauvegarde chiffrée dans Fichiers.')}catch(e){alert('Vérification échouée : '+(e?.message||'erreur')+'. Exporte une sauvegarde chiffrée avant de fermer.')}}
-async function importBackup(event){let file=event.target.files?.[0];if(!file)return;try{if(file.size>8000000)throw Error('Fichier trop volumineux');let pkg=JSON.parse(await file.text()),imported;try{imported=await openSeal(pkg,passphrase)}catch(firstError){let other=prompt('Cette sauvegarde ne s’ouvre pas avec la phrase actuelle. Saisis sa phrase secrète d’origine (Annuler pour abandonner) :');if(other===null)return;imported=await openSeal(pkg,other)}imported=migrate(imported);if(!confirm('Remplacer toutes les modifications locales par cette sauvegarde ? Exporte d’abord une copie si nécessaire.'))return;let previous=vault;vault=imported;try{await persist()}catch(e){vault=previous;throw e}show('home');alert('Sauvegarde restaurée et écriture locale vérifiée.')}catch(e){alert('Restauration impossible : '+(e?.message||'vérifie le fichier et sa phrase secrète'))}finally{event.target.value=''}}
+async function verifyCurrentForBackup(){
+ const raw=await readIdb();if(!raw)throw Error('Coffre local absent');
+ const decoded=migrate(await openSeal(JSON.parse(raw),passphrase));
+ if(!sameBusinessData(decoded,vault))throw Error('Les données locales ne correspondent pas aux données affichées');
+}
+async function exportBackup(){try{await writeQueue;await verifyCurrentForBackup();let pkg=await seal(vault,passphrase);let blob=new Blob([JSON.stringify(pkg,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='assistant-incendie-principale-v383-sauvegarde-chiffree-'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000)}catch(e){alert('Export impossible')}}
+// Les métadonnées de sauvegarde sont ajoutées à la copie chiffrée par persist().
+// Leur absence dans le coffre en mémoire n'est pas une divergence métier.
+function sameBusinessData(a,b){
+ const strip=d=>{const x=structuredClone(d);delete x._savedAt;delete x._revision;return x};
+ return JSON.stringify(strip(a))===JSON.stringify(strip(b));
+}
+async function verifyStorage(){try{await writeQueue;const stored=await readIdb();if(!stored)throw Error('Aucune sauvegarde IndexedDB');const saved=migrate(await openSeal(JSON.parse(stored),passphrase));if(!sameBusinessData(saved,vault))throw Error('La sauvegarde locale ne correspond pas aux données affichées');alert('Vérification réussie dans IndexedDB. Attention : Safari peut effacer son stockage. Exporte une sauvegarde chiffrée dans Fichiers.')}catch(e){alert('Vérification échouée : '+(e?.message||'erreur')+'. Exporte une sauvegarde chiffrée avant de fermer.')}}
+async function importBackup(event){let file=event.target.files?.[0];if(!file)return;try{if(file.size>8000000)throw Error('Fichier trop volumineux');let pkg=JSON.parse(await file.text()),imported;try{imported=await openSeal(pkg,passphrase)}catch(firstError){let other=prompt('Cette sauvegarde ne s’ouvre pas avec la phrase actuelle. Saisis sa phrase secrète d’origine (Annuler pour abandonner) :');if(other===null)return;imported=await openSeal(pkg,other)}imported=migrate(validateVaultShape(imported));if(!confirm('Remplacer toutes les modifications locales par cette sauvegarde ? Exporte d’abord une copie si nécessaire.'))return;let previous=vault;vault=imported;try{await persist()}catch(e){vault=previous;throw e}show('home');alert('Sauvegarde restaurée et écriture locale vérifiée.')}catch(e){alert('Restauration impossible : '+(e?.message||'vérifie le fichier et sa phrase secrète'))}finally{event.target.value=''}}
+
+// V3.8.3: automatic filing and separate extinguisher tariff options.
+function canAutoImport(f){
+ const a=f.analysis,p=a?.fields||{};
+ if(f.issue||!a?.textFound)return false;
+ const existing=vault.sites.find(s=>String(s.id).toUpperCase()===String(p.number).toUpperCase())||vault.sites.find(s=>s.id===a.siteId);
+ if(!existing&&(!p.number||!p.name||!p.syndic))return false;
+ if(existing&&p.syndic&&existing.syndicId&&normalized(syndicName(existing.syndicId))!==normalized(p.syndic))return false;
+ if(a.category==='Devis'&&(!a.reference||!p.object||parseDetectedEuro(a.amount)===null))return false;
+ return true;
+}
+const extractBusinessFieldsOriginal=extractBusinessFields;
+extractBusinessFields=function(text,name){
+ const f=extractBusinessFieldsOriginal(text,name),lines=String(text||'').split(/\r?\n/).map(l=>l.trim()).filter(Boolean);
+ for(const [key,rx] of [['name',/^(?:syndicat des copropri[eé]taires|r[eé]sidence|copropri[eé]t[eé])\s*[:\-]\s*(.*)$/i],['syndic',/^(?:repr[eé]sent[eé] par|syndic(?: de copropri[eé]t[eé])?)\s*[:\-]\s*(.*)$/i]]){
+  if(f[key])continue;const at=lines.findIndex(l=>rx.test(l));if(at>=0){const value=lines[at].match(rx)[1].trim()||lines[at+1]||'';if(value&&!/^(?:adresse|n[°º]|identification)/i.test(value))f[key]=value.slice(0,key==='name'?120:100);}
+ }
+ return f;
+};
+const detectContractDetailsOriginal=detectContractDetails;
+detectContractDetails=function(text){
+ const d=detectContractDetailsOriginal(text),lines=String(text||'').split(/\r?\n/).map(l=>l.trim());
+ let base=d.prices.Extincteurs??null,supplement=d.optionSerenite??null;
+ const baseLine=lines.find(l=>/^(?:[☐□]\s*)?(?:prestation\s+)?extincteurs?\s*(?:base)?\s*:/i.test(l));
+ if(baseLine){const n=parseEuroAmount(baseLine);if(n!==null)base=n;}
+ for(const line of lines){if(/^(?:[☐□]\s*)?\+?\s*option\s+s[eé]r[eé]nit[eé]\s+extincteurs?\s*:/i.test(line)){const n=parseEuroAmount(line);if(n!==null)supplement=n;}}
+ d.extinguisherOptions={base,serenite:base!==null&&supplement!==null?Math.round((base+supplement)*100)/100:null,supplement};
+ if(base!==null){d.prices.Extincteurs=base;if(!d.items.includes('Extincteurs'))d.items.push('Extincteurs');}
+ return d;
+};
+function contractOptions(siteId){
+ const c=vault.contracts[siteId]||{};
+ if(c.extinguisherOptions)return c.extinguisherOptions;
+ return vault.documents.filter(d=>d.siteId===siteId&&d.contractProposal?.extinguisherOptions).at(-1)?.contractProposal.extinguisherOptions||{base:null,serenite:null,supplement:null};
+}
+function attachContractProposal(doc){
+ if(doc.category!=='Contrat de maintenance'||!doc.contractProposal)return;
+ const p=doc.contractProposal,old=vault.contracts[doc.siteId];
+ if(old){old.proposedItems=structuredClone(p.items||[]);old.proposedPrices=structuredClone(p.prices||{});old.proposedFees=structuredClone(p.fees||[]);old.otherProposedItems=structuredClone(p.otherItems||[]);old.proposedQuantities=structuredClone(p.quantityLines||[]);if(!old.extinguisherOptions||Object.values(old.extinguisherOptions).every(v=>v==null))old.extinguisherOptions=structuredClone(p.extinguisherOptions);return;}
+ vault.contracts[doc.siteId]={number:doc.detectedReference||'',amount:null,equipmentItems:[],equipmentPrices:{},proposedItems:p.items||[],proposedPrices:p.prices||{},proposedFees:p.fees||[],otherProposedItems:p.otherItems||[],proposedQuantities:p.quantityLines||[],extinguisherOptions:structuredClone(p.extinguisherOptions),extinguisherChoice:'',status:'À proposer',sourceDocId:doc.id};
+}
+function tariffLabel(value){return value==null?'Montant à compléter':money(value)+' HT/an';}
+const contractCardOriginal=contractCard;
+contractCard=function(siteId){
+ const c=vault.contracts[siteId],o=contractOptions(siteId);let html=contractCardOriginal(siteId);
+ if(c?.amount==null)html=html.replace('0,00 € HT/an','Montant global à compléter');
+ if(!c)return proposalEquipmentCard(siteId)+html;
+ return proposalEquipmentCard(siteId)+`<section><h3>Formule extincteurs</h3><p class="small">Deux tarifs proposés, un seul choix. Les autres prestations restent indépendantes.</p><div class="grid"><button class="${c.extinguisherChoice==='base'?'':'light'}" onclick="chooseExtinguisher(${jsArg(siteId)},'base')">${c.extinguisherChoice==='base'?'✓ ':''}Base<br>${tariffLabel(o.base)}</button><button class="${c.extinguisherChoice==='serenite'?'':'light'}" onclick="chooseExtinguisher(${jsArg(siteId)},'serenite')">${c.extinguisherChoice==='serenite'?'✓ ':''}Sérénité<br>${tariffLabel(o.serenite)}</button></div><p><b>Choix : ${c.extinguisherChoice==='base'?'Base':c.extinguisherChoice==='serenite'?'Sérénité':'En attente de décision'}</b></p><button class="light" onclick="chooseExtinguisher(${jsArg(siteId)},'')">Remettre en attente</button><p class="small">Ce choix ne modifie pas le statut de signature du contrat.</p></section>`+html;
+};
+async function chooseExtinguisher(siteId,choice){
+ const c=vault.contracts[siteId];if(!c||!['','base','serenite'].includes(choice))return;
+ const options=contractOptions(siteId),price=options[choice];
+ if(choice&&price==null){editContract(siteId);return alert('Complète le tarif '+(choice==='base'?'Base':'Sérénité')+' avant de choisir.');}
+ const previous=structuredClone(c),oldPrice=c.equipmentPrices?.Extincteurs;
+ c.extinguisherOptions=structuredClone(options);c.extinguisherChoice=choice;c.equipmentPrices={...c.equipmentPrices};c.equipmentItems=equipmentFromLegacy(c);
+ if(choice){c.equipmentPrices.Extincteurs=price;if(!c.equipmentItems.includes('Extincteurs'))c.equipmentItems.push('Extincteurs');}
+ else{delete c.equipmentPrices.Extincteurs;c.equipmentItems=c.equipmentItems.filter(x=>x!=='Extincteurs');}
+ if(c.amount!=null&&oldPrice!=null)c.amount=Math.round((c.amount-oldPrice+(choice?price:0))*100)/100;
+ else if(c.amount!=null&&choice)c.amount=null;
+ c.equipment=c.equipmentItems.join(', ');
+ try{await persist();showSite(siteId);}catch(e){vault.contracts[siteId]=previous;alert('Choix non enregistré : '+(e?.message||'erreur'));}
+}
+const editContractOriginal=editContract;
+editContract=function(siteId){
+ editContractOriginal(siteId);if(!$('ca'))return;
+ const c=vault.contracts[siteId]||{},o=contractOptions(siteId);
+ const form=$('ca').closest('form');
+ form.insertAdjacentHTML('afterbegin',`<section style="background:#fff6ed"><h3>Tarifs extincteurs proposés</h3><label>Base — montant annuel HT (€)<input id="extBase" type="number" min="0" step="0.01" value="${esc(o.base??'')}"></label><label>Sérénité — montant annuel HT total des extincteurs (€)<input id="extSerenite" type="number" min="0" step="0.01" value="${esc(o.serenite??'')}"></label><label>Formule retenue<select id="extChoice" onchange="applyExtChoice()"><option value="">En attente de décision</option><option value="base" ${c.extinguisherChoice==='base'?'selected':''}>Base</option><option value="serenite" ${c.extinguisherChoice==='serenite'?'selected':''}>Sérénité</option></select></label><p class="small">Sérénité comprend le tarif Base et son supplément. Aucun tarif manquant n’est inventé. Vérifie le montant global après modification.</p></section>`);
+ for(let i=0;i<EQUIPMENT.length;i++)if(c.proposedPrices?.[EQUIPMENT[i]]!=null&&!$('eq'+i).checked)$('ep'+i).value=c.proposedPrices[EQUIPMENT[i]];
+};
+function applyExtChoice(){const choice=$('extChoice').value;const price=choice==='base'?$('extBase').value:choice==='serenite'?$('extSerenite').value:'';if(choice){$('eq0').checked=true;$('ep0').disabled=false;$('ep0').value=price;}else{$('eq0').checked=false;$('ep0').disabled=true;$('ep0').value='';}$('ca').value='';}
+const saveContractOriginal=saveContract;
+saveContract=async function(e,siteId){
+ const base=parseDetectedEuro($('extBase').value),serenite=parseDetectedEuro($('extSerenite').value),choice=$('extChoice').value;
+ if(choice&&(choice==='base'?base:serenite)===null){e.preventDefault();return alert('Renseigne le tarif de la formule choisie.');}
+ if(choice&&(!$('eq0').checked||Number($('ep0').value)!==(choice==='base'?base:serenite))){e.preventDefault();return alert('Le montant Extincteurs doit correspondre à la formule choisie. Sélectionne à nouveau la formule.');}
+ const old=vault.contracts[siteId],prior=old?structuredClone(old):undefined;
+ vault.contracts[siteId]={...old,extinguisherOptions:{base,serenite,supplement:base!==null&&serenite!==null?Math.round((serenite-base)*100)/100:null},extinguisherChoice:choice};
+ await saveContractOriginal(e,siteId);
+ if($('extChoice')){if(prior===undefined)delete vault.contracts[siteId];else vault.contracts[siteId]=prior;}
+};
+function showContracts(){if(!unlocked)return;current='contracts';el.innerHTML='<h2>Contrats de maintenance</h2><p class="small">Ouvre une résidence pour choisir Base ou Sérénité et modifier ses prestations.</p>'+vault.sites.filter(s=>vault.contracts[s.id]||vault.documents.some(d=>d.siteId===s.id&&d.category==='Contrat de maintenance')).map(s=>`<button class="site-card" onclick="showSite(${jsArg(s.id)})"><b>${esc(s.name)} ›</b><div class="muted">${esc(syndicName(s.syndicId))} · Site ${esc(s.id)}</div></button>`).join('');}
+
+
+// Match priced service lines even when PDF extraction adds spaces around punctuation.
+const detectAllContractDetailsPrevious=detectContractDetails;
+detectContractDetails=function(text){
+ const result=detectAllContractDetailsPrevious(text),lines=String(text||'').split(/\r?\n/).map(l=>l.trim());
+ const aliases=[/^(?:extincteurs?)(?: base)?$/,/^(?:baes|baeh|blocs? secours|eclairage de securite)$/,/^desenfumage escalier$/,/^colonnes? seches?$/,/^desenfumage (?:des )?circulations?$/,/^ferme portes?$/,/^ventilation (?:du )?parking$/,/^(?:vmc|ventilation mecanique controlee)$/,/^pompes? (?:de )?relevage$/,/^portes? coupe feu$/,/^(?:alarme incendie|ssi|baas)$/];
+ const readLine=(line,summary=false)=>{
+  const match=line.match(/^\s*(?:[☐□]\s*)?(?:prestation\s+)?([^:€]+?)\s*:\s*([\d\s.,]+)\s*€/i);if(!match)return;
+  if(!summary&&!/^prestation\b/i.test(line))return;
+  const label=normalized(match[1]).trim(),index=aliases.findIndex(rx=>rx.test(label)),amount=parseDetectedEuro(match[2]);
+  if(index<0||amount===null)return;
+  const item=EQUIPMENT[index];if(!result.items.includes(item))result.items.push(item);result.prices[item]=amount;
+ };
+ for(const line of lines)readLine(line);
+ // The WITH-fire-safety summary is distinct from standalone VMC/pump tariffs.
+ let inSummary=false;
+ for(const line of lines){const n=normalized(line).trim();if(/^avec la securite incendie/.test(n)){inSummary=true;continue;}if(inSummary&&/^(?:frais annexes|cout total)/.test(n))inSummary=false;if(inSummary)readLine(line,true);}
+ result.fees=[];let inFees=false;
+ for(const line of lines){const n=normalized(line).trim();if(/^frais annexes/.test(n)){inFees=true;continue;}if(inFees&&/^cout total/.test(n))break;if(!inFees||!/^frais de/.test(n))continue;const m=line.match(/^(.*?)\s+([\d\s.,]+)\s*€/);if(m){const amount=parseDetectedEuro(m[2]);if(amount!==null)result.fees.push({label:m[1].trim(),amount});}}
+ return result;
+};
+function proposalEquipmentCard(siteId){
+ const c=vault.contracts[siteId]||{},docs=vault.documents.filter(d=>d.siteId===siteId&&d.category==='Contrat de maintenance');
+ const p=docs.filter(d=>d.contractProposal).at(-1)?.contractProposal||{};
+ const items=Array.from(new Set([...(c.proposedItems||[]),...(p.items||[])]));
+ if(!items.length)return '';
+ const prices={...c.proposedPrices,...p.prices},selected=equipmentFromLegacy(c),fees=p.fees||c.proposedFees||[];
+ return `<section><h3>Prestations détectées dans le PDF (${items.length})</h3><p class="small">Tous les montants proposés restent visibles. Clique sur « Modifier les prestations » pour retenir les équipements souhaités.</p>${items.map(item=>{const chosen=selected.includes(item);return `<div class="row" style="border-bottom:1px solid #edf0f4;padding-bottom:12px"><div><b>${esc(item)}</b><div class="muted">${chosen?'Retenue'+(item==='Extincteurs'&&c.extinguisherChoice?' · '+(c.extinguisherChoice==='base'?'Base':'Sérénité'):''):'À choisir'}</div></div><div style="text-align:right"><b>${prices[item]==null?'À compléter':money(prices[item])+' HT/an'}</b>${chosen&&c.equipmentPrices?.[item]!=null&&c.equipmentPrices[item]!==prices[item]?`<div class="muted">Retenu : ${money(c.equipmentPrices[item])} HT/an</div>`:''}</div></div>`}).join('')}${fees.length?'<h4>Frais annexes proposés</h4>'+fees.map(f=>`<div class="row"><span>${esc(f.label)}</span><b>${money(f.amount)} HT</b></div>`).join('')+'<p class="small">Frais affichés séparément : leur application au total reste à vérifier selon les prestations retenues.</p>':''}<button onclick="editContract(${jsArg(siteId)})">Modifier les prestations</button></section>`;
+}
+
+
+// Read embedded raster images locally; retain only photographic candidates.
+function photographicPixels(data,width,height){
+ if(width<180||height<110||width/height<0.55||width/height>3.2)return false;
+ const colors=new Set();let used=0,extremes=0;
+ const stride=Math.max(1,Math.floor(width*height/3500));
+ for(let pixel=0;pixel<width*height;pixel+=stride){const i=pixel*4;if(data[i+3]<220)continue;used++;const r=data[i],g=data[i+1],b=data[i+2];if(Math.max(r,g,b)>245&&Math.min(r,g,b)>235||Math.max(r,g,b)<20)extremes++;colors.add((r>>4)*256+(g>>4)*16+(b>>4));}
+ return used>100&&colors.size>=100&&extremes/used<0.72;
+}
+async function embeddedImageCanvas(img,lib){
+ if(!document.createElement||!img)return null;
+ const width=img.width||img.bitmap?.width,height=img.height||img.bitmap?.height;
+ if(!width||!height||width*height>20000000||width<180||height<110)return null;
+ const canvas=document.createElement('canvas');canvas.width=width;canvas.height=height;const ctx=canvas.getContext('2d',{willReadFrequently:true});if(!ctx)return null;
+ if(img.bitmap)ctx.drawImage(img.bitmap,0,0);
+ else if(img.data){
+  const image=ctx.createImageData(width,height),source=img.data;
+  if(img.kind===lib.ImageKind.RGBA_32BPP||source.length===width*height*4)image.data.set(source);
+  else if(img.kind===lib.ImageKind.RGB_24BPP||source.length===width*height*3){for(let i=0,j=0;i<source.length;i+=3,j+=4){image.data[j]=source[i];image.data[j+1]=source[i+1];image.data[j+2]=source[i+2];image.data[j+3]=255;}}
+  else return null;
+  ctx.putImageData(image,0,0);
+ }else return null;
+ const small=document.createElement('canvas'),scale=Math.min(1,480/width,360/height);small.width=Math.round(width*scale);small.height=Math.round(height*scale);const out=small.getContext('2d',{willReadFrequently:true});out.drawImage(canvas,0,0,small.width,small.height);
+ const pixels=out.getImageData(0,0,small.width,small.height).data;
+ if(!photographicPixels(pixels,small.width,small.height))return null;
+ const data=small.toDataURL('image/jpeg',0.72);if(data.length>120000)return null;
+ return {data,width:small.width,height:small.height};
+}
+async function extractPagePhotos(page,lib,pageNumber){
+ if(!document.createElement)return [];
+ const ops=await page.getOperatorList(),photos=[];
+ for(let i=0;i<ops.fnArray.length&&photos.length<4;i++){
+  const type=ops.fnArray[i],args=ops.argsArray[i];let img=null;
+  if(type===lib.OPS.paintInlineImageXObject)img=args[0];
+  else if(type===lib.OPS.paintImageXObject||type===lib.OPS.paintImageXObjectRepeat){const id=args[0],pool=String(id).startsWith('g_')?page.commonObjs:page.objs;img=await Promise.race([new Promise(resolve=>{try{pool.get(id,resolve)}catch(e){resolve(null)}}),new Promise(resolve=>setTimeout(()=>resolve(null),1500))]);}
+  if(img){const photo=await embeddedImageCanvas(img,lib);if(photo&&!photos.some(p=>p.data===photo.data))photos.push({...photo,page:pageNumber});}
+ }
+ return photos;
+}
+function residenceImages(siteId){return vault.documents.filter(d=>d.siteId===siteId&&d.category==='Contrat de maintenance').flatMap(d=>(d.photos||[]).map((p,i)=>({...p,docId:d.id,index:i,source:d.name})));}
+function residencePhotoCard(siteId){
+ const site=vault.sites.find(x=>x.id===siteId),images=residenceImages(siteId);if(!images.length||site?.photoHidden)return '';
+ const chosen=images.find(p=>p.docId===site?.photoDocId&&p.index===site?.photoIndex),photo=chosen||images[0];
+ return `<img src="${esc(photo.data)}" alt="Image extraite du contrat de la résidence" style="width:100%;height:190px;object-fit:cover;border-radius:13px"><p class="muted">Image extraite du contrat · page ${photo.page}${chosen?'':' · À vérifier'}</p>${images.length>1?`<button class="light" onclick="chooseResidencePhoto(${jsArg(siteId)})">Choisir parmi ${images.length} images</button>`:''}<button class="light" onclick="hideResidencePhoto(${jsArg(siteId)})">Masquer cette image</button>`;
+}
+function chooseResidencePhoto(siteId){el.innerHTML=`<button class="light" onclick="showSite(${jsArg(siteId)})">← Résidence</button><h2>Images présentes dans le contrat</h2><p class="small">Choisis la photo correspondant à la résidence.</p>`+residenceImages(siteId).map(p=>`<section><img src="${esc(p.data)}" alt="Image du contrat, page ${p.page}" style="width:100%;max-height:260px;object-fit:contain"><p class="small">${esc(p.source)} · page ${p.page}</p><button onclick="saveResidencePhoto(${jsArg(siteId)},${jsArg(p.docId)},${p.index})">Utiliser cette image</button></section>`).join('');}
+async function saveResidencePhoto(siteId,docId,index){const site=vault.sites.find(s=>s.id===siteId),old=structuredClone(site);if(!site)return;Object.assign(site,{photoDocId:docId,photoIndex:index,photoHidden:false});try{await persist();showSite(siteId)}catch(e){Object.assign(site,old);alert('Photo non enregistrée : '+e.message)}}
+async function hideResidencePhoto(siteId){const site=vault.sites.find(s=>s.id===siteId);if(!site)return;const old=site.photoHidden;site.photoHidden=true;try{await persist();showSite(siteId)}catch(e){site.photoHidden=old;alert('Modification non enregistrée.')}}
+const detectCompleteEquipmentPrevious=detectContractDetails;
+detectContractDetails=function(text){
+ const d=detectCompleteEquipmentPrevious(text);d.otherItems=[];
+ for(const line of String(text||'').split(/\r?\n/)){
+  const m=line.trim().match(/^prestation\s+([^:]{2,100})\s*:\s*([\d\s.,]+)\s*€/i);if(!m)continue;
+  const label=m[1].trim(),key=normalized(label),amount=parseDetectedEuro(m[2]);if(amount===null)continue;
+  const known=EQUIPMENT_PATTERNS.some(rx=>rx.test(key))||/^(?:blocs? secours|ferme portes?)$/.test(key);
+  if(!known&&!d.otherItems.some(x=>normalized(x.label)===key))d.otherItems.push({label,amount});
+ }
+ return d;
+};
+const equipmentSummaryPrevious=proposalEquipmentCard;
+proposalEquipmentCard=function(siteId){
+ let html=equipmentSummaryPrevious(siteId);const c=vault.contracts[siteId]||{},p=vault.documents.filter(d=>d.siteId===siteId&&d.contractProposal).at(-1)?.contractProposal||{},o=contractOptions(siteId);
+ // Display both extinguisher prices in the equipment list itself.
+ if(o.base!=null||o.serenite!=null){const baseMarkup=o.base==null?'À compléter':money(o.base)+' HT/an';html=html.replace(`<b>${baseMarkup}</b>`,`<b>Base : ${baseMarkup}</b><div class="muted">Sérénité : ${tariffLabel(o.serenite)}</div>`);}
+ const extra=p.otherItems||c.otherProposedItems||[];
+ if(extra.length)html+=`<section><h3>Autres prestations détectées (${extra.length})</h3>${extra.map(x=>`<div class="row"><b>${esc(x.label)}</b><span>${money(x.amount)} HT/an</span></div>`).join('')}<p class="small">Libellés conservés tels qu’ils figurent dans le PDF.</p></section>`;
+ return html;
+};
+
+
+function equipmentHeading(line){
+ const n=normalized(line).trim();
+ const aliases=[/^(?:extincteurs?)(?: base)?$/,/^(?:baes|baeh|blocs? secours|eclairage de securite)$/,/^desenfumage escalier$/,/^colonnes? seches?$/,/^desenfumage (?:des )?circulations?$/,/^ferme portes?$/,/^ventilation (?:du )?parking(?: hors centrale co)?$/,/^vmc(?: hors vmc gaz)?$/,/^pompes? (?:de )?relevage$/,/^portes? coupe feu$/,/^(?:alarme incendie|ssi|baas)$/];
+ const i=aliases.findIndex(rx=>rx.test(n));return i<0?'':EQUIPMENT[i];
+}
+function extractEquipmentQuantities(text){
+ const lines=String(text||'').split(/\r?\n/).map(l=>l.trim()).filter(Boolean),results=[];
+ let group='',table=false,previousLabel='',option=false;
+ for(const line of lines){
+  const heading=equipmentHeading(line);if(heading){group=heading;table=false;option=false;previousLabel='';continue;}
+  if(/^option serenite/.test(normalized(line))){option=true;table=false;previousLabel='';}
+  if(/mat[eé]riel.*(?:qt[eé]|quantit[eé]).*(?:p\.?u\.?|prix)/i.test(line)){table=true;previousLabel='';continue;}
+  if(/^prestation\s+/i.test(line)||/^(?:les recharges|si evolution|prestations retenues|frais annexes|cout total)/.test(normalized(line))){table=false;continue;}
+  if(!table||!group)continue;
+  // Two monetary columns are required: unit price and line amount.
+  const amounts=Array.from(line.matchAll(/(\d[\d\s.,]*?)\s*€/g));
+  if(amounts.length>=2){
+   const unitMatch=amounts[amounts.length-2],totalMatch=amounts[amounts.length-1];
+   let leading=line.slice(0,unitMatch.index),rawUnit=unitMatch[1];
+   // In text extraction, quantity and unit price can share the same token run.
+   const tokens=rawUnit.trim().split(/\s+/);let quantity=null,unitPrice=null,amount=parseDetectedEuro(totalMatch[1]);
+   for(let k=1;k<tokens.length;k++){
+    const qraw=tokens.slice(0,k).join(''),uraw=tokens.slice(k).join(' '),q=Number(qraw),u=parseDetectedEuro(uraw);
+    if(/^\d+$/.test(qraw)&&q>0&&u!==null&&amount!==null&&Math.abs(q*u-amount)<=0.02){quantity=q;unitPrice=u;break;}
+   }
+   if(quantity===null){
+    unitPrice=parseDetectedEuro(rawUnit);
+    const qmatch=leading.match(/(?:^|\s)(\d+(?:\s+\d)?)\s*$/);
+    if(qmatch){const q=Number(qmatch[1].replace(/\s/g,''));if(q>0&&unitPrice!==null&&amount!==null&&Math.abs(q*unitPrice-amount)<=0.02){quantity=q;leading=leading.slice(0,qmatch.index).trim();}}
+   }
+   if(amount===null)continue;
+   const label=leading.trim()||previousLabel||group;
+   results.push({equipment:group,label,quantity,unitPrice,amount,option:option?'sereniteSupplement':''});previousLabel='';
+  }else if(!/^(?:n[°º]|fl protection|sas au capital|\d+\s*\/\s*\d+)/i.test(line)){
+   // Material labels can wrap over several lines in a table.
+   if(results.length&&/^(?:securite|et maintenance)/.test(normalized(line))&&results.at(-1).equipment===group)results.at(-1).label+=' '+line;
+   else previousLabel=(previousLabel+' '+line).trim().slice(0,160);
+  }
+ }
+ return results;
+}
+const detectQuantitiesPrevious=detectContractDetails;
+detectContractDetails=function(text){const details=detectQuantitiesPrevious(text);details.quantityLines=extractEquipmentQuantities(text);return details;};
+const summaryWithImagesPrevious=proposalEquipmentCard;
+proposalEquipmentCard=function(siteId){
+ let html=summaryWithImagesPrevious(siteId);
+ const c=vault.contracts[siteId]||{},p=vault.documents.filter(d=>d.siteId===siteId&&d.contractProposal).at(-1)?.contractProposal||{},lines=p.quantityLines||c.proposedQuantities||[];
+ if(!lines.length)return html;
+ const groups=Array.from(new Set(lines.map(l=>l.equipment)));
+ const table=`<section><h3>Quantitatif des équipements</h3><p class="small">Quantités et prix extraits du contrat. Une quantité illisible reste « À vérifier ».</p>${groups.map(group=>`<h4>${esc(group)}</h4><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px"><thead><tr><th style="text-align:left;padding:8px">Matériel</th><th>Qté</th><th>PU HT</th><th>Montant HT</th></tr></thead><tbody>${lines.filter(l=>l.equipment===group).map(l=>`<tr><td style="padding:9px 5px;border-top:1px solid #e5eaf0">${esc(l.label)}${l.option?' · supplément Sérénité':''}</td><td style="text-align:center">${l.quantity??'À vérifier'}</td><td style="text-align:right;white-space:nowrap">${l.unitPrice==null?'—':money(l.unitPrice)}</td><td style="text-align:right;white-space:nowrap">${money(l.amount)}</td></tr>`).join('')}</tbody></table></div>`).join('')}<p class="small">Le supplément Sérénité concerne les mêmes extincteurs : il n’ajoute pas d’appareils au quantitatif.</p></section>`;
+ return html+table;
+};
+
+
+let quoteBundleDraft=null;
+function cleanQuoteText(text){return String(text||'').replace(/†/g,' ').replace(/Ä/g,'€').replace(/N∞/g,'N°');}
+function bundleFields(text){
+ const clean=cleanQuoteText(text),f=extractBusinessFields(clean,''),lines=clean.split(/\r?\n/).map(l=>l.trim()).filter(Boolean);
+ const concern=lines.findIndex(l=>/^concerne\s*:/i.test(l));
+ if(concern>=0){
+  const block=lines.slice(concern+1,concern+12),siteLine=block.find(l=>/\bSITE\s*N[°ºo]?\s*\d+/i.test(l));
+  const number=siteLine?.match(/\bSITE\s*N[°ºo]?\s*(\d+)/i)?.[1];if(number)f.number=number;
+  const title=block.find(l=>/^(?:SDC|R[EÉ]SIDENCE|COPROPRI[EÉ]T[EÉ])\b/i.test(l));if(title)f.name=title.slice(0,120);
+  const syn=block.join('\n').match(/\b(CABINET\s+[^\n]+|SYNDIC\s*:\s*[^\n]+)/i);if(syn)f.syndic=syn[1].replace(/^syndic\s*:\s*/i,'').trim().slice(0,100);
+  const street=block.find(l=>/^\d+[\w/ -]*\s+(?:rue|avenue|boulevard|place|all[eé]e|chemin)\b/i.test(l));if(street)f.street=street.split(/\bCABINET\b|\bSYNDIC\b/i)[0].trim().slice(0,160);
+  const loc=block.find(l=>/^\d{5}\s+/.test(l)&&!/PARIS\b/i.test(l)&&!/\brue\b/i.test(l));if(loc)f.city=loc.replace(/\s+FR\s+FRANCE.*$/i,'').trim();
+ }
+ f.gestionnaire=detectManagerName(clean);
+ f.ref=(clean.match(/\bC\d{5,12}\b/)||[])[0]||'';
+ f.lineItems=extractQuoteLineItems(clean);
+ f.object=(clean.match(/objet\s+du\s+devis\s*:\s*([^\n]+)/i)||[])[1]?.trim()||'';
+ const date=clean.match(/\b(\d{2})\/(\d{2})\/(\d{4})\b/);if(date)f.date=`${date[3]}-${date[2]}-${date[1]}`;
+ const total=clean.match(/TOTAL\s*H\s*\.?\s*T\s*\.?[^\d]{0,40}(\d[\d\s.,]*?)\s*€/i);f.amount=total?parseDetectedEuro(total[1]):null;
+ return f;
+}
+function detectQuoteBundle(pages,name){
+ const groups=[],annexPages=[];let currentGroup=null;
+ pages.forEach((raw,index)=>{
+  const text=cleanQuoteText(raw),ref=(text.match(/\bC\d{5,12}\b/)||[])[0]||'';
+  const annex=/conditions\s+(?:particulieres|particulières|generales|générales)|objet\s+de\s+la\s+vente/i.test(text)&&!ref;
+  if(annex){currentGroup=null;annexPages.push(index+1);return;}
+  if(ref){if(!currentGroup||currentGroup.ref!==ref){currentGroup={ref,pages:[],texts:[]};groups.push(currentGroup);}currentGroup.pages.push(index+1);currentGroup.texts.push(text);}
+  else if(currentGroup){currentGroup.pages.push(index+1);currentGroup.texts.push(text);}else annexPages.push(index+1);
+ });
+ const annexText=annexPages.map(n=>pages[n-1]).join('\n'),annexFields=extractBusinessFields(annexText,name);
+ const quotes=groups.map(group=>{const fields=bundleFields(group.texts.join('\n'));if(fields.number&&annexFields.number===fields.number){for(const key of ['name','street','city','syndic'])if(!fields[key]&&annexFields[key])fields[key]=annexFields[key];}return {...fields,ref:group.ref,sourcePages:group.pages};});
+ return {quotes,annexPages,pageCount:pages.length};
+}
+function validBundledQuote(q){return !!(q.ref&&q.number&&q.name&&q.syndic&&q.object&&q.amount!==null&&Number.isFinite(Number(q.amount))&&Number(q.amount)>=0);}
+function renderQuoteBundle(){
+ const d=quoteBundleDraft;if(!d)return;
+ $('pdfDrafts').innerHTML=`<section><h3>${d.bundle.quotes.length} devis détectés dans ce PDF</h3><p class="small">Chaque devis aura sa propre référence, son montant et ses pages source. Le PDF original est conservé une seule fois. Les signatures et accords restent à confirmer.</p>${d.bundle.quotes.map((q,i)=>`<section><b>${esc(q.ref)} · pages ${q.sourcePages.join(', ')}</b><label>Référence<input id="bref${i}" value="${esc(q.ref)}"></label><label>Objet<input id="bobject${i}" value="${esc(q.object)}"></label><label>Montant HT<input id="bamount${i}" type="number" step="0.01" min="0" value="${q.amount??''}"></label><label>N° site<input id="bnumber${i}" value="${esc(q.number)}"></label><label>Résidence<input id="bname${i}" value="${esc(q.name)}"></label><label>Syndic<input id="bsyndic${i}" value="${esc(q.syndic)}"></label><label>Gestionnaire<input id="bmanager${i}" value="${esc(q.gestionnaire||'')}"></label><p class="small">${esc(q.street||'')} · ${esc(q.city||'')}</p></section>`).join('')}${d.bundle.annexPages.length?`<p class="notice">Pages annexes : ${d.bundle.annexPages.join(', ')}. Conservées dans le PDF, sans créer de devis ni de contrat de maintenance.</p>`:''}<button onclick="saveQuoteBundle()">Enregistrer les devis séparément</button></section>`;
+}
+async function saveQuoteBundle(){
+ const draft=quoteBundleDraft;if(!draft)return;
+ const quotes=draft.bundle.quotes.map((q,i)=>({...q,ref:$('bref'+i).value.trim(),object:$('bobject'+i).value.trim(),number:$('bnumber'+i).value.trim(),name:$('bname'+i).value.trim(),syndic:$('bsyndic'+i).value.trim(),gestionnaire:$('bmanager'+i).value.trim(),amount:$('bamount'+i).value===''?null:Number($('bamount'+i).value)}));
+ if(!quotes.every(validBundledQuote))return alert('Une information nécessaire manque. Complète les champs avant d’enregistrer les devis.');
+ if(new Set(quotes.map(q=>q.ref.toUpperCase())).size!==quotes.length)return alert('Deux devis portent la même référence : vérifie le découpage.');
+ const original=vault.documents.find(d=>d.data===draft.data);
+ if(!original&&vault.documents.reduce((n,d)=>n+d.size,0)+draft.size>MAX_ALL)return alert('Limite du coffre atteinte.');
+ const before=structuredClone(vault);let count=0;
+ try{
+  const doc=original||{id:uid(),name:draft.name,size:draft.size,data:draft.data,category:'Devis',siteId:'',quoteBundle:true,sourcePageCount:draft.bundle.pageCount,annexPages:draft.bundle.annexPages};
+  const quoteSiteIds=[];
+  for(const q of quotes){
+   let syndic=vault.syndics.find(s=>normalized(s.name)===normalized(q.syndic));if(!syndic){syndic={id:'SY-'+uid(),name:q.syndic,contact:'',phone:'',email:''};vault.syndics.push(syndic);}
+   let site=vault.sites.find(s=>s.id.toUpperCase()===q.number.toUpperCase());
+   if(site&&site.syndicId&&normalized(syndicName(site.syndicId))!==normalized(q.syndic))throw Error('Le syndic détecté diffère de celui du site '+q.number+'. Vérifie le rattachement.');
+   if(!site){site={id:q.number,name:q.name,address:q.street||'',city:q.city||'',syndicId:syndic.id,gestionnaire:q.gestionnaire||'',devis:0,contrat:0};vault.sites.push(site);}else if(!site.syndicId)site.syndicId=syndic.id;
+   attachManagerToSite(site,q.gestionnaire);quoteSiteIds.push(site.id);
+   const existing=vault.quotes.find(x=>x.ref.toUpperCase()===q.ref.toUpperCase());
+   if(existing){if(existing.siteId!==site.id)throw Error('La référence '+q.ref+' existe pour une autre résidence.');if(existing.pdfDocId&&existing.pdfDocId!==doc.id)continue;existing.pdfDocId=doc.id;existing.sourcePages=q.sourcePages;if(q.gestionnaire)existing.gestionnaire=q.gestionnaire;existing.lineItems=structuredClone(q.lineItems||[]);}
+   else{vault.quotes.push({ref:q.ref,name:q.object,siteId:site.id,amount:q.amount,date:q.date||'',status:'À confirmer',pdfDocId:doc.id,sourcePages:q.sourcePages,gestionnaire:q.gestionnaire||'',lineItems:structuredClone(q.lineItems||[])});count++;}
+  }
+  doc.quoteBundle=true;doc.category='Devis';doc.siteId=doc.siteId||quoteSiteIds[0];doc.siteIds=Array.from(new Set([...(doc.siteIds||[]),...quoteSiteIds]));doc.annexPages=draft.bundle.annexPages;doc.quoteReferences=quotes.map(q=>q.ref);
+  if(!original)vault.documents.push(doc);
+  await persist();quoteBundleDraft=null;stagedPDFs=[];show('devis');alert(count+' nouveau(x) devis enregistré(s) séparément. Le PDF original et les pages associées sont conservés.');
+ }catch(e){vault=before;alert('Import annulé : '+(e?.message||'erreur de sauvegarde'));}
+}
+function openQuoteSource(index){const q=vault.quotes[index];if(!q?.pdfDocId)return;const doc=vault.documents.find(d=>d.id===q.pdfDocId);if(!doc)return alert('PDF source introuvable.');if(q.sourcePages?.length)alert('Devis '+q.ref+' : pages '+q.sourcePages.join(', ')+' du PDF original.');openPDF(doc.id);}
+
+
+function detectManagerName(text){
+ const lines=String(text||'').split(/\r?\n/).map(l=>l.trim());
+ const rx=/(?:[aà]\s+l['’]attention\s+de|^gestionnaire(?=\s*:))\s*:?\s*(.*)$/i;
+ for(let i=0;i<lines.length;i++){const m=lines[i].match(rx);if(!m)continue;const name=(m[1]||lines[i+1]||'').split(/\s+(?:commercial|date\s+[eé]mission|t[eé]l[eé]phone|e-?mail)\b/i)[0].trim();if(name&&/[a-zà-ÿ]/i.test(name)&&!/^non renseign/i.test(name))return name.slice(0,100);}
+ return '';
+}
+function siteManagerNames(site){return Array.from(new Set([site?.gestionnaire,...(site?.gestionnaires||[])].filter(Boolean)));}
+function attachManagerToSite(site,name){if(!site||!name)return;const trimmed=String(name).trim();if(!trimmed)return;const names=siteManagerNames(site);if(!names.some(n=>normalized(n)===normalized(trimmed)))names.push(trimmed);site.gestionnaires=names;if(!site.gestionnaire)site.gestionnaire=trimmed;}
+const extractManagerFieldsPrevious=extractBusinessFields;
+extractBusinessFields=function(text,name){const fields=extractManagerFieldsPrevious(text,name);fields.gestionnaire=detectManagerName(text);return fields;};
+
+
+// V3.8: commercial agreement and execution are distinct operational facts.
+let salesYear='all',quoteFilter='all';
+function todayLocal(){const n=new Date();return `${n.getFullYear()}-${String(n.getMonth()+1).padStart(2,'0')}-${String(n.getDate()).padStart(2,'0')}`;}
+function commercialState(q){if(q.commercialStatus)return q.commercialStatus;return ['Accepté','Réalisé','Facturé'].includes(q.status)?'Accepté':q.status||'À confirmer';}
+function workState(q){return q.workStatus||(q.status==='Réalisé'?'Réalisé':q.status==='Facturé'?'À vérifier':'À planifier');}
+function acceptedQuote(q){return commercialState(q)==='Accepté';}
+function quoteIsDone(q){return workState(q)==='Réalisé';}
+function quoteNeedsReminder(q){return !['Accepté','Refusé'].includes(commercialState(q))&&(commercialState(q)==='À relancer'||!!q.followupDate&&q.followupDate<=todayLocal());}
+function operationalBadge(label,tone=''){return `<span class="sales-badge ${tone}">${esc(label)}</span>`;}
+function quoteSalesBadges(q){
+ const commercial=commercialState(q),work=workState(q);let b=operationalBadge(commercial,commercial==='Accepté'?'green':commercial==='Refusé'?'red':quoteNeedsReminder(q)?'orange':'');
+ if(acceptedQuote(q)){b+=operationalBadge(work,work==='Réalisé'?'green':work==='Planifié'?'blue':'orange');if(work==='Planifié'&&q.plannedDate&&q.plannedDate<todayLocal())b+=operationalBadge('Date prévue dépassée','red');}
+ if(quoteNeedsReminder(q)&&commercial!=='À relancer')b+=operationalBadge('À relancer','orange');
+ if(q.status==='Facturé'&&!quoteIsDone(q))b+=operationalBadge('Réalisation à vérifier','orange');
+ return `<div class="sales-badges">${b}</div>`;
+}
+function siteSalesBadges(siteId){const qs=vault.quotes.filter(q=>q.siteId===siteId),accepted=qs.filter(acceptedQuote).length,reminders=qs.filter(quoteNeedsReminder).length,pending=qs.filter(q=>acceptedQuote(q)&&workState(q)==='À planifier').length;return `<div class="sales-badges">${accepted?operationalBadge(accepted+' devis accepté(s)','green'):''}${reminders?operationalBadge(reminders+' à relancer','orange'):''}${pending?operationalBadge(pending+' chantier(s) à planifier','orange'):''}</div>`;}
+function inSalesYear(date){return salesYear==='all'||String(date||'').slice(0,4)===String(salesYear);}
+function realizedQuoteAmount(q){return Number(q.realizedAmount??q.amount??0);}
+function syndicMetrics(syndicId){
+ const ids=new Set(vault.sites.filter(s=>s.syndicId===syndicId).map(s=>s.id)),quotes=vault.quotes.filter(q=>ids.has(q.siteId)),visits=(vault.maintenanceVisits||[]).filter(v=>ids.has(v.siteId));
+ const done=quotes.filter(q=>quoteIsDone(q)&&inSalesYear(q.doneDate));
+ const completedVisits=visits.filter(v=>v.status==='Réalisé'&&v.amount!==null&&v.amount!==''&&Number.isFinite(Number(v.amount))&&inSalesYear(v.doneDate));
+ const work=done.reduce((sum,q)=>sum+realizedQuoteAmount(q),0),maintenance=completedVisits.reduce((sum,v)=>sum+Number(v.amount),0);
+ const annual=Object.entries(vault.contracts||{}).filter(([id,c])=>ids.has(id)&&['Signé','En cours'].includes(c.status)).reduce((sum,[id,c])=>sum+Number(c.amount||0),0);
+ return {work,maintenance,realized:work+maintenance,annual,accepted:quotes.filter(acceptedQuote).reduce((sum,q)=>sum+Number(q.amount||0),0),remaining:quotes.filter(q=>acceptedQuote(q)&&!quoteIsDone(q)).reduce((sum,q)=>sum+Number(q.amount||0),0),toFollow:quotes.filter(quoteNeedsReminder).length,toPlan:quotes.filter(q=>acceptedQuote(q)&&workState(q)==='À planifier').length,undated:quotes.filter(q=>quoteIsDone(q)&&!q.doneDate).length+visits.filter(v=>v.status==='Réalisé'&&!v.doneDate).length};
+}
+function caSummary(syndicId){const m=syndicMetrics(syndicId);return `<section><h3>CA réalisé HT · ${salesYear==='all'?'Toutes périodes':esc(salesYear)}</h3><div class="ca-number">${money(m.realized)}</div><div class="row"><span>Travaux réalisés</span><b>${money(m.work)}</b></div><div class="row"><span>Maintenances effectuées</span><b>${money(m.maintenance)}</b></div><hr><div class="row"><span>Devis acceptés · toutes périodes</span><b>${money(m.accepted)}</b></div><div class="row"><span>Travaux acceptés restant à réaliser</span><b>${money(m.remaining)}</b></div><div class="row"><span>Contrats actifs · montant annuel HT</span><b>${money(m.annual)}</b></div><p class="small">Le montant annuel des contrats et les devis acceptés ne sont pas ajoutés au CA réalisé. Une maintenance est comptée par visite marquée « Réalisé », pour son montant propre.</p>${m.undated?`<p class="notice">${m.undated} réalisation(s) sans date : comptées uniquement dans « Toutes périodes ». Complète les dates pour le bilan annuel.</p>`:''}<button class="light" onclick="show('planning')">Voir les relances de planification</button></section>`;}
+function yearSelector(){const years=new Set([String(new Date().getFullYear())]);for(const q of vault.quotes)if(q.doneDate)years.add(q.doneDate.slice(0,4));for(const v of vault.maintenanceVisits||[])if(v.doneDate)years.add(v.doneDate.slice(0,4));return `<label>Période du CA réalisé<select onchange="salesYear=this.value;show('ca')"><option value="all" ${salesYear==='all'?'selected':''}>Toutes périodes</option>${Array.from(years).sort().reverse().map(y=>`<option value="${esc(y)}" ${salesYear===y?'selected':''}>${esc(y)}</option>`).join('')}</select></label>`;}
+function renderSyndicCA(){const rows=vault.syndics.map(s=>({s,m:syndicMetrics(s.id)})),total=rows.reduce((n,r)=>n+r.m.realized,0);el.innerHTML=`<h2>Chiffre d’affaires par syndic</h2>${yearSelector()}<section><p>CA réalisé HT · ${salesYear==='all'?'Toutes périodes':esc(salesYear)}</p><div class="ca-number">${money(total)}</div><p class="small">Suivi opérationnel fondé sur les travaux et visites marqués réalisés. Les devis importés restent « À confirmer » tant que tu ne renseignes pas leur état.</p></section><section style="overflow-x:auto"><table class="ca-table"><thead><tr><th>Syndic</th><th>Travaux réalisés</th><th>Maintenance réalisée</th><th>Total réalisé HT</th><th>Accepté à réaliser</th></tr></thead><tbody>${rows.map(({s,m})=>`<tr><td><button class="light" onclick="showSyndic(${jsArg(s.id)})">${esc(s.name)}</button></td><td>${money(m.work)}</td><td>${money(m.maintenance)}</td><td><b>${money(m.realized)}</b></td><td>${money(m.remaining)}</td></tr>`).join('')}</tbody></table></section><button onclick="show('planning')">À relancer / À planifier</button>`;const unattached=vault.sites.filter(s=>!vault.syndics.some(x=>x.id===s.syndicId));if(unattached.length)el.innerHTML+=`<p class="notice">${unattached.length} résidence(s) sans syndic reconnu : leur CA ne figure pas dans ce total. Rattache-les pour compléter le bilan.</p>`;}
+function renderQuotesTracking(){
+ const list=vault.quotes.filter(q=>quoteFilter==='all'||quoteFilter==='follow'&&quoteNeedsReminder(q)||quoteFilter==='accepted'&&acceptedQuote(q)||quoteFilter==='plan'&&acceptedQuote(q)&&workState(q)==='À planifier');
+ el.innerHTML=`<h2>Suivi des devis</h2><button onclick="openNewQuoteForm()">＋ Nouveau devis</button><div class="actions" style="margin-top:14px">${[['all','Tous'],['follow','À relancer'],['accepted','Acceptés'],['plan','À planifier']].map(([key,label])=>`<button class="${quoteFilter===key?'':'light'}" onclick="quoteFilter='${key}';show('devis')">${label}</button>`).join('')}</div>${list.map(q=>`<section class="sales-card ${quoteIsDone(q)?'done':''}"><div class="row"><b>${esc(q.ref)}</b><b>${money(q.amount)} HT</b></div><p>${esc(q.name)}</p><div class="muted">${esc(siteName(q.siteId))}${q.sourcePages?.length?' · PDF pages '+q.sourcePages.join(', '):''}</div>${quoteSalesBadges(q)}${q.plannedDate?`<p class="small">Prévu le ${esc(q.plannedDate)}</p>`:''}${q.doneDate?`<p class="small">Réalisé le ${esc(q.doneDate)}</p>`:''}<div class="actions"><button onclick="editQuoteTracking(${jsArg(q.ref)})">Statut / Planification</button><button class="light" onclick="showQuoteItems(${jsArg(q.ref)})">Équipements et détail</button>${q.pdfDocId?`<button class="light" onclick="openQuoteSource(${vault.quotes.indexOf(q)})">PDF source</button>`:''}<button class="light" onclick="remindQuote(${vault.quotes.indexOf(q)})">Relance commerciale</button></div></section>`).join('')||'<p>Aucun devis dans cette catégorie.</p>'}`;
+}
+function openNewQuoteForm(){el.innerHTML=`<button class="light" onclick="show('devis')">← Devis</button><section><h2>Nouveau devis</h2><form onsubmit="addQuote(event)"><label>Référence<input id="qref" required maxlength="60"></label><label>Objet<input id="qname" required maxlength="160"></label><label>Résidence<select id="qsite" required>${docOptions('')}</select></label><label>Montant HT<input id="qamount" type="number" min="0" step="0.01" required></label><label>Date du devis<input id="qdate" type="date"></label><label>État commercial<select id="qstatus">${['À confirmer','Envoyé','À relancer','Accepté','Refusé'].map(v=>`<option>${v}</option>`).join('')}</select></label><button>Enregistrer</button></form></section>`;}
+function editQuoteTracking(ref){const q=vault.quotes.find(q=>q.ref===ref);if(!q)return;el.innerHTML=`<button class="light" onclick="show('devis')">← Devis</button><section><h2>${esc(q.ref)} · ${esc(siteName(q.siteId))}</h2><p>${esc(q.name)} · ${money(q.amount)} HT</p><form onsubmit="saveQuoteTracking(event,${jsArg(ref)})"><label>État commercial<select id="salesCommercial">${['À confirmer','Envoyé','À relancer','Accepté','Refusé'].map(v=>`<option ${commercialState(q)===v?'selected':''}>${v}</option>`).join('')}</select></label><label>Date d’acceptation du devis<input id="salesAccepted" type="date" value="${esc(q.acceptedDate||'')}"></label><label>Date de relance de planification (facultative)<input id="salesPlanningFollow" type="date" value="${esc(q.planningFollowupDate||'')}"></label><p class="small">Sans date personnalisée : acceptation + ${planningDelays().works} jour(s) calendaire(s).</p><label>Date de relance commerciale<input id="salesFollow" type="date" value="${esc(q.followupDate||'')}"></label><label>Réalisation du chantier<select id="salesWork">${['À planifier','Planifié','Réalisé','À vérifier'].map(v=>`<option ${workState(q)===v?'selected':''}>${v}</option>`).join('')}</select></label><label>Date prévue<input id="salesPlanned" type="date" value="${esc(q.plannedDate||'')}"></label><label>Date réelle de réalisation<input id="salesDone" type="date" value="${esc(q.doneDate||'')}" onfocus="if(!this.value&&$('salesWork').value==='Réalisé')this.value=todayLocal()"></label><label>Montant HT réalisé (si différent du devis)<input id="salesAmount" type="number" min="0" step="0.01" value="${esc(q.realizedAmount??q.amount??'')}"></label><p class="small">Le CA réalisé est compté une seule fois lorsque le chantier est marqué « Réalisé ». Une facture seule ne prouve pas que le chantier est terminé.</p><button>Enregistrer le suivi</button></form></section>`;}
+async function saveQuoteTracking(e,ref){
+ e.preventDefault();const q=vault.quotes.find(q=>q.ref===ref);if(!q)return;
+ const commercial=$('salesCommercial').value,work=$('salesWork').value,planned=$('salesPlanned').value,done=$('salesDone').value,amount=$('salesAmount').value;
+ if(!['À confirmer','Envoyé','À relancer','Accepté','Refusé'].includes(commercial)||!['À planifier','Planifié','Réalisé','À vérifier'].includes(work))return alert('État incorrect.');
+ if(['Planifié','Réalisé'].includes(work)&&commercial!=='Accepté')return alert('Marque le devis comme accepté avant de renseigner sa planification ou sa réalisation.');
+ if(work==='Planifié'&&!planned)return alert('Indique la date prévue.');if(work==='Réalisé'&&(!done||done>todayLocal()))return alert('Indique une date de réalisation valide, au plus tard aujourd’hui.');
+ if(work==='Réalisé'&&(amount===''||!Number.isFinite(Number(amount))||Number(amount)<0))return alert('Indique le montant HT réalisé.');
+ const accepted=$('salesAccepted').value,planningFollow=$('salesPlanningFollow').value;if(commercial==='Accepté'&&(!accepted||accepted>todayLocal()))return alert('Indique la date réelle d’acceptation, au plus tard aujourd’hui.');if(planningFollow&&accepted&&planningFollow<accepted)return alert('La relance ne peut pas précéder l’acceptation.');const old=structuredClone(q),oldReminders=structuredClone(vault.reminders);Object.assign(q,{acceptedDate:accepted,planningFollowupDate:planningFollow,commercialStatus:commercial,workStatus:work,followupDate:$('salesFollow').value,plannedDate:planned,doneDate:work==='Réalisé'?done:'',realizedAmount:amount===''?null:Number(amount),status:work==='Réalisé'?'Réalisé':commercial});reconcilePlanningReminders();
+ try{await persist();show('devis')}catch(err){for(const key of Object.keys(q))delete q[key];Object.assign(q,old);vault.reminders=oldReminders;alert('Suivi non enregistré : '+err.message);}
+}
+function visitForm(siteId,visitId=''){
+ const c=vault.contracts[siteId];if(!c)return;const v=(vault.maintenanceVisits||[]).find(v=>v.id===visitId)||{};
+ el.innerHTML=`<button class="light" onclick="showSite(${jsArg(siteId)})">← Résidence</button><section><h2>Visite de maintenance · ${esc(siteName(siteId))}</h2><p class="small">Contrat annuel : ${c.amount==null?'montant à compléter':money(c.amount)+' HT'}. Renseigne uniquement le montant attribué à cette visite pour éviter de compter plusieurs fois le contrat annuel.</p><form onsubmit="saveMaintenanceVisit(event,${jsArg(siteId)},${jsArg(visitId)})"><label>Échéance de la visite<input id="visitDue" type="date" required value="${esc(v.dueDate||'')}"></label><label>État<select id="visitStatus">${['À planifier','Planifié','Réalisé','Annulé'].map(s=>`<option ${v.status===s?'selected':''}>${s}</option>`).join('')}</select></label><label>Date prévue<input id="visitPlanned" type="date" value="${esc(v.plannedDate||'')}"></label><label>Date réelle de réalisation<input id="visitDone" type="date" value="${esc(v.doneDate||'')}"></label><label>Montant HT attribué à cette visite<input id="visitAmount" type="number" min="0" step="0.01" value="${esc(v.amount??'')}"></label><button>Enregistrer la visite</button></form></section>`;
+}
+async function saveMaintenanceVisit(e,siteId,visitId){
+ e.preventDefault();if(!vault.contracts[siteId])return;const due=$('visitDue').value,status=$('visitStatus').value,planned=$('visitPlanned').value,done=$('visitDone').value,raw=$('visitAmount').value;
+ if(!due||!['À planifier','Planifié','Réalisé','Annulé'].includes(status))return alert('Indique une échéance et un état valide.');if(status==='Planifié'&&!planned)return alert('Indique la date prévue.');if(status==='Réalisé'&&(!done||done>todayLocal()||raw===''))return alert('Indique la date réelle et le montant HT de la visite réalisée.');if(raw!==''&&(!Number.isFinite(Number(raw))||Number(raw)<0))return alert('Montant incorrect.');
+ const before=structuredClone(vault);if(!vault.maintenanceVisits)vault.maintenanceVisits=[];
+ if(!visitId&&vault.maintenanceVisits.some(v=>v.siteId===siteId&&v.dueDate===due&&v.status!=='Annulé'))return alert('Une visite existe déjà pour cette résidence et cette échéance. Modifie-la depuis sa fiche.');
+ const v={id:visitId||uid(),siteId,dueDate:due,status,plannedDate:planned,doneDate:status==='Réalisé'?done:'',amount:raw===''?null:Number(raw)},index=vault.maintenanceVisits.findIndex(v=>v.id===visitId);if(visitId&&index<0)return alert('Visite introuvable.');if(index>=0)vault.maintenanceVisits[index]=v;else vault.maintenanceVisits.push(v);
+ reconcilePlanningReminders();try{await persist();showSite(siteId)}catch(err){vault=before;alert('Visite non enregistrée : '+err.message);}
+}
+function maintenanceTrackingCard(siteId){const c=vault.contracts[siteId];if(!c)return '';const visits=(vault.maintenanceVisits||[]).filter(v=>v.siteId===siteId).sort((a,b)=>String(b.dueDate).localeCompare(String(a.dueDate)));return `<section><h3>Réalisation des maintenances</h3><p>État du contrat : <b>${esc(c.status||'À proposer')}</b></p>${contractAcceptanceForm(siteId)}<button onclick="visitForm(${jsArg(siteId)})">＋ Planifier / enregistrer une visite</button>${visits.map(v=>`<div style="border-top:1px solid #e4eaf0;margin-top:14px;padding-top:12px">${operationalBadge(v.status,v.status==='Réalisé'?'green':v.status==='Planifié'?'blue':'orange')}<p class="small">Échéance : ${esc(v.dueDate)}${v.plannedDate?' · Prévu : '+esc(v.plannedDate):''}${v.doneDate?' · Réalisé : '+esc(v.doneDate):''}</p><b>${v.amount==null?'Montant à compléter':money(v.amount)+' HT'}</b><button class="light" onclick="visitForm(${jsArg(siteId)},${jsArg(v.id)})">Modifier la visite</button></div>`).join('')||'<p class="small">Aucune visite enregistrée. Un contrat signé ne signifie pas que sa maintenance est faite.</p>'}</section>`;}
+function planningTasks(){
+ const tasks=[];for(const q of vault.quotes){if(quoteNeedsReminder(q))tasks.push({key:'commercial:'+q.ref,kind:'quote',id:q.ref,siteId:q.siteId,title:'Relancer le devis '+q.ref,detail:q.name});if(acceptedQuote(q)&&workState(q)==='À planifier')tasks.push({key:'quote:'+q.ref,kind:'quote',id:q.ref,siteId:q.siteId,title:'Faire planifier le chantier '+q.ref,detail:q.name});if(acceptedQuote(q)&&workState(q)==='Planifié'&&q.plannedDate&&q.plannedDate<todayLocal())tasks.push({key:'overdue:'+q.ref,kind:'quote',id:q.ref,siteId:q.siteId,title:'Vérifier la réalisation du chantier '+q.ref,detail:'Date prévue dépassée : '+q.plannedDate});}
+ for(const [siteId,c] of Object.entries(vault.contracts||{})){if(!['Signé','En cours'].includes(c.status))continue;const visits=(vault.maintenanceVisits||[]).filter(v=>v.siteId===siteId&&v.status!=='Annulé'),year=String(new Date().getFullYear());if(!visits.some(v=>v.dueDate?.startsWith(year)||v.doneDate?.startsWith(year)))tasks.push({key:'contract:'+siteId+':'+year,kind:'contract',id:siteId,siteId,title:'Prévoir la maintenance annuelle',detail:'Contrat actif · aucune visite enregistrée pour '+year});for(const v of visits){if(v.status==='À planifier')tasks.push({key:'visit:'+v.id,kind:'visit',id:v.id,siteId,title:'Faire planifier la maintenance',detail:'Échéance : '+v.dueDate});if(v.status==='Planifié'&&v.plannedDate&&v.plannedDate<todayLocal())tasks.push({key:'visit-overdue:'+v.id,kind:'visit',id:v.id,siteId,title:'Vérifier la réalisation de la maintenance',detail:'Date prévue dépassée : '+v.plannedDate});}}
+ return tasks;
+}
+function renderPlanningTasks(){const tasks=planningTasks();el.innerHTML=`<h2>À relancer / À planifier (${tasks.length})</h2><p class="small">Relances commerciales et suivi interne des travaux / maintenances. Aucun message n’est envoyé automatiquement.</p>${tasks.map(t=>`<section class="sales-card"><b>${esc(t.title)}</b><p>${esc(siteName(t.siteId))} · ${esc(syndicName(vault.sites.find(s=>s.id===t.siteId)?.syndicId))}</p><p class="small">${esc(t.detail)}</p><div class="actions"><button onclick="openPlanningTask(${jsArg(t.key)})">Mettre à jour le suivi</button><button class="light" onclick="addPlanningReminder(${jsArg(t.key)})">Créer une relance</button></div></section>`).join('')||'<section>Aucune action en attente.</section>'}`;}
+function openPlanningTask(key){const t=planningTasks().find(t=>t.key===key);if(!t)return;if(t.kind==='quote')editQuoteTracking(t.id);else if(t.kind==='visit')visitForm(t.siteId,t.id);else visitForm(t.siteId);}
+async function addPlanningReminder(key){const t=planningTasks().find(t=>t.key===key);if(!t)return;if(vault.reminders.some(r=>r.planningKey===key))return alert('Une relance existe déjà pour cette action.');const before=structuredClone(vault);vault.reminders.push({title:t.title,date:t.dueDate||todayLocal(),siteId:t.siteId,quoteRef:t.kind==='quote'?t.id:'',planningKey:key});try{await persist();show('relances')}catch(e){vault=before;alert('Relance non enregistrée : '+e.message);}}
+const previousShowSales=show;
+show=function(page){if(!unlocked)return renderLock();if(['devis','ca','planning'].includes(page)){current=page;if(page==='devis')renderQuotesTracking();else if(page==='ca')renderSyndicCA();else renderPlanningTasks();document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.getAttribute('onclick')===`show('${page}')`));return;}previousShowSales(page);};
+const previousSyndicSales=showSyndic;
+showSyndic=function(id){previousSyndicSales(id);if(vault.syndics.some(s=>s.id===id))el.insertAdjacentHTML('beforeend',caSummary(id));};
+const previousContractSales=contractCard;
+contractCard=function(siteId){return previousContractSales(siteId)+maintenanceTrackingCard(siteId);};
+
+
+function planningDelays(){return {works:14,maintenance:14,...vault.planningSettings};}
+function shiftCalendarDays(date,count){if(!/^\d{4}-\d{2}-\d{2}$/.test(String(date||'')))return '';const d=new Date(date+'T12:00:00');d.setDate(d.getDate()+Number(count));return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;}
+function planningDeadline(entity,type){return entity.planningFollowupDate||shiftCalendarDays(entity.acceptedDate,planningDelays()[type]);}
+function acceptanceTask(kind,id,siteId){return {key:'acceptance:'+kind+':'+id,kind:kind==='quote'?'quote':'contract',id,siteId,title:'Compléter la date d’acceptation',detail:'Date nécessaire pour calculer la relance de planification.',dueDate:todayLocal()};}
+// Keep future deadlines visible, but clearly separate them from due reminders.
+planningTasks=function(){
+ const tasks=[],today=todayLocal();
+ for(const q of vault.quotes){
+  if(quoteNeedsReminder(q))tasks.push({key:'commercial:'+q.ref,kind:'quote',id:q.ref,siteId:q.siteId,title:'Relancer le devis '+q.ref,detail:q.name,dueDate:q.followupDate||today});
+  if(acceptedQuote(q)&&workState(q)==='À planifier'){
+   if(!q.acceptedDate)tasks.push(acceptanceTask('quote',q.ref,q.siteId));
+   else tasks.push({key:'quote:'+q.ref,kind:'quote',id:q.ref,siteId:q.siteId,title:'Faire planifier le chantier '+q.ref,detail:'Accepté le '+q.acceptedDate,dueDate:planningDeadline(q,'works')});
+  }
+  if(acceptedQuote(q)&&workState(q)==='Planifié'&&q.plannedDate&&q.plannedDate<today)tasks.push({key:'overdue:'+q.ref,kind:'quote',id:q.ref,siteId:q.siteId,title:'Vérifier la réalisation du chantier '+q.ref,detail:'Date prévue dépassée : '+q.plannedDate,dueDate:q.plannedDate});
+ }
+ for(const [siteId,c] of Object.entries(vault.contracts||{})){
+  if(!['Signé','En cours'].includes(c.status))continue;
+  const visits=(vault.maintenanceVisits||[]).filter(v=>v.siteId===siteId&&v.status!=='Annulé'),year=String(new Date().getFullYear());
+  const unscheduled=visits.filter(v=>v.status==='À planifier'),noAnnualVisit=!visits.some(v=>v.dueDate?.startsWith(year)||v.doneDate?.startsWith(year));
+  if((unscheduled.length||noAnnualVisit)&&!c.acceptedDate){tasks.push(acceptanceTask('contract',siteId,siteId));continue;}
+  if(noAnnualVisit)tasks.push({key:'contract:'+siteId+':'+year,kind:'contract',id:siteId,siteId,title:'Prévoir la maintenance annuelle',detail:'Contrat accepté le '+c.acceptedDate+' · aucune visite pour '+year,dueDate:planningDeadline(c,'maintenance')});
+  for(const v of visits){
+   if(v.status==='À planifier')tasks.push({key:'visit:'+v.id,kind:'visit',id:v.id,siteId,title:'Faire planifier la maintenance',detail:'Contrat accepté le '+c.acceptedDate+' · échéance visite : '+v.dueDate,dueDate:v.planningFollowupDate||planningDeadline(c,'maintenance')});
+   if(v.status==='Planifié'&&v.plannedDate&&v.plannedDate<today)tasks.push({key:'visit-overdue:'+v.id,kind:'visit',id:v.id,siteId,title:'Vérifier la réalisation de la maintenance',detail:'Date prévue dépassée : '+v.plannedDate,dueDate:v.plannedDate});
+  }
+ }
+ return tasks.sort((a,b)=>String(a.dueDate).localeCompare(String(b.dueDate)));
+};
+function reconcilePlanningReminders(){const tasks=new Map(planningTasks().map(t=>[t.key,t]));vault.reminders=vault.reminders.filter(r=>!r.planningKey||tasks.has(r.planningKey)).map(r=>r.planningKey?{...r,date:tasks.get(r.planningKey).dueDate||r.date}:r);}
+renderPlanningTasks=function(){
+ const tasks=planningTasks(),today=todayLocal(),due=tasks.filter(t=>t.dueDate<=today).length,d=planningDelays();
+ el.innerHTML=`<h2>Relances de planification</h2><div class="sales-badges">${operationalBadge(due+' à traiter','orange')}${operationalBadge((tasks.length-due)+' à venir','blue')}</div><section><h3>Délais après acceptation</h3><form onsubmit="savePlanningDelays(event)"><label>Travaux · jours calendaires<input id="delayWorks" type="number" min="0" max="365" required value="${d.works}"></label><label>Maintenance · jours calendaires<input id="delayMaintenance" type="number" min="0" max="365" required value="${d.maintenance}"></label><button>Appliquer les délais</button></form><p class="small">Échéance = date réelle d’acceptation + délai. Tu peux fixer une date particulière dans le suivi du devis ou du contrat. Une prestation planifiée ou réalisée sort des relances de planification.</p></section>${tasks.map(t=>`<section class="sales-card">${operationalBadge(t.dueDate<=today?'À traiter':'À venir',t.dueDate<=today?'orange':'blue')}<h3>${esc(t.title)}</h3><p>${esc(siteName(t.siteId))}</p><p class="small">${esc(t.detail)}</p><p><b>Relance le ${esc(t.dueDate)}</b></p><div class="actions"><button onclick="openPlanningTask(${jsArg(t.key)})">Mettre à jour</button>${!t.key.startsWith('acceptance:')?`<button class="light" onclick="addPlanningReminder(${jsArg(t.key)})">Ajouter aux relances</button>`:''}</div></section>`).join('')||'<section>Aucune relance de planification en attente.</section>'}`;
+};
+async function savePlanningDelays(e){e.preventDefault();const works=Number($('delayWorks').value),maintenance=Number($('delayMaintenance').value);if(![works,maintenance].every(v=>Number.isInteger(v)&&v>=0&&v<=365))return alert('Choisis un nombre entier entre 0 et 365 jours.');const before=structuredClone(vault);vault.planningSettings={works,maintenance};reconcilePlanningReminders();try{await persist();show('planning')}catch(err){vault=before;alert('Délais non enregistrés : '+err.message);}}
+function contractAcceptanceForm(siteId){const c=vault.contracts[siteId];return `<form onsubmit="saveContractAcceptance(event,${jsArg(siteId)})"><label>État du contrat<select id="acceptanceContractStatus">${['À proposer','Envoyé','Signé','En cours','Résilié'].map(v=>`<option ${c.status===v?'selected':''}>${v}</option>`).join('')}</select></label><label>Date d’acceptation du contrat<input id="acceptanceContractDate" type="date" value="${esc(c.acceptedDate||'')}"></label><label>Date de relance de planification (facultative)<input id="acceptanceContractFollow" type="date" value="${esc(c.planningFollowupDate||'')}"></label><p class="small">Sans date personnalisée : acceptation + ${planningDelays().maintenance} jour(s) calendaire(s).</p><button class="light">Enregistrer l’acceptation</button></form>`;}
+async function saveContractAcceptance(e,siteId){e.preventDefault();const c=vault.contracts[siteId];if(!c)return;const status=$('acceptanceContractStatus').value,accepted=$('acceptanceContractDate').value,follow=$('acceptanceContractFollow').value;if(!['À proposer','Envoyé','Signé','En cours','Résilié'].includes(status))return;if(['Signé','En cours'].includes(status)&&(!accepted||accepted>todayLocal()))return alert('Indique la date réelle d’acceptation du contrat, au plus tard aujourd’hui.');if(follow&&accepted&&follow<accepted)return alert('La relance ne peut pas précéder l’acceptation.');const before=structuredClone(vault);Object.assign(c,{status,acceptedDate:accepted,planningFollowupDate:follow});reconcilePlanningReminders();try{await persist();showSite(siteId)}catch(err){vault=before;alert('Acceptation non enregistrée : '+err.message);}}
+const editContractAcceptancePrevious=editContract;
+editContract=function(siteId){editContractAcceptancePrevious(siteId);if(!$('ca'))return;const c=vault.contracts[siteId]||{};$('ca').closest('form').insertAdjacentHTML('afterbegin',`<label>Date d’acceptation du contrat<input type="date" id="contractAcceptedDate" value="${esc(c.acceptedDate||'')}"></label>`);};
+const quoteBadgesAcceptancePrevious=quoteSalesBadges;
+quoteSalesBadges=function(q){let html=quoteBadgesAcceptancePrevious(q);if(acceptedQuote(q)&&workState(q)==='À planifier'){const due=planningDeadline(q,'works');html+=q.acceptedDate?`<p class="small">Accepté le ${esc(q.acceptedDate)} · relance de planification le <b>${esc(due)}</b>${due<=todayLocal()?' · À relancer':''}</p>`:'<p class="small danger">Date d’acceptation à compléter.</p>';}return html;};
+const openPlanningAcceptancePrevious=openPlanningTask;
+openPlanningTask=function(key){const t=planningTasks().find(t=>t.key===key);if(t?.kind==='contract'){showSite(t.siteId);return;}openPlanningAcceptancePrevious(key);};
+
+
+function extractQuoteLineItems(text){
+ const lines=cleanQuoteText(text).split(/\r?\n/).map(l=>l.trim()).filter(Boolean),result=[];
+ let active=false,category='Matériel',pending='';
+ const decimal='[0-9]+(?:[ \\u00a0][0-9]{3})*(?:[,.][0-9]{2})';
+ const pattern=new RegExp('^(.*?)\\s*([0-9]+(?:[,.][0-9]{1,3})?)\\s+('+decimal+')\\s+('+decimal+')(?:\\s+[0-9]+(?:[,.][0-9]+)?\\s*%?)?\\s*$');
+ for(const line of lines){
+  const n=normalized(line).trim();
+  if(/designation.*quantite.*montant ht/.test(n)){active=true;pending='';continue;}
+  if(!active)continue;
+  if(/^(?:delais|delai |validite|informations|total ht|total h t|date d acceptation|conditions de reglement|fl protection incendie|sas au capital)/.test(n)){active=false;pending='';continue;}
+  if(n==='materiel'||n==='materiels'){category='Matériel';pending='';continue;}
+  if(/^deplacement et main d oeuvre/.test(n)){category='Main-d’œuvre';pending='';continue;}
+  const m=line.match(pattern);
+  if(m){
+   const label=(m[1].trim()||pending).trim(),quantity=parseDetectedEuro(m[2]),unitPrice=parseDetectedEuro(m[3]),amount=parseDetectedEuro(m[4]);
+   if(!label||quantity===null||unitPrice===null||amount===null){pending='';continue;}
+   result.push({label,quantity,unitPrice,amount,category:/^(?:frais|deplacement zone|vacation)\b/i.test(label)?'Frais':category,consistent:Math.abs(quantity*unitPrice-amount)<=0.02});pending='';
+  }else if(/^code de l environnement/i.test(n)&&result.length){result.at(-1).label+=' · '+line;}
+  else if(!/^page\b/.test(n))pending=(pending+' '+line).trim().slice(0,240);
+ }
+ return result;
+}
+function quoteItemTable(items){return `<div style="overflow-x:auto"><table class="ca-table"><thead><tr><th>Équipement / prestation</th><th>Qté</th><th>PU HT</th><th>Montant HT</th></tr></thead><tbody>${items.map(l=>`<tr><td style="white-space:normal;min-width:130px">${esc(l.label)}${l.consistent===false?'<div class="danger">Calcul de ligne à vérifier</div>':''}</td><td>${esc(l.quantity)}</td><td>${money(l.unitPrice)}</td><td>${money(l.amount)}</td></tr>`).join('')}</tbody></table></div>`;}
+function quoteLineReconciliation(q){const items=q.lineItems||[];if(!items.length)return '';const sum=Math.round(items.reduce((s,l)=>s+Number(l.amount||0),0)*100)/100;return Math.abs(sum-Number(q.amount||0))>0.02?`<p class="notice">Somme des lignes détectées : ${money(sum)} HT ; total du devis : ${money(q.amount)} HT. Certaines lignes ou remises restent à vérifier.</p>`:'';}
+function residenceQuoteItemsCard(siteId){
+ const qs=vault.quotes.filter(q=>q.siteId===siteId);if(!qs.length)return '';
+ return `<section><h2>Équipements proposés dans les devis</h2><p class="small">Matériel proposé, devis par devis. Le statut de réalisation est affiché séparément : ces lignes ne constituent pas un inventaire de matériel déjà installé.</p>${qs.map(q=>{const items=q.lineItems||[],materials=items.filter(l=>l.category==='Matériel'),other=items.filter(l=>l.category!=='Matériel');return `<section><div class="row"><b>${esc(q.ref)}</b><b>${money(q.amount)} HT</b></div><p>${esc(q.name)}</p>${quoteSalesBadges(q)}${materials.length?quoteItemTable(materials):`<p class="small">${items.length?'Ce devis ne comporte pas de ligne classée comme matériel.':'Détail non encore extrait : réimporte le PDF avec cette version.'}</p>`}${other.length?`<details><summary style="padding:12px 0;cursor:pointer">Main-d’œuvre et frais (${other.length} lignes)</summary>${quoteItemTable(other)}</details>`:''}${quoteLineReconciliation(q)}<button class="light" onclick="showQuoteItems(${jsArg(q.ref)})">Voir toutes les lignes</button></section>`}).join('')}</section>`;
+}
+function showQuoteItems(ref){
+ const q=vault.quotes.find(q=>q.ref===ref);if(!q)return;
+ const items=q.lineItems||[];
+ el.innerHTML=`<button class="light" onclick="showSite(${jsArg(q.siteId)})">← Résidence</button><section><h2>${esc(q.ref)} · ${esc(q.name)}</h2><p>${esc(siteName(q.siteId))}</p>${quoteSalesBadges(q)}${['Matériel','Main-d’œuvre','Frais'].map(cat=>{const group=items.filter(l=>l.category===cat);return group.length?`<h3>${cat}</h3>${quoteItemTable(group)}`:''}).join('')}${!items.length?'<p>Réimporte le PDF pour compléter le détail des équipements.</p>':''}${quoteLineReconciliation(q)}<div class="row"><b>Total du devis HT</b><b>${money(q.amount)}</b></div>${q.sourcePages?.length?`<p class="small">Pages source : ${q.sourcePages.join(', ')}</p>`:''}<div class="actions"><button onclick="editQuoteTracking(${jsArg(q.ref)})">Statut et planification</button>${q.pdfDocId?`<button class="light" onclick="openQuoteSource(${vault.quotes.indexOf(q)})">PDF original</button>`:''}</div></section>`;
+}
+const previousSiteQuoteItems=showSite;
+showSite=function(siteId){previousSiteQuoteItems(siteId);const html=residenceQuoteItemsCard(siteId);if(html){const first=el.querySelector('section');if(first)first.insertAdjacentHTML('afterend',html);else el.insertAdjacentHTML('beforeend',html);}};
+
+
+let testMergeDraft=null;
+function mergeVaultSnapshots(primary,incoming,skipExamples=true){
+ const result=migrate(structuredClone(primary)),source=migrate(structuredClone(incoming)),counts={syndics:0,sites:0,documents:0,quotes:0,contracts:0,visits:0,reminders:0,examplesSkipped:0,existingQuotes:0,existingContracts:0};
+ const errors=[],notes=[],synMap=new Map(),siteMap=new Map(),docMap=new Map(),visitMap=new Map(),addedSites=[];
+ const copy=structuredClone,canonical=value=>String(value??'').trim().toLocaleUpperCase('fr'),companyKey=value=>normalized(value).trim().replace(/^(?:cabinet|syndic)\s+/,'').replace(/\s+syndic$/,''),addressKey=value=>normalized(String(value||'').replace(/\b\d{5}\b.*$/,'')).trim();
+ const excluded=new Set(skipExamples?source.sites.filter(s=>(s.id==='DEMO-001'&&s.name==='Résidence Démonstration A'||s.id==='DEMO-002'&&s.name==='Résidence Démonstration B')).map(s=>s.id):[]);
+ counts.examplesSkipped=excluded.size;
+ const sites=source.sites.filter(s=>!excluded.has(s.id)),neededSyndics=new Set(sites.map(s=>s.syndicId));
+ for(const syn of source.syndics){
+  if(skipExamples&&syn.id==='SY-DEMO-1'&&!neededSyndics.has(syn.id))continue;
+  if(!syn.id||!String(syn.name||'').trim()){errors.push('Un syndic importé n’a pas de nom ou d’identifiant.');continue;}
+  let target=result.syndics.find(s=>companyKey(s.name)===companyKey(syn.name));
+  if(!target){target=copy(syn);if(result.syndics.some(s=>s.id===target.id))target.id='SY-'+uid();result.syndics.push(target);counts.syndics++;}
+  else for(const field of ['contact','phone','email'])if(!target[field]&&syn[field])target[field]=syn[field];
+  synMap.set(syn.id,target.id);
+ }
+ for(const site of sites){
+  if(!site.id||!site.name||['__proto__','constructor','prototype'].includes(String(site.id).toLowerCase())){errors.push('Une résidence importée n’a pas de nom ou de numéro.');continue;}
+  const synId=synMap.get(site.syndicId)||'',target=result.sites.find(s=>canonical(s.id)===canonical(site.id));
+  if(target){
+   if(target.syndicId&&synId&&target.syndicId!==synId)errors.push('Site '+site.id+' : syndics différents. Corrige le rattachement avant la fusion.');
+   if(target.address&&site.address&&addressKey(target.address)!==addressKey(site.address))errors.push('Site '+site.id+' : adresses différentes. Vérifie les deux fiches avant la fusion.');
+   for(const field of ['address','city','gestionnaire'])if(!target[field]&&site[field])target[field]=site[field];
+   if(!target.syndicId)target.syndicId=synId;
+   for(const name of siteManagerNames(site))attachManagerToSite(target,name);
+   if(normalized(target.name)!==normalized(site.name))notes.push('Site '+site.id+' : nom de la principale conservé (« '+target.name+' »).');
+   siteMap.set(site.id,target.id);
+  }else{const added={...copy(site),syndicId:synId};result.sites.push(added);siteMap.set(site.id,added.id);addedSites.push(added);counts.sites++;}
+ }
+ const mappedSite=id=>siteMap.get(id)||result.sites.find(s=>canonical(s.id)===canonical(id))?.id||'';
+ for(const doc of source.documents){
+  if(excluded.has(doc.siteId)&&!(doc.siteIds||[]).some(id=>!excluded.has(id)))continue;
+  if(!doc.id||!doc.data){errors.push('Un document importé est incomplet.');continue;}
+  let target=result.documents.find(d=>d.data===doc.data);
+  if(!target){target=copy(doc);if(result.documents.some(d=>d.id===target.id))target.id=uid();target.siteId=mappedSite(doc.siteId)||(doc.siteIds||[]).map(mappedSite).find(Boolean)||'';target.siteIds=Array.from(new Set([target.siteId,...(doc.siteIds||[]).map(mappedSite)].filter(Boolean)));result.documents.push(target);counts.documents++;}
+  else{target.siteIds=Array.from(new Set([target.siteId,...(target.siteIds||[]),mappedSite(doc.siteId),...(doc.siteIds||[]).map(mappedSite)].filter(Boolean)));for(const field of ['contractProposal','detectedQuoteLines','photos','quoteReferences','annexPages'])if((target[field]==null||Array.isArray(target[field])&&!target[field].length)&&doc[field]!=null)target[field]=copy(doc[field]);}
+  docMap.set(doc.id,target.id);
+ }
+ for(const site of addedSites)if(site.photoDocId)site.photoDocId=docMap.get(site.photoDocId)||'';
+ for(const q of source.quotes){
+  if(excluded.has(q.siteId))continue;
+  const siteId=mappedSite(q.siteId);if(q.siteId&&!siteId){errors.push('Devis '+q.ref+' : résidence introuvable.');continue;}
+  if(!q.ref){errors.push('Un devis importé n’a pas de référence.');continue;}
+  const target=result.quotes.find(t=>canonical(t.ref)===canonical(q.ref));
+  if(target){
+   if(target.siteId&&siteId&&target.siteId!==siteId){errors.push('Devis '+q.ref+' déjà présent pour une autre résidence.');continue;}
+   counts.existingQuotes++;
+   if(!target.siteId)target.siteId=siteId;
+   for(const field of ['lineItems','sourcePages'])if((!target[field]||!target[field].length)&&q[field])target[field]=copy(q[field]);
+   if(!target.pdfDocId&&q.pdfDocId)target.pdfDocId=docMap.get(q.pdfDocId)||'';
+   if(!target.gestionnaire&&q.gestionnaire)target.gestionnaire=q.gestionnaire;
+   if(!target.acceptedDate&&commercialState(target)===commercialState(q)&&q.acceptedDate)target.acceptedDate=q.acceptedDate;
+   if(commercialState(target)!==commercialState(q)||workState(target)!==workState(q))notes.push('Devis '+q.ref+' : état de la principale conservé.');
+  }else{result.quotes.push({...copy(q),siteId,pdfDocId:docMap.get(q.pdfDocId)||''});counts.quotes++;}
+ }
+ for(const [oldId,contract] of Object.entries(source.contracts||{})){
+  if(excluded.has(oldId))continue;const siteId=mappedSite(oldId);if(!siteId){errors.push('Contrat sans résidence reconnue : '+oldId);continue;}
+  const target=result.contracts[siteId];
+  if(target){counts.existingContracts++;for(const field of ['proposedItems','proposedPrices','proposedFees','proposedQuantities','otherProposedItems','extinguisherOptions'])if((!target[field]||Array.isArray(target[field])&&!target[field].length)&&contract[field])target[field]=copy(contract[field]);if(!target.acceptedDate&&target.status===contract.status&&contract.acceptedDate)target.acceptedDate=contract.acceptedDate;notes.push('Contrat du site '+siteId+' : sélection, montant et état de la principale conservés.');}
+  else{result.contracts[siteId]={...copy(contract),sourceDocId:docMap.get(contract.sourceDocId)||''};counts.contracts++;}
+ }
+ if(!result.maintenanceVisits)result.maintenanceVisits=[];
+ for(const v of source.maintenanceVisits||[]){
+  if(excluded.has(v.siteId))continue;const siteId=mappedSite(v.siteId);if(!siteId){errors.push('Visite sans résidence reconnue.');continue;}
+  let target=result.maintenanceVisits.find(t=>t.siteId===siteId&&t.dueDate===v.dueDate);
+  if(!target){target={...copy(v),siteId};if(result.maintenanceVisits.some(t=>t.id===target.id))target.id=uid();result.maintenanceVisits.push(target);counts.visits++;}
+  else if(target.status!==v.status)notes.push('Visite du site '+siteId+' ('+v.dueDate+') : état de la principale conservé.');
+  visitMap.set(v.id,target.id);
+ }
+ for(const r of source.reminders){
+  if(excluded.has(r.siteId))continue;const item={...copy(r),siteId:mappedSite(r.siteId)};
+  if(item.planningKey){for(const [oldId,newId] of visitMap)for(const prefix of ['visit:','visit-overdue:'])if(item.planningKey===prefix+oldId)item.planningKey=prefix+newId;for(const [oldId,newId] of siteMap)if(item.planningKey.startsWith('contract:'+oldId+':'))item.planningKey=item.planningKey.replace('contract:'+oldId+':','contract:'+newId+':');}
+  if(result.reminders.some(t=>t.title===item.title&&t.date===item.date&&t.siteId===item.siteId&&t.quoteRef===item.quoteRef||item.planningKey&&t.planningKey===item.planningKey))continue;
+  result.reminders.push(item);counts.reminders++;
+ }
+ if(!result.planningSettings&&source.planningSettings){if([source.planningSettings.works,source.planningSettings.maintenance].every(v=>Number.isInteger(v)&&v>=0&&v<=365))result.planningSettings=copy(source.planningSettings);else errors.push('Délais de planification incorrects dans la sauvegarde.');}
+ const usedBytes=result.documents.reduce((n,d)=>n+Number(d.size||0),0);if(usedBytes>MAX_ALL)errors.push('La fusion dépasserait la limite de documents du coffre. Exporte et libère de la place avant de recommencer.');
+ return {vault:validateVaultShape(result),counts,errors:Array.from(new Set(errors)),notes:Array.from(new Set(notes))};
+}
+async function prepareTestMerge(event){
+ const file=event.target.files?.[0];if(!file)return;
+ try{if(file.size>8000000)throw Error('Sauvegarde trop volumineuse.');const pkg=JSON.parse(await file.text());let incoming;
+  try{incoming=await openSeal(pkg,passphrase)}catch(e){const secret=prompt('Saisis la phrase secrète de la version test pour ouvrir sa sauvegarde. Elle reste sur cet appareil.');if(secret===null)return;incoming=await openSeal(pkg,secret);}
+  testMergeDraft={incoming};renderTestMerge(true);
+ }catch(e){alert('Sauvegarde test illisible : '+(e.message||'vérifie le fichier et sa phrase secrète.'));}finally{event.target.value='';}
+}
+function renderTestMerge(skipExamples=true){
+ if(!testMergeDraft)return;const p=mergeVaultSnapshots(vault,testMergeDraft.incoming,skipExamples),c=p.counts;
+ el.innerHTML=`<button class="light" onclick="testMergeDraft=null;show('home')">← Annuler</button><section><h2>Importer les données de la version test</h2><p>Les données de la principale sont conservées. Les nouvelles fiches sont ajoutées et les références déjà présentes sont réutilisées.</p><label><input type="checkbox" style="width:auto" id="skipMergeExamples" ${skipExamples?'checked':''} onchange="renderTestMerge(this.checked)"> Ignorer les deux résidences de démonstration</label><p class="small">${c.examplesSkipped} résidence(s) de démonstration ignorée(s).</p><ul><li>${c.syndics} nouveau(x) syndic(s)</li><li>${c.sites} nouvelle(s) résidence(s)</li><li>${c.quotes} nouveau(x) devis</li><li>${c.contracts} nouveau(x) contrat(s)</li><li>${c.documents} nouveau(x) PDF</li><li>${c.visits} visite(s) et ${c.reminders} relance(s)</li></ul><p>${c.existingQuotes} devis et ${c.existingContracts} contrats déjà présents : leur suivi principal reste prioritaire.</p>${p.notes.length?'<details><summary>Informations sur les fiches déjà présentes</summary><ul>'+p.notes.map(n=>'<li>'+esc(n)+'</li>').join('')+'</ul></details>':''}${p.errors.length?'<p class="notice">Fusion suspendue : corrige les points suivants.</p><ul>'+p.errors.map(e=>'<li>'+esc(e)+'</li>').join('')+'</ul>':''}<p class="small">Une copie chiffrée du coffre principal sera conservée localement avant la fusion.</p><div class="actions"><button class="light" onclick="exportBackup()">Exporter le coffre principal actuel</button><button ${p.errors.length?'disabled':''} onclick="applyTestMerge()">Fusionner ces données</button></div></section>`;
+}
+const mergeRecoveryKey='before-test-merge-v383';
+async function saveMergeRecovery(before){
+ const sealed=JSON.stringify(await seal(before,passphrase)),db=await openDb();
+ try{await new Promise((resolve,reject)=>{const tx=db.transaction(storeName,'readwrite');tx.objectStore(storeName).put(sealed,mergeRecoveryKey);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error);});const stored=await new Promise((resolve,reject)=>{const tx=db.transaction(storeName,'readonly'),r=tx.objectStore(storeName).get(mergeRecoveryKey);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});if(stored!==sealed)throw Error('Copie avant fusion non vérifiée.');}finally{db.close();}
+}
+async function applyTestMerge(){
+ if(!testMergeDraft)return;const plan=mergeVaultSnapshots(vault,testMergeDraft.incoming,$('skipMergeExamples').checked);if(plan.errors.length)return renderTestMerge($('skipMergeExamples').checked);
+ const before=structuredClone(vault);try{await writeQueue;await saveMergeRecovery(before);vault=plan.vault;reconcilePlanningReminders();await persist();testMergeDraft=null;show('home');alert('Fusion enregistrée et vérifiée. Les fiches de la principale sont conservées.');}catch(e){vault=before;alert('Fusion non validée : '+(e.message||'erreur')+'. La copie avant fusion reste disponible si elle a pu être enregistrée.');}
+}
+async function restoreBeforeMerge(){
+ try{const db=await openDb();let value;try{value=await new Promise((resolve,reject)=>{const tx=db.transaction(storeName,'readonly'),r=tx.objectStore(storeName).get(mergeRecoveryKey);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});}finally{db.close();}
+  if(!value)return alert('Aucune sauvegarde avant fusion n’est disponible sur cet appareil.');const restored=migrate(await openSeal(JSON.parse(value),passphrase));
+  if(!confirm('Revenir aux données du coffre principal juste avant la dernière fusion ? Les modifications faites depuis seront retirées.'))return;
+  const before=vault;vault=restored;try{await persist();show('home');alert('Coffre avant fusion restauré.');}catch(e){vault=before;throw e;}
+ }catch(e){alert('Restauration avant fusion impossible : '+(e.message||'erreur'));}
+}
+
 if(!window.crypto?.subtle){el.innerHTML='<section>Ce navigateur ne permet pas le chiffrement. Ouvre l’application depuis son adresse HTTPS dans Safari.</section>'}else{renderLock();if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{})}
 
 </script></body></html>
