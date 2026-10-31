@@ -110,8 +110,8 @@ const MAX_PDF=Math.floor(1.5*1024*1024),MAX_ALL=3*1024*1024;
 let stagedPDFs=[];
 function docOptions(selected=''){return vault.sites.map(x=>`<option value="${esc(x.id)}" ${selected===x.id?'selected':''}>${esc(x.name)} — ${esc(x.id)}</option>`).join('')}
 // PDF.js corrige: module ESM et worker de la meme version. Test fictif uniquement.
-const PDFJS_MODULE_URL='./test-v366/test-v366/vendor/pdfjs/pdf.min.mjs?v=3691';
-const PDFJS_WORKER_URL='./test-v366/test-v366/vendor/pdfjs/pdf.worker.min.mjs?v=3691';
+const PDFJS_MODULE_URL=new URL('./vendor/pdfjs/pdf.min.mjs?v=3691',document.baseURI).href;
+const PDFJS_WORKER_URL=new URL('./vendor/pdfjs/pdf.worker.min.mjs?v=3691',document.baseURI).href;
 let pdfLibraryPromise=null;
 async function loadPdfLibrary(){
   if(!pdfLibraryPromise){
